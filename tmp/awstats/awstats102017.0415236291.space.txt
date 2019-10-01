@@ -1,0 +1,463 @@
+AWSTATS DATA FILE 7.4 (build 20140726)
+# If you remove this file, all statistics for date 201710 will be lost/reset.
+# Last config file used to build this data file was /home3/cash4cats13/tmp/awstats/awstats.0415236291.space.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2017                
+POS_TIME 2695                
+POS_VISITOR 8746                
+POS_DAY 11088               
+POS_DOMAIN 3433                
+POS_LOGIN 3791                
+POS_ROBOT 3946                
+POS_WORMS 4162                
+POS_EMAILSENDER 4293                
+POS_EMAILRECEIVER 4436                
+POS_SESSION 11888               
+POS_SIDER 12088               
+POS_FILETYPES 4571                
+POS_DOWNLOADS 4848                
+POS_OS 4896                
+POS_BROWSER 5126                
+POS_SCREENSIZE 5765                
+POS_UNKNOWNREFERER 5839                
+POS_UNKNOWNREFERERBROWSER 6134                
+POS_ORIGIN 6251                
+POS_SEREFERRALS 6393                
+POS_PAGEREFS 6562                
+POS_SEARCHWORDS 6743                
+POS_KEYWORDS 6895                
+POS_MISC 2359                
+POS_ERRORS 6954                
+POS_CLUSTER 3647                
+POS_SIDER_404 7083                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20171101020435 14 3030 13518050564079
+FirstTime 20171001041537
+LastTime 20171031124729
+LastUpdate 20171101075114 14 0 13 0 0
+TotalVisits 104                 
+TotalUnique 57                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 57                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+PDFSupport 0 0 0
+JavascriptDisabled 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+QuickTimeSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 6 0
+JavaEnabled 0 0 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 2 2 13002 2 2 0
+1 22 1128 33675776 8 16 55502
+2 4 4 26004 1 2 4384
+3 13 47 2206543 4 8 17000
+4 11 11 71511 8 10 34000
+5 17 17 110517 2 7 27751
+6 8 8 52008 1 3 12750
+7 20 54 2389774 4 7 8952
+8 20 20 130020 0 5 21250
+9 6 6 32505 3 5 8768
+10 8 8 52008 4 7 23635
+11 9 9 58509 1 8 187977
+12 49 423 26290213 40 74 396076
+13 23 32 367462 2 10 49571
+14 1 1 6501 3 3 0
+15 2 2 13002 8 44 1915492
+16 2 36 2135032 6 7 27751
+17 37 145 7357850 19 23 40769
+18 55 1125 34450013 13 31 112751
+19 34 1885 6456227 12 44 178500
+20 51 51 5774268 21 50 159753
+21 0 0 0 5 5 8500
+22 5 39 2260303 5 40 2264553
+23 6 40 2266804 3 5 8500
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 10
+us 200 617 29831783
+au 181 4316 87719925
+ru 9 145 8546629
+ca 4 4 26004
+cn 3 3 19503
+fr 3 3 19503
+de 2 2 13002
+cl 1 1 6501
+ua 1 1 6501
+nl 1 1 6501
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 2
+bot[\s_+:,\.\;\/\\-] 115 4394782 20171031184535 0
+spider 45 279897 20171030125006 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 11
+jpg 3849 56762874 0 0
+png 13 16368 0 0
+php 17 110517 0 0
+woff2 7 358376 0 0
+gif 1 1849 0 0
+js 789 37259715 0 0
+woff 30 728296 0 0
+html 194 1241691 0 0
+css 36 12271182 0 0
+eot 1 68875 0 0
+Unknown 156 17376109 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 13
+win8.1 37 3
+linux 79 11
+macosx9 1 1
+winxp 4 4
+winlong 2 2
+win8 71 3
+macosx 16 16
+winnt 4278 177
+win7 531 114
+win2003 1 1
+Unknown 71 71
+linuxandroid 1 1
+macosx8 1 1
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 31
+chrome60.0.3112.78 39 5
+chrome45.0.2454.94 1 1
+msie8.0 3 3
+chrome26.0.1410.65 1 1
+firefox32.0 1 1
+mozilla 5 5
+firefox57.0 3015 58
+chrome34.0.1847.137 1 1
+chrome58.0.3029.81 1 1
+firefox35.0 1 1
+chrome39.0.2171.95 62 62
+msie10.0 105 3
+firefox55.0 1 1
+netscape 64 64
+firefox42.0 1 1
+safari8.0 13 13
+chrome51.0.2704.79 1180 104
+chrome43.0.2357.124 1 1
+safari 40 6
+chrome40.0.2214.115 1 1
+opera8.50 1 1
+chrome58.0.3029.110 3 3
+chrome57.0.2987.133 1 1
+chrome31.0.1650.57 1 1
+chrome61.0.3163.100 39 5
+chrome60.0.3112.113 35 1
+msie11.0 42 8
+firefox27.0 1 1
+msie7.0 1 1
+msie9.0 432 49
+Unknown 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 5
+Mozilla/5.0_Firefox/35.0 20171008051907
+Mozilla/5.0_(compatible;_ips-agent) 20171018131822
+WhatsApp/0.2.6426_N 20171016175118
+Mozilla 20171031054543
+Mozilla/5.0_(compatible;_Dataprovider.com;) 20171007183153
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+WhatsApp/0.2.6426_N 20171016175118
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 108 108
+From1 4 4
+From2 50 433
+From3 2 2
+From4 241 4546
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+yandex 5 5
+google 45 428
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+http://www.marinetraffic.com 2 2
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+303 16 0
+307 17 0
+404 209 888250
+406 2 452
+403 6 804
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 28
+/web/wp-login.php 2 -
+/wordpress/wp-login.php 3 -
+/test/wp-login.php 2 -
+/blog/wp-login.php 3 -
+/th1s_1s_a_4o4.html 31 http://www.google.com/url
+/sitemap.xml 1 -
+/cat_img/resized_cat_images_300/Nissan-02-3b-9103-VN.JPG 15 http://0415236291.space/index.php/pages/view/invoice
+/wp/wp-login.php 2 -
+/robots.txt 54 http://www.0415236291.space/robots.txt
+/libraries/sfn.php 1 -
+/cat_img/resized_cat_images_300/Ford-08-928-XS.JPG 15 http://0415236291.space/index.php/pages/view/invoice
+/wp-login.php 2 -
+/cat_img/resized_cat_images_300/logo.png 16 http://0415236291.space/index.php/pages/view/invoice
+/cms/wp-login.php 3 -
+/blog/ 1 http://0415236291.space/blog/
+/cat_img/resized_cat_images_300/Holden-M03-93.23.JPG 15 http://0415236291.space/index.php/pages/view/invoice
+/news/wp-login.php 3 -
+/administrator/components/com_joomlaupdate/restore.php 3 -
+/skin/Signedint.php 1 -
+/home/wp-login.php 3 -
+/http%3A%2F%2Fwww%2E0415236291%2Espace%2F%3Ca%20class%3D%22forgot%22%3EFor%20any%20issues%20contact%20the%20System%20Administrator%3C%2Fa%3E 2 -
+/blogs/wp-login.php 2 -
+/site/wp-login.php 3 -
+/main/wp-login.php 3 -
+/cat_img/resized_cat_images_300/Ford_02-1b-9126_R.JPG 15 http://0415236291.space/index.php/pages/view/invoice
+/<a%20class=\"forgot\">For%20any%20issues%20contact%20the%20System%20Administrator</a> 2 -
+/en/wp-login.php 3 -
+/new/wp-login.php 3 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 57
+120.150.180.132 107 1217 40772758 20171016204712
+110.21.11.86 64 3055 44615902 20171020223017
+184.154.139.22 19 226 13384232 20171030125003
+54.85.182.120 13 13 185223 20171019204107
+104.192.74.22 12 12 78012 20171028085714
+104.192.74.36 12 12 78012 20171027072920
+184.154.36.168 10 77 5272421 20171028124728
+49.181.232.69 10 44 2331265 20171017072735
+104.192.74.39 8 8 52008 20171021060910
+104.192.74.43 8 8 52008 20171006052555
+104.192.74.21 8 8 52008 20171026082727
+104.192.74.29 8 8 52008 20171017123953
+104.192.74.24 8 8 52008 20171012013714
+104.192.74.46 8 8 52008 20171015062818
+104.192.74.37 8 8 52008 20171013030709
+184.154.36.166 7 63 4299610 20171029125351
+184.154.36.167 6 45 2773956 20171022125124
+54.89.210.68 6 40 2299779 20171006170230
+104.192.74.14 4 4 26004 20171024010626
+104.192.74.18 4 4 26004 20171018050334
+104.192.74.35 4 4 26004 20171007031340
+158.69.225.34 4 4 26004 20171007183154
+104.192.74.19 4 4 26004 20171003090017
+104.192.74.41 4 4 26004 20171030023310
+104.192.74.38 4 4 26004 20171014054331
+173.239.216.3 1 1 0 20171015015227
+185.201.8.109 1 1 6501 20171003070632
+124.206.180.130 1 1 6501 20171008051907
+54.198.73.228 1 1 6501 20171007111202
+54.203.58.242 1 1 6501 20171024095239
+85.17.171.149 1 1 6501 20171028035108
+62.210.105.112 2 2 13002 20171031012149
+95.220.91.5 1 35 2128531 20171024015902
+37.110.66.106 1 35 2128531 20171024015902
+104.238.248.15 2 2 13002 20171027040751
+94.180.216.159 1 35 2128531 20171026165411
+45.32.128.51 1 1 6501 20171002014929
+46.105.30.8 1 1 6501 20171012000309
+188.32.18.203 1 35 2128531 20171029032449
+54.202.4.146 1 1 6501 20171024145023
+104.192.74.13 4 4 26004 20171031054543
+181.214.169.125 1 1 6501 20171012121002
+69.58.178.57 2 2 13002 20171018131822
+104.192.74.17 4 4 26004 20171004131930
+146.185.223.146 2 2 13002 20171017004120
+155.133.82.122 2 2 13002 20171015042138
+104.192.74.20 4 4 26004 20171029131033
+128.72.177.9 1 1 6501 20171028170954
+184.154.36.164 3 17 751929 20171031124732
+139.227.144.102 1 1 6501 20171001151837
+54.152.194.50 2 2 0 20171026090035
+91.210.145.142 1 1 6501 20171006162446
+158.46.203.1 1 1 6501 20171026203741
+139.227.144.203 1 1 6501 20171007010515
+38.100.21.64 1 1 6501 20171006015222
+104.192.74.12 4 4 26004 20171023084748
+104.192.74.45 4 4 26004 20171011082838
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20171001 6 14 320765 3
+20171002 7 21 1319992 3
+20171003 7 39 2170480 3
+20171004 6 12 790016 2
+20171005 6 18 1173589 2
+20171006 14 66 3245015 5
+20171007 11 27 1313983 5
+20171008 7 21 675137 4
+20171009 6 15 644985 3
+20171010 5 14 250444 2
+20171011 5 22 666523 2
+20171012 7 24 1409135 4
+20171013 6 12 550688 3
+20171014 5 15 723552 2
+20171015 7 15 639825 4
+20171016 123 1310 45712092 6
+20171017 26 1114 32642922 6
+20171018 8 23 874590 3
+20171019 57 1924 9767274 4
+20171020 11 55 3440410 3
+20171021 6 15 438717 2
+20171022 6 15 653672 2
+20171023 6 12 1010791 3
+20171024 9 94 5757654 6
+20171025 5 14 555142 2
+20171026 8 53 2711998 5
+20171027 6 23 733572 3
+20171028 8 19 875546 4
+20171029 7 53 3297491 3
+20171030 6 20 1327177 2
+20171031 8 14 502675 3
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+2mn-5mn 1
+30s-2mn 2
+15mn-30mn 2
+30mn-1h 1
+0s-30s 97
+5mn-15mn 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 43
+/ 194 1241691 94 76
+/index.php/reports/pop_cats 23 106534 0 0
+/index.php/pages/view/view_invoices 21 1276685 0 1
+/index.php/invoicing/ajax_cats 21 969712 0 1
+/index.php 17 110517 7 6
+/index.php/login/validate 15 98625 1 14
+/index.php/pages/view/home 11 160112 1 0
+/index.php/pages/view/invoice 8 7100330 0 1
+/index.php/pages/view/edit_invoice/130 7 6318006 0 0
+/theme/css/fonts/google/open-sans-bold.woff 7 159236 0 0
+/theme/css/fonts/google/open-sans-semibold.woff 7 158228 0 0
+/theme/css/fonts/google/open-sans.woff 7 153692 0 0
+/index.php/customers/view_customers 6 122830 0 0
+/index.php/pages/view/view_invoice/130 5 99751 0 0
+/theme/css/fonts/font-awesome/fontawesome-webfont.woff2 5 322320 0 3
+/index.php/login/logout 5 32910 1 1
+/index.php/customers/edit_customer/21 5 261370 0 0
+/theme/css/fonts/google/open-sans-light.woff 4 90624 0 1
+/index.php/pages/view/view_invoice/129 4 79016 0 0
+/index.php/pages/view/add_user 2 42024 0 0
+/index.php/customers/update_customer_type 2 85793 0 0
+/theme/css/fonts/google/open-sans-italic-light.woff 2 43048 0 0
+/index.php/pdf_contr/generate_pdf_report/130 2 209467 0 0
+/cpanel 2 17948 0 0
+/index.php/pages/view/add_customer 2 40590 0 0
+/index.php/pages/view/view_invoice/126 1 13368 0 0
+/theme/css/fonts/font-awesome/fontawesome-webfont.eot 1 68875 0 0
+/index.php/customers/edit_customer/22 1 33296 0 0
+/index.php/pages/view/add_expense 1 18148 0 0
+/index.php/pages/view/view_invoice/109 1 19779 0 0
+/theme/css/fonts/google/open-sans-italic.woff 2 42184 0 0
+/theme/css/fonts/font-awesome/fontawesome-webfont.woff 1 81284 0 0
+/index.php/users/add_user 2 42150 0 0
+/index.php/pages/view/view_invoice/127 1 19186 0 0
+/index.php/pages/view/calculator 1 57363 0 0
+/theme/css/fonts/bootstrap/glyphicons-halflings-regular.woff2 2 36056 0 0
+/index.php/users/view_users 1 25754 0 0
+/index.php/pages/catalogue_view/1 1 23360 0 0
+/index.php/pages/view/login_report_shipment_summary 1 17831 0 0
+/index.php/pages/view/view_invoice/128 1 19186 0 0
+/index.php/customers/edit_customer/23 1 33296 0 0
+/index.php/pages/view/login_report_user_summary 1 16453 0 0
+/index.php/pages/view/login_report_bulk_pdf 1 15236 0 0
+END_SIDER

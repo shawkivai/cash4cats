@@ -1,0 +1,657 @@
+AWSTATS DATA FILE 7.6 (build 20161204)
+# If you remove this file, all statistics for date 201810 will be lost/reset.
+# Last config file used to build this data file was /home3/cash4cats13/tmp/awstats/awstats.0415236291.space.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2017                
+POS_TIME 2701                
+POS_VISITOR 13244               
+POS_DAY 18355               
+POS_DOMAIN 3582                
+POS_LOGIN 4021                
+POS_ROBOT 4176                
+POS_WORMS 4768                
+POS_EMAILSENDER 4899                
+POS_EMAILRECEIVER 5042                
+POS_SESSION 19286               
+POS_SIDER 19499               
+POS_FILETYPES 5177                
+POS_DOWNLOADS 5446                
+POS_OS 5494                
+POS_BROWSER 5754                
+POS_SCREENSIZE 6730                
+POS_UNKNOWNREFERER 6804                
+POS_UNKNOWNREFERERBROWSER 7291                
+POS_ORIGIN 7488                
+POS_SEREFERRALS 7633                
+POS_PAGEREFS 7812                
+POS_SEARCHWORDS 8067                
+POS_KEYWORDS 8219                
+POS_MISC 2364                
+POS_ERRORS 8278                
+POS_CLUSTER 3877                
+POS_SIDER_404 8428                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20181101004408 808 264975 15106217646133
+FirstTime 20181001045535
+LastTime 20181031231917
+LastUpdate 20181101074418 808 0 807 0 0
+TotalVisits 282                 
+TotalUnique 119                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 126                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+JavaEnabled 0 0 0
+QuickTimeSupport 0 0 0
+DirectorSupport 0 0 0
+PDFSupport 0 0 0
+TotalMisc 0 0 0
+RealPlayerSupport 0 0 0
+FlashSupport 0 0 0
+AddToFavourites 0 38 0
+JavascriptDisabled 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 574 611 30501113 45 88 498433
+1 48 82 2217311 16 18 42223
+2 39 1149 40167102 15 26 62221
+3 20 20 140420 5 52 2427305
+4 12 12 84252 17 19 41922
+5 17 17 119357 10 16 8792
+6 12 12 12699603 23 30 96530
+7 13 13 91273 13 35 1289588
+8 38 157 5761707 5 13 14052
+9 20 20 140420 10 15 39470
+10 9 9 63189 8 48 2317494
+11 14 14 84252 32 69 2457696
+12 45 348 24278355 56 140 3522111
+13 13 134 9201115 23 42 270331
+14 23 1187 38540528 37 45 45369
+15 52 93 2877269 9 26 738398
+16 731 1052 47186201 70 103 523804
+17 3442 4645 184496128 73 250 2813479
+18 4325 4558 116221468 29 131 1006246
+19 7188 7786 128453415 33 164 3975006
+20 3270 4513 106781416 53 124 354520
+21 2512 2792 60252119 37 70 67631
+22 2060 3185 73908590 24 56 925694
+23 1231 2342 58315977 22 47 430241
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 15
+au 25268 28847 705319547
+us 249 1050 58755169
+my 149 4668 168821985
+cn 13 121 7184489
+ca 8 8 56168
+gb 4 4 28084
+ru 4 40 2298974
+ua 3 3 47954
+fr 3 3 21063
+ro 2 2 14042
+cl 1 1 7021
+ar 1 1 7021
+eu 1 1 7021
+cw 1 1 7021
+nl 1 1 7021
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 12
+bingbot/ 131 8192936 20181027190626 0
+Googlebot/ 103 5926428 20181028061535 0
+spider 63 506370 20181031124825 0
+bingpreview 61 4599601 20181027200634 0
+facebookexternalhit/ 38 2280743 20181011121951 0
+bot[\s_+:,\.\;\/\\-] 24 168504 20181030042115 0
+no_user_agent 7 212107 20181029161809 0
+Python\-urllib/ 4 28084 20181019062919 0
+YandexBot/ 3 21063 20181026003514 0
+Wget/ 2 0 20181006110613 0
+Dalvik/ 1 140084 20181029161809 0
+Uptimebot/ 1 0 20181028165825 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+woff 91 2219200 0 0
+woff2 41 1688628 0 0
+png 66 60127 0 0
+jpg 7339 203169577 0 0
+gif 3 5547 0 0
+js 1539 76978122 0 0
+html 295 3190293 0 0
+css 96 27212362 0 0
+Unknown 25207 627539170 0 0
+php 74 519554 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 14
+win10 2841 210
+linuxandroid 30770 25194
+Unknown 68 68
+winxp 3 3
+macosx10 1 1
+win2003 1 1
+macosx9 2 2
+ios_iphone 228 12
+linux 67 67
+macosx 35 1
+win8.1 40 3
+macosx12 76 76
+winlong 5 5
+win7 614 65
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 44
+chrome68.0.3427.1 80 8
+chrome46.0.2490.80 1 1
+netscape 56 56
+chrome24.0.1312.52 1 1
+chrome37.0.2062.120 1 1
+Unknown 3 3
+chrome66.0.3359.126 1204 128
+msie7.0 1 1
+chrome67.0.3396.79 39 3
+chrome60.0.3112.101 2 2
+chrome45.0.2454.94 1 1
+msie10.0 1 1
+msie8.0 4 4
+firefox59.0 1 1
+chrome69.0.3497.91 7194 7183
+chrome67.0.3396.103 37 1
+chrome68.0.3440.91 2173 23
+chrome27.0.1453.94 1 1
+chrome62.0.3202.94 4 4
+chrome61.0.3163.100 14 14
+firefox45.0 2 2
+chrome49.0.2623.75 2 2
+chrome64.0.3251.0 2 2
+chrome69.0.3497.100 2624 144
+safari8.0 228 12
+edge17 39 3
+chrome63.0.3239.132 2 2
+chrome67.0.3396.99 169 53
+firefox42.0 1 1
+chrome58.0.3029.110 63 63
+firefox33.0 1 1
+chrome34.0.1847.116 1 1
+mozilla 33 33
+firefox61.0 1 1
+chrome31.0.1650.57 1 1
+chrome59.0.3071.125 20104 17856
+chrome57.0.2987.133 1 1
+safari10.1.1 1 1
+chrome63.0.3239.111 127 36
+firefox32.0 3 3
+msie9.0 490 49
+opera11.2.3.102637 2 2
+chrome65.0.3325.181 1 1
+firefox62.0 35 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 8
+Mozilla/5.0_(compatible;_Dataprovider.com) 20181025185318
+python-requests/2.9.1 20181011142752
+Python/3.6_aiohttp/2.3.2 20181012011245
+python-requests/2.20.0 20181031082554
+Mozilla/4.0_(compatible;_Netcraft_Web_Server_Survey) 20181031111906
+Mozilla 20181031100611
+Mozilla/5.0_(compatible;_NetcraftSurveyAgent/1.0;__info@netcraft.com) 20181002181612
+Mozilla/5.0_(compatible;_ips-agent) 20181016114656
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+python-requests/2.20.0 20181031082554
+Python/3.6_aiohttp/2.3.2 20181012011245
+python-requests/2.9.1 20181011142752
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 198 232
+From1 2 2
+From2 50 491
+From3 4 4
+From4 25454 34022
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+www_google_com 49 490
+yandexru 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 3
+http://www.netcraft.com/survey/ 2 2
+http://burger-imperia.com 1 1
+https://mawords.com/0415236291.space 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 6
+500 18 32674
+303 100 0
+406 9 2034
+404 770 1699242
+307 53 0
+403 201 158686
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 96
+/wordpress/wp-includes/wlwmanifest.xml 1 -
+//oldsite/wp-admin/install.php 1 -
+/admin/editor/filemanager/connectors/uploadtest.html 1 -
+/wordpress/wp-login.php 2 -
+/index.php/benchmarks/update_conversion_rate 2 http://0415236291.space/index.php/pages/view/calculator
+/sitemap.xml 1 -
+/phpcms/base.php 1 -
+/wysiwyg/fckeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/blog/ 2 http://0415236291.space/blog/
+/wordpress/ 1 -
+/customer_images/188/ 2 http://0415236291.space/index.php/customers/edit_customer/188
+/bea_wls_deployment_internal 8 -
+/new/ 1 -
+/admin/login.php 1 -
+/administrator/fckeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/user/register/ 1 -
+/editor/editor/filemanager/upload/test.html 1 -
+/scripts/setup.php 11 -
+/index.php/reports/get_overrides 10 http://0415236291.space/index.php/pages/view/invoice
+/wp/wp-login.php 2 -
+/blog/wp-login.php 2 -
+/http%3A%2F%2Fwww%2E0415236291%2Espace%2F%3Ca%20class%3D%22forgot%22%3EFor%20any%20issues%20contact%20the%20System%20Administrator%3C%2Fa%3E 4 -
+//old/wp-admin/install.php 1 -
+/admin/images/cal_date_over.gif 1 -
+//wp/wp-admin/install.php 1 -
+/fckeditor/editor/filemanager/connectors/php/upload.php 1 -
+/cms/editor/filemanager/connectors/uploadtest404.html 1 -
+/wp-config.php 1 -
+/robots.txt 72 http://www.0415236291.space/robots.txt
+/wp-login.php 4 -
+/assets/fileUpload/server/php/files/index.php 1 -
+/customer_images/163/ 14 http://0415236291.space/index.php/customers/edit_customer/163
+/mother.php 1 -
+//blog/wp-admin/install.php 1 -
+/plugins/p_fckeditor/fckeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/<a%20class=\"forgot\">For%20any%20issues%20contact%20the%20System%20Administrator</a> 4 -
+//wordpress/wp-admin/install.php 1 -
+/cms/fckeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/cat_img/resized_cat_images_300/Nissan-02-3b-9103-VN.JPG 138 http://0415236291.space/index.php/pages/view/invoice
+/administrator/index.php 2 https://google.com
+/test/ 1 -
+/cms/wp-includes/wlwmanifest.xml 1 -
+/ckeditor/filemanager/connectors/uploadtest.html 1 -
+/customer_images/67/ 3 http://0415236291.space/index.php/customers/edit_customer/67
+/backup/ 1 -
+/js/fckeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/editor/filemanager/connectors/uploadtest.html 1 -
+/sites/all/modules/fckeditor/fckeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/customer_images/187/ 8 http://0415236291.space/index.php/customers/update_customer_type
+/cat_img/resized_cat_images_300/Ford-08-928-XS.JPG 78 http://0415236291.space/index.php/pages/view/invoice
+/cat_img/resized_cat_images_300/Ford_02-1b-9126_R.JPG 78 http://0415236291.space/index.php/pages/view/invoice
+/modules/fckeditor/fckeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/fckeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/home/ 1 -
+/wp/ 1 -
+/wp/wp-includes/wlwmanifest.xml 1 -
+/tmp/ 1 -
+/wp-content/plugins/easyrotator-for-wordpress/indox.php 1 -
+/xmlrpc.php 1 -
+/config/AspCms_config.asp 1 -
+//new/wp-admin/install.php 1 -
+/editor/editor/filemanager/connectors/uploadtest.html 1 -
+///wp-admin/install.php 1 -
+/cms/editor/filemanager/connectors/uploadtest.html 1 -
+/wp-includes/wlwmanifest.xml 1 -
+/admin/FCKeditor/editor/filemanager/connectors/uploadtest.html 1 -
+/cat_img/resized_cat_images_300/Holden-M03-93.23.JPG 111 http://0415236291.space/index.php/pages/view/invoice
+/.git/HEAD 1 -
+/site/ 1 -
+/cat_img/resized_cat_images_300/logo.png 60 http://0415236291.space/index.php/pages/view/invoice
+/admin/editor/editor/filemanager/connectors/uploadtest.html 1 -
+/demo/ 1 -
+/phpmyadmin/index.php 2 https://google.com
+/assets/fileUpload/server/php/index.php 1 -
+/th1s_1s_a_4o4.html 31 http://www.google.com/url
+/index.php/reports/get_notes 6 http://0415236291.space/index.php/pages/view/invoice
+/dede/login.php 1 -
+/main/ 1 -
+/site/wp-includes/wlwmanifest.xml 1 -
+/.git/index 1 -
+/index.php/reports/pop_cats 6 http://0415236291.space/index.php/pages/view/invoice
+/customer_images/185/ 6 http://0415236291.space/index.php/customers/update_customer_type
+/pma/index.php 2 https://google.com
+/wp-load.php 1 -
+/templates/system/css/system.css 1 -
+/wp-updats.php 1 -
+/ads.txt 1 -
+/.DS_Store 1 -
+/blog/wp-includes/wlwmanifest.xml 1 -
+/old/ 1 -
+/xmlrpz.php 1 -
+/HTMLEditor/editor/filemanager/connectors/uploadtest.html 1 -
+/customer_images/48/ 3 http://0415236291.space/index.php/customers/edit_customer/48
+/console/css/dashboard-min.css 9 -
+/customer_images/186/ 8 http://0415236291.space/index.php/customers/edit_customer/186
+/status 16 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 126
+49.180.94.79 7826 7827 135923281 20181019192942
+49.197.207.23 7147 7235 186184840 20181022214803
+49.180.97.192 3348 4110 79109928 20181031231917
+49.181.141.199 2417 2419 28845075 20181025175618
+49.180.168.191 1777 1778 35359976 20181008222928
+49.181.210.231 749 895 12633466 20181019032800
+49.181.171.51 630 662 6204461 20181031225455
+49.176.175.72 403 518 15737170 20181031220058
+49.181.249.52 327 327 2312168 20181029172657
+49.197.205.160 183 2335 134250422 20181008175118
+49.195.39.248 159 159 3867778 20181023190638
+49.180.162.17 115 301 10782513 20181029165801
+113.210.72.230 60 158 6807308 20181013210444
+112.141.197.114 59 59 7216962 20181021064052
+49.195.111.253 37 37 1503838 20181016205711
+113.210.178.178 37 1197 47450911 20181008082614
+49.197.234.96 27 29 34905980 20181007173138
+113.210.178.107 23 1097 37667264 20181006021650
+184.154.139.22 22 231 17777599 20181028125830
+49.195.66.108 21 21 2399847 20181009221136
+49.195.196.143 20 71 3449732 20181028161159
+113.210.67.149 19 2167 74245732 20181006221854
+49.180.156.40 16 56 3032485 20181030185138
+52.53.201.78 14 14 98294 20181030221031
+104.192.74.15 12 12 84252 20181026083218
+51.254.97.56 1 1 7021 20181003010637
+198.50.200.91 1 1 7021 20181002184913
+95.29.111.20 1 37 2277911 20181022233556
+35.231.101.56 2 2 14042 20181010220425
+104.192.74.41 4 4 28084 20181025052006
+104.192.74.24 8 8 56168 20181003115723
+184.154.36.166 6 41 2814828 20181027124843
+173.252.127.1 1 6 384028 20181031023403
+54.77.33.212 1 1 7021 20181012011245
+35.237.30.106 3 39 2366216 20181025182213
+198.204.229.83 2 2 14042 20181011152451
+173.252.127.23 0 6 218399 
+220.245.248.9 7 8 1599625 20181003173249
+104.192.74.18 8 8 56168 20181018124339
+104.196.205.213 2 2 14042 20181006210339
+104.192.74.26 4 4 28084 20181002120857
+209.97.148.44 1 1 7021 20181002141212
+35.231.189.10 2 2 14042 20181014230943
+104.196.157.166 2 2 14042 20181023031918
+46.101.80.192 1 1 7021 20181004165554
+42.236.10.84 3 23 1604501 20181008141017
+35.237.108.190 3 39 2366216 20181020192128
+159.65.46.44 1 1 0 20181001110717
+104.192.74.46 4 4 28084 20181012060043
+173.252.127.28 0 5 240435 
+35.229.72.58 3 39 2366216 20181007182727
+35.231.198.140 2 2 14042 20181027040331
+173.252.127.12 0 5 398578 
+42.236.10.106 3 11 440690 20181008141018
+104.192.74.36 4 4 28084 20181011161349
+54.215.206.74 1 1 7021 20181028110747
+104.192.74.14 4 4 28084 20181030010739
+206.180.165.147 1 1 7021 20181011040536
+209.97.144.9 1 1 0 20181031111906
+18.237.180.177 1 35 1718107 20181021085401
+162.244.33.8 1 1 7021 20181009081232
+23.229.105.162 3 40 2308745 20181008004826
+178.20.157.98 1 1 33912 20181001215106
+185.81.157.110 2 2 14042 20181027072318
+91.210.147.116 1 1 7021 20181004114751
+104.192.74.23 8 8 56168 20181013102721
+198.72.24.98 1 1 7021 20181004222622
+104.192.74.20 4 4 28084 20181027032653
+104.192.74.45 12 12 84252 20181021182139
+194.63.141.238 1 1 7021 20181006163033
+163.172.4.153 4 4 28084 20181029075143
+35.237.172.57 2 2 14042 20181031050242
+192.241.65.3 3 40 2308745 20181005213122
+104.192.74.44 4 4 28084 20181004052209
+104.192.74.17 4 4 28084 20181029031116
+69.58.178.56 2 2 14042 20181016114656
+190.2.148.176 1 1 7021 20181030010539
+159.89.104.3 1 1 7021 20181004002844
+35.237.26.30 3 39 2366216 20181011195949
+158.69.225.34 4 4 28084 20181025185320
+42.236.10.92 1 11 590025 20181008141017
+35.231.29.102 2 2 14042 20181019000535
+104.192.74.43 8 8 56168 20181031100611
+66.102.6.105 1 1 7021 20181011180321
+152.44.107.217 2 2 14042 20181019210811
+104.192.74.21 4 4 28084 20181010055126
+158.46.139.230 1 1 7021 20181011021740
+91.90.192.195 1 1 7021 20181015190818
+104.196.28.223 2 2 14042 20181002204630
+35.227.107.59 3 39 2366216 20181029192930
+64.246.165.170 1 1 7021 20181017031211
+35.237.169.86 3 39 2366216 20181016184011
+104.238.248.15 3 3 21063 20181025114848
+42.236.10.75 1 7 215157 20181008141017
+13.56.249.89 1 1 7021 20181007072840
+195.254.134.194 1 1 7021 20181011230009
+108.171.216.162 1 1 7021 20181010041338
+104.192.74.16 4 4 28084 20181006092401
+199.249.224.49 1 1 7021 20181022181124
+113.210.183.121 10 49 2650770 20181016213522
+27.115.124.68 3 21 1258685 20181008184933
+178.171.89.212 1 1 7021 20181017225641
+42.236.10.124 2 16 749502 20181008141018
+184.154.36.164 8 94 5285652 20181030130550
+104.192.74.25 4 4 28084 20181014031500
+64.233.172.167 1 1 7021 20181017215702
+104.192.74.29 4 4 28084 20181023093548
+151.106.60.151 1 1 7021 20181011142752
+38.100.21.68 1 1 7021 20181006125140
+190.7.21.13 1 1 7021 20181025001254
+23.80.146.43 2 2 14042 20181005071228
+35.237.242.8 2 2 14042 20181023010437
+139.81.100.75 1 1 7021 20181019141933
+173.252.127.39 2 11 892521 20181031023403
+184.154.36.167 7 61 4667072 20181031124823
+184.154.36.168 6 63 4118432 20181018125005
+191.101.113.43 1 1 7021 20181025025840
+142.93.74.197 1 1 7021 20181002181612
+27.115.124.67 0 3 328328 
+104.192.74.12 8 8 56168 20181019035300
+27.115.124.69 0 15 778110 
+184.174.59.241 1 1 7021 20181003205813
+37.235.48.55 1 1 7021 20181006110614
+89.40.123.28 1 1 7021 20181031082554
+173.252.127.25 0 6 231162 
+42.236.10.117 0 14 1219491 
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20181001 8 24 761218 5
+20181002 20 38 4535729 7
+20181003 15 32 3244916 6
+20181004 9 22 813776 6
+20181005 22 1148 35814988 7
+20181006 82 3321 145385232 10
+20181007 709 2912 151678947 13
+20181008 1657 1979 65087896 20
+20181009 2573 2594 51403237 10
+20181010 2773 2820 81378506 12
+20181011 1007 1060 33619766 14
+20181012 7 23 1649553 4
+20181013 71 216 10186241 4
+20181014 861 873 13556737 7
+20181015 1492 1550 28676925 12
+20181016 1175 1317 28555745 13
+20181017 1250 1316 29359553 11
+20181018 1892 1907 43949209 9
+20181019 1226 1240 8481697 10
+20181020 5 53 3026454 2
+20181021 1860 1910 42411663 11
+20181022 593 643 9891152 12
+20181023 747 763 15808851 10
+20181024 856 867 8024931 8
+20181025 332 378 6287638 11
+20181026 7 23 1309621 3
+20181027 10 22 1179500 4
+20181028 863 978 26915033 8
+20181029 938 1289 24539763 11
+20181030 1875 2602 49888586 9
+20181031 773 831 15159517 13
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+0s-30s 172
+1h+ 32
+15mn-30mn 16
+30s-2mn 19
+5mn-15mn 17
+30mn-1h 16
+2mn-5mn 10
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 63
+/index.php/reports/get_overrides 11844 142128 0 89
+/index.php/invoicing/ajax_cats 11684 459702808 52 0
+/index.php/invoicing/sold_at_loss 1135 6700 0 1
+/ 280 1952148 162 119
+/index.php/pages/view/invoice 100 156386582 1 7
+/index.php/pages/view/home 93 1635081 3 0
+/index.php/reports/get_notes 83 2656 2 0
+/index.php/reports/pop_cats 83 2573 0 0
+/index.php 74 519554 43 13
+/index.php/pages/view/calculator 28 2414290 1 3
+/index.php/login/logout 27 191754 10 8
+/theme/css/fonts/google/open-sans-bold.woff 24 500456 1 2
+/index.php/login/validate 24 170280 0 18
+/theme/css/fonts/font-awesome/fontawesome-webfont.woff2 24 1418208 2 7
+/theme/css/fonts/google/open-sans.woff 22 439120 0 0
+/theme/css/fonts/google/open-sans-semibold.woff 22 452080 1 2
+/index.php/customers/view_customers 20 2366023 2 0
+/theme/css/fonts/bootstrap/glyphicons-halflings-regular.woff2 17 270420 0 0
+/theme/css/fonts/google/open-sans-light.woff 17 339840 0 0
+/cat_img/resized_cat_images_600/ 15 1238145 0 1
+/index.php/pages/view/add_customer 9 142148 0 0
+/index.php/pages/catalogue_view/2 7 1468820 1 1
+/index.php/customers/edit_customer/163 7 220046 0 0
+/theme/css/fonts/font-awesome/fontawesome-webfont.woff 6 487704 0 6
+/index.php/pages/catalogue_view/1 5 135901 0 0
+/index.php/pages/view/edit_cat/1110 1 52734 0 0
+/index.php/customers/edit_customer/188 1 29239 0 0
+/index.php/customers/edit_customer/185 2 58472 0 0
+/index.php/pages/view/edit_cat/1108 2 105566 0 0
+/index.php/pages/catalogue_view/7 2 772726 0 0
+/index.php/pages/catalogue_view/28 1 281744 0 0
+/index.php/pages/view/preview_cat/587 1 14549 0 0
+/index.php/pages/view/preview_cat/283 3 43668 0 0
+/index.php/pages/view/preview_cat/1290 1 14591 0 0
+/index.php/pages/view/preview_cat/217 2 29090 0 0
+/index.php/pages/catalogue_view/4 1 31109 0 0
+/index.php/pages/view/preview_cat/4290 1 14559 0 0
+/index.php/customers/update_customer_type 3 95761 0 1
+/index.php/Pages/view/add_cat 3 85716 0 1
+/index.php/customers/edit_customer/48 1 29337 0 0
+/index.php/customers/edit_customer/186 4 117033 0 1
+/index.php/pages/view/edit_cat/36 1 52780 0 0
+/index.php/customers/edit_customer/67 1 29394 0 1
+/index.php/pages/view/edit_cat/1164 1 52734 0 0
+/index.php/pages/view/preview_cat/1978 3 43716 0 0
+/index.php/pages/view/view_invoices 2 33420 0 0
+/index.php/pages/view/preview_cat/15 2 29166 0 0
+/index.php/pages/view/preview_cat/282 1 14572 0 0
+/index.php/pages/view/preview_cat/714 2 29112 0 0
+/index.php/pdf_contr/generate_pdf_report/1 1 140084 0 0
+/index.php/pages/view/preview_cat/219 2 29096 0 0
+/index.php/pages/view/preview_cat/218 2 29108 0 0
+/index.php/pages/view/view_invoice/1 1 15642 0 0
+/index.php/pages/view/edit_cat/1324 1 52767 0 0
+/cpanel 1 33912 1 1
+/index.php/pages/view/preview_cat/2176 1 14592 0 0
+/index.php/pages/view/preview_cat/964 1 14550 0 0
+/index.php/customers/edit_customer/187 1 29239 0 0
+/index.php/pages/catalogue_view/32 1 20133 0 0
+/index.php/pages/view/edit_cat/1152 1 52734 0 0
+/index.php/customers/add_note 1 29634 0 0
+/index.php/pages/view/preview_cat/1131 1 14548 0 0
+/index.php/pages/view/preview_cat/1416 1 14553 0 0
+END_SIDER

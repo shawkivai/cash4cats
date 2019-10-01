@@ -1,0 +1,339 @@
+# Webalizer V2.23-08 Incremental Data - 09/29/2019 01:53:32
+2019 9 29 1 53 32
+168 47 64 1 1 13 1315801 147 89 0
+1 1 54 2 29
+0 0 0 0 0 0
+2 0 924 2 0 0
+2 0 278 2 2 2
+11 4 15398 9 11 10
+7 1 3043 7 7 7
+1 1 7021 1 1 1
+2 2 7021 2 2 2
+4 3 5061 4 4 4
+5 0 976 4 2 2
+1 0 52 1 1 1
+2 2 14042 2 2 2
+4 2 52 2 3 3
+8 4 16243 6 7 7
+2 1 1687 2 2 2
+2 0 924 2 0 0
+2 2 8708 2 2 2
+6 3 327283 5 6 6
+3 2 8760 2 3 3
+4 1 323926 4 3 3
+4 2 14129 3 4 4
+3 3 5061 3 3 3
+54 0 40668 1 45 1
+0 0 0 0 0 0
+6 3 168869 6 6 6
+7 4 13006 5 5 4
+4 1 318540 4 4 4
+5 3 7108 4 5 5
+16 2 7021 3 16 4
+1 1 0 1 1 1
+0 0 0 0 0 0
+0 0 0 0 0 0
+4 2 3478 4
+3 3 1687 3
+61 4 53428 52
+11 1 678 11
+4 2 14077 4
+3 3 15729 3
+0 0 0 0
+4 2 14042 4
+8 1 7021 8
+3 3 21063 3
+1 0 52 1
+8 1 161530 5
+5 3 10499 5
+2 1 7056 2
+3 0 158439 2
+7 0 1706 4
+5 2 165634 5
+5 1 161077 3
+8 4 174568 8
+8 7 19329 8
+5 3 3426 5
+3 1 924 1
+3 1 160153 3
+4 2 160205 3
+0
+0
+0
+47
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+20
+19
+0
+0
+69
+0
+13
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -urls- 
+/
+0 47 8243129286180037221 158431 87 31
+# End Of Table - urls
+# -sites- (monthly)
+157.245.9.186
+0 1 0 226 1 1567539041
+-
+209.17.97.26.rdns.cloudsystemnetworks.com
+0 2 1 165487 2 1568759697
+/
+planetlab5.net.in.tum.de
+0 20 9 0 19 1569722012
+/
+209.17.97.82.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1569608371
+/
+crawl-66-249-69-150.googlebot.com
+0 1 0 462 0 0
+-
+researchscan21.comsys.rwth-aachen.de
+0 5 5 8435 4 1569414316
+/
+209.17.96.34.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1568403771
+/
+209.17.96.154.rdns.cloudsystemnetworks.com
+0 1 0 158387 1 1568745309
+/
+209.17.96.242.rdns.cloudsystemnetworks.com
+0 2 2 14042 2 1568945604
+/
+209.17.97.106.rdns.cloudsystemnetworks.com
+0 1 0 158387 1 1569325792
+/
+209.17.96.26.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1568359952
+/
+209.17.96.194.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1569388537
+/
+157.245.12.186
+0 1 0 226 1 1567613578
+/
+167.71.97.44
+0 1 0 226 1 1567651551
+/
+209.17.96.106.rdns.cloudsystemnetworks.com
+0 1 0 35 1 1569326032
+/
+209.17.97.2.rdns.cloudsystemnetworks.com
+0 1 0 52 1 1567468921
+-
+86.105.25.68
+0 54 0 40668 1 1569119640
+-
+researchscan19.comsys.rwth-aachen.de
+0 2 2 3374 2 1569525379
+/
+167.71.90.101
+0 1 0 226 1 1567651454
+/
+60.191.38.77
+0 2 0 104 0 0
+-
+209.17.96.122.rdns.cloudsystemnetworks.com
+0 1 0 35 1 1569589781
+/
+209.17.96.114.rdns.cloudsystemnetworks.com
+0 1 0 158387 1 1568903969
+/
+209.17.96.130.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1567576658
+/
+209.17.96.42.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1569328888
+/
+ec2-34-221-107-155.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1569366069
+/
+ec2-34-223-212-103.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1567910288
+/
+45.93.20.4
+0 14 1 0 2 1569660383
+-
+networkopspolar.me-upbeat-rosalind
+0 1 0 226 1 1567610629
+/
+167.71.255.62
+0 1 0 226 1 1567621151
+/
+209.17.97.90.rdns.cloudsystemnetworks.com
+0 1 0 52 1 1568118670
+/
+crawl-66-249-65-143.googlebot.com
+0 1 0 462 0 0
+-
+167.71.87.55
+0 1 0 226 1 1567654789
+/
+ec2-52-35-211-239.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1568592136
+/
+209.17.97.114.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1569003725
+/
+157.245.10.69
+0 1 0 226 1 1567652205
+/
+209.17.96.90.rdns.cloudsystemnetworks.com
+0 2 0 87 2 1569012599
+/
+ec2-54-184-20-214.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1569033766
+/
+scanner3.ispsystem.net
+0 1 1 1687 1 1569099245
+/
+209.17.97.10.rdns.cloudsystemnetworks.com
+0 1 0 158466 1 1569540413
+/
+crawl-66-249-65-147.googlebot.com
+0 1 0 462 0 0
+-
+crawl-66-249-65-145.googlebot.com
+0 4 0 1848 0 0
+-
+ec2-54-201-55-46.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1568771958
+/
+209.17.96.50.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1568209422
+/
+157.245.2.158
+0 1 0 226 1 1567623120
+/
+ec2-18-237-138-205.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1569435473
+/
+crawl-66-249-75-21.googlebot.com
+0 1 0 462 0 0
+-
+ec2-34-223-232-28.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1567722080
+/
+167.71.94.186
+0 1 0 226 1 1567652939
+/
+157.245.13.81
+0 1 0 226 1 1567653435
+/
+209.17.96.10.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1567589402
+/
+209.17.96.146.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1568650132
+/
+ec2-54-187-4-120.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1568333674
+/
+209.17.96.58.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1568188374
+/
+209.17.96.162.rdns.cloudsystemnetworks.com
+0 2 1 7073 2 1569285514
+/
+167.71.93.103
+0 1 0 226 1 1567611597
+/
+209.17.96.2.rdns.cloudsystemnetworks.com
+0 2 0 158501 2 1568915401
+/
+209.17.96.178.rdns.cloudsystemnetworks.com
+0 2 0 158439 2 1569599752
+/
+209.17.96.210.rdns.cloudsystemnetworks.com
+0 1 1 7021 1 1568921075
+/
+ec2-34-214-47-105.us-west-2.compute.amazonaws.com
+0 1 1 1687 1 1569290980
+/
+185.234.217.41
+0 2 0 514 0 0
+-
+209.17.96.82.rdns.cloudsystemnetworks.com
+0 2 1 7073 2 1568803568
+/
+209.17.96.18.rdns.cloudsystemnetworks.com
+0 2 1 7073 2 1569643532
+/
+researchscan20.comsys.rwth-aachen.de
+0 2 2 3374 2 1568749665
+/
+167.71.91.109
+0 1 0 226 1 1567611411
+/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+planetlab5.net.in.tum.de
+0 1 1 0 1 1569722012
+/
+# End Of Table - sites (daily)
+# -referrers- 
+- (Direct Request)
+0 168
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (compatible; Nimbostratus-Bot/v1.3.2; http://cloudsystemnetworks.com)
+0 36
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+0 2
+Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
+0 13
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+0 8
+Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.2.8) Gecko/20100723 Ubuntu/10.04 (lucid) Firefox/3.6.8
+0 14
+Mozilla/5.0 zgrab/0.x (compatible; Researchscan/t12sns; +http://researchscan.comsys.rwth-aachen.de)
+0 3
+Mozilla/5.0 zgrab/0.x (compatible; Researchscan/t13rl; +http://researchscan.comsys.rwth-aachen.de)
+0 3
+Go-http-client/2.0
+0 9
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:47.0) Gecko/20100101 Firefox/47.0
+0 2
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36
+0 20
+Mozilla/5.0 zgrab/0.x (compatible; Researchscan/t12ca; +http://researchscan.comsys.rwth-aachen.de)
+0 3
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0
+0 54
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+0 1
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames
