@@ -50,10 +50,9 @@ body {
 <div id="errorbox" style="">
 </div>
         <h2 class="page-title">New Invoice<small> <?php
-            if ($this->session->flashdata('notice'))
-            {
-              echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-    } ?></span></small></h2>
+        if ($this->session->flashdata('notice')) {
+            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+        } ?></span></small></h2>
 
           <div class="row" onClick="pageload()">
 
@@ -63,9 +62,9 @@ body {
                 <section class="widget" >
 
                     <header>
-                       <?php if ($customers == false) : ?>
+                        <?php if ($customers == false) : ?>
                           <span class="label label-important">No Customers have been registered. Please register customers first before continuing</span>
-                       <?php endif; ?>
+                        <?php endif; ?>
                         <h4><i class="fa fa-user"></i> Select Customer</h4>
                     </header>
                   <div class="body">
@@ -77,7 +76,7 @@ body {
                                     <div class="col-sm-10">
                                         <select onChange="groupPrices(this)" data-parsley-id="1" id="customer" name="customer" data-style="btn-success" data-width="80%" required required="required" data-parsley-trigger="change" class="select2 form-control optionBox" disabled>
                                             <option value="0" style="width:100%"></option>
-                                            <?php foreach($customers as $customer) : ?>
+                                            <?php foreach ($customers as $customer) : ?>
                                             <option value="<?php echo $customer->id ?>" style="width:100%" data-type="<?php echo $customer->customer_type; ?>"><?php echo $customer->business_name ?></option>
                                             <?php endforeach; ?>
                                         </select>

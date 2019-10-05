@@ -1,24 +1,22 @@
 <style type="text/css">
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
 </style>
 
         <h2 class="page-title">Calculator<small> <?php
-						if ($this->session->flashdata('notice_update'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice_update'));
-		} ?></span></small></h2>
+        if ($this->session->flashdata('notice_update')) {
+            echo('<span class="label label-important">' . $this->session->flashdata('notice_update'));
+        } ?></span></small></h2>
 
         <div class="row">
 
          <div class="col-md-6">
                 <section class="widget">
         <?php
-						if ($this->session->flashdata('notice'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-		} ?></span>
+        if ($this->session->flashdata('notice')) {
+            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+        } ?></span>
                     <header>
                         <h4>
                             <i class="fa fa-align-left"></i>
@@ -56,10 +54,9 @@ body {
            <div class="col-md-6">
                 <section class="widget">
                     <?php
-						if ($this->session->flashdata('notice_market'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice_market'));
-						} ?></span>
+                    if ($this->session->flashdata('notice_market')) {
+                        echo('<span class="label label-important">' . $this->session->flashdata('notice_market'));
+                    } ?></span>
                     <header>
                         <h4>
                             <i class="fa fa-align-left"></i>
@@ -120,10 +117,9 @@ body {
          <div class="col-md-12 omersBox">
                 <section class="widget othervalues">
                     <?php
-						if ($this->session->flashdata('notice_other'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice_other'));
-						} ?></span>
+                    if ($this->session->flashdata('notice_other')) {
+                        echo('<span class="label label-important">' . $this->session->flashdata('notice_other'));
+                    } ?></span>
                     <header onClick="expand(this)" class="hidden_row">
                         <h4>
                             <i class="fa fa-align-left"></i>
@@ -193,8 +189,8 @@ body {
                             </div>
                         </form>
 
-					</div>
-			 </section>
+                    </div>
+             </section>
        </div>
 </div>
 
@@ -203,10 +199,9 @@ body {
          <div class="col-md-12 omersBox">
                 <section class="widget price_categories">
                     <?php
-						if ($this->session->flashdata('notice_groupings'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice_groupings'));
-						} ?></span>
+                    if ($this->session->flashdata('notice_groupings')) {
+                        echo('<span class="label label-important">' . $this->session->flashdata('notice_groupings'));
+                    } ?></span>
                     <header onClick="expand(this)" class="hidden_row">
                         <h4>
                             <i class="fa fa-align-left"></i>
@@ -232,7 +227,8 @@ body {
                                         </div>
                                     </div>
                                 </div>
-                                <?php $count++; endforeach; ?>
+                                    <?php $count++;
+                                endforeach; ?>
                             </fieldset>
                             <input type="hidden" id="count" name="count" value="<?php echo $count ?>" />
                             <div class="form-actions">
@@ -246,8 +242,8 @@ body {
                             </div>
                         </form>
 
-					</div>
-			 </section>
+                    </div>
+             </section>
        </div>
 </div>
 
@@ -256,10 +252,9 @@ body {
          <div class="col-md-12 omersBox">
                 <section class="widget customer_categories">
                     <?php
-						if ($this->session->flashdata('notice_discounts'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice_discounts'));
-						} ?></span>
+                    if ($this->session->flashdata('notice_discounts')) {
+                        echo('<span class="label label-important">' . $this->session->flashdata('notice_discounts'));
+                    } ?></span>
                     <header onClick="expand(this)" class="hidden_row">
                         <h4>
                             <i class="fa fa-align-left"></i>
@@ -311,8 +306,8 @@ body {
                             </div>
                         </form>
 
-					</div>
-			 </section>
+                    </div>
+             </section>
        </div>
 </div>
 
@@ -321,14 +316,13 @@ body {
          <div class="col-md-12 omersBox">
                 <section class="widget options">
                     <?php
-						if ($this->session->flashdata('options'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('options'));
-						} ?></span>
+                    if ($this->session->flashdata('options')) {
+                        echo('<span class="label label-important">' . $this->session->flashdata('options'));
+                    } ?></span>
                     <header onClick="expand(this)" class="hidden_row">
                         <h4>
                             <i class="fa fa-align-left"></i>
-	                          Other Options
+                              Other Options
                         </h4>
                         <div class="widget-controls" >
                             <a data-widgster="collapse" title="Collapse" href="#" style="display: inline;"><i class="glyphicon glyphicon-chevron-down"></i></a>
@@ -368,14 +362,14 @@ body {
                             </div>
                         </form>
 
-					</div>
-			 </section>
+                    </div>
+             </section>
        </div>
 </div>
 
 
 
-       	</div>
+        </div>
    </div>
 
 <script type="text/javascript">
@@ -383,20 +377,20 @@ body {
    $('#metal-prices-form').parsley();
    $('#other-values-form').parsley();
    $(window).load(function() {$('.othervalues').widgster('collapse'); $('.price_categories').widgster('collapse');
-							  $('.customer_categories').widgster('collapse');
-								$('.options').widgster('collapse');
-							 	$("#price-categories-form").parsley();
-							  $("#customer-categories-form").parsley();
-							 });
+                              $('.customer_categories').widgster('collapse');
+                                $('.options').widgster('collapse');
+                                $("#price-categories-form").parsley();
+                              $("#customer-categories-form").parsley();
+                             });
    function expand(row){
-	   if ($(row).hasClass("hidden_row")){
-		   $(row).parent().widgster('expand');
-		   $(row).removeClass("hidden_row");
-	   }
-	   else{
-		   $(row).parent().widgster('collapse');
-		   $(row).addClass("hidden_row");
-	   }
+       if ($(row).hasClass("hidden_row")){
+           $(row).parent().widgster('expand');
+           $(row).removeClass("hidden_row");
+       }
+       else{
+           $(row).parent().widgster('collapse');
+           $(row).addClass("hidden_row");
+       }
    }
 </script>
     <!-- page specific scripts -->

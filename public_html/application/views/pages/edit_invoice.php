@@ -1,12 +1,12 @@
 <style type="text/css">
 
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
 .omersBorder{
-	border: 1px solid #1e556c;
+    border: 1px solid #1e556c;
     border-radius: 3px;
-	padding: 2%;
+    padding: 2%;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -14,61 +14,60 @@ body {
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-	#show_searched_cats	{
-		display: none;
-		overflow: scroll;
-		height: 450px !important;
-	}
+    #show_searched_cats {
+        display: none;
+        overflow: scroll;
+        height: 450px !important;
+    }
 
-	.input-lg{
-		font-size: 2em;
-	}
+    .input-lg{
+        font-size: 2em;
+    }
 
-	.striked{
-		text-decoration: line-through !important;
-	}
-	.thumbnail{
-		margin-top:20px;
-		margin-right:5px;
-		margin-left: 5px;
-	}
-	#show_all_cats	{
-		overflow: scroll;
-		height: 450px !important;
-	}
+    .striked{
+        text-decoration: line-through !important;
+    }
+    .thumbnail{
+        margin-top:20px;
+        margin-right:5px;
+        margin-left: 5px;
+    }
+    #show_all_cats  {
+        overflow: scroll;
+        height: 450px !important;
+    }
   .invoice_add{
     float:left;
   }
 </style>
         <h2 class="page-title">Edit Invoice<small> <?php
-						if ($this->session->flashdata('notice'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-		} ?></span></small></h2>
+        if ($this->session->flashdata('notice')) {
+            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+        } ?></span></small></h2>
 
-        	<div class="row" onClick="pageload()">
+            <div class="row" onClick="pageload()">
 
-       			<div class="col-lg-12">
+                <div class="col-lg-12">
 
-               	<form id="new-invoice" class="form-horizontal form-label-left" enctype="multipart/form-data" method="post" action="<?php echo (site_url() . '/invoicing/update_invoice') ?>">
-               	<section class="widget">
+                <form id="new-invoice" class="form-horizontal form-label-left" enctype="multipart/form-data" method="post" action="<?php echo (site_url() . '/invoicing/update_invoice') ?>">
+                <section class="widget">
 
                     <header>
-                       <?php if ($customers == false) : ?>
-                       		<span class="label label-important">No Customers have been registered. Please register customers first before continuing</span>
-                       <?php endif; ?>
+                        <?php if ($customers == false) : ?>
+                            <span class="label label-important">No Customers have been registered. Please register customers first before continuing</span>
+                        <?php endif; ?>
                         <h4><i class="fa fa-user"></i> Select Customer</h4>
                     </header>
-               		<div class="body">
+                    <div class="body">
 
-               			<fieldset>
+                        <fieldset>
                                 <legend class="section"></legend>
                                 <div class="form-group">
                                     <label for="customer" class="control-label col-sm-2">Select Customer</label>
                                     <div class="col-sm-10">
                                         <select onChange="groupPrices(this)" id="customer" name="customer" data-style="btn-success" data-width="80%" class="select2 optionBox" >
                                             <option value="0" style="width:100%"></option>
-                                            <?php foreach($customers as $customer) : ?>
+                                            <?php foreach ($customers as $customer) : ?>
                                             <option value="<?php echo $customer->id ?>" style="width:100%" data-type="<?php echo $customer->customer_type; ?>"><?php echo $customer->business_name ?></option>
                                             <?php endforeach; ?>
                                         </select>
@@ -88,13 +87,13 @@ body {
 
                             </fieldset>
                             <script>$('#customer').val('<?php echo $invoice->customer_id ?>');
-									$('#comm').val('<?php echo $invoice->commission; ?>');
-						</script>
+                                    $('#comm').val('<?php echo $invoice->commission; ?>');
+                        </script>
 
-               		</div>
-               	</section>
+                    </div>
+                </section>
 
-               	 <section class="widget">
+                 <section class="widget">
 
                     <header id="popheader" onClick="expand(this)" class="" style="cursor:pointer">
 
@@ -129,7 +128,7 @@ body {
                       <div class="body">
 
 
-               			<div class="form-group">
+                        <div class="form-group">
                                     <label for="article-status" class="control-label col-sm-2">Search for a Catalytic Converter</label>
                                     <div class="col-sm-10">
                                         <input type="text" id="cat_search" name="cat_search" data-style="btn-success" data-width="80%" class="form-control" placeholder="Start searching for a cat here...">
@@ -137,25 +136,25 @@ body {
                                     <div class="col-sm-10 col-sm-offset-2" style="margin-top: 20px" id="show_searched_cats"></div>
                           </div>                          
 
-               		</div>
-               	</section>
+                    </div>
+                </section>
 
-               	<section class="widget">
+                <section class="widget">
 
                     <header>
                         <h4><i class="fa fa-user"></i> Selected Catalytic Converters</h4>
                     </header>
-               		<div class="body">
+                    <div class="body">
 
 
 
-               			<fieldset>
+                        <fieldset>
                                 <legend class="section"></legend>
                                 <div class="form-group">
                                     <table class="table table-striped">
                             <thead>
                             <tr>
-                               	<th class="hidden-xs">Picture</th>
+                                <th class="hidden-xs">Picture</th>
                                 <th>Item</th>
                                 <th class="">Price</th>
                                 <th class="">QTY</th>
@@ -167,11 +166,10 @@ body {
 
                         <?php $count = 1; ?>
                         <?php foreach ($rows as $row) : ?>
-
                             <tr data-name="<?php echo $row->PRICE; ?>" class="inv-row" id="row-id<?php echo $count; ?>">
-                               	<td class="hidden-xs">
-                               		  <img class="img-rounded" id="inv-img<?php echo $count ?>" src="<?php echo base_url() . $row->image; ?>" height="100px" />
-                               	</td>
+                                <td class="hidden-xs">
+                                      <img class="img-rounded" id="inv-img<?php echo $count ?>" src="<?php echo base_url() . $row->image; ?>" height="100px" />
+                                </td>
                                 <td>
                                     <input type="text" id="cat-name<?php echo $count ?>" name="cat-name<?php echo $count; ?>"  class="form-control" value="<?php echo $row->name ?>" readonly>
                                 </td>
@@ -189,10 +187,10 @@ body {
                                     <input type="text" value="<?php echo $row->TOTAL_ROW; ?>" id="cat-total<?php echo $count; ?>" name="cat-total<?php echo $count; ?>"  class="form-control" readonly>
                                 </td>
                                 <td><a data-num="<?php echo $count; ?>" class="fa fa-times" onClick="removeRow(this)"></a>
-                                	<input type="hidden" id="isActive<?php echo $count; ?>" name="isActive<?php echo $count; ?>" value="1" />
-                                	<input type="hidden" id="item-id<?php echo $count; ?>" name="item-id<?php echo $count; ?>" value="<?php echo $row->ID; ?>" />
-                                	<input type="hidden" id="cat-id<?php echo $count; ?>" name="cat-id<?php echo $count; ?>" value="<?php echo $row->PRODUCT; ?>" />
-                                	<input type="hidden" class="lines" id="line-number<?php echo $count; ?>" name="line-number<?php echo $count; ?>" value="<?php echo $row->LINE_NUM; ?>" />
+                                    <input type="hidden" id="isActive<?php echo $count; ?>" name="isActive<?php echo $count; ?>" value="1" />
+                                    <input type="hidden" id="item-id<?php echo $count; ?>" name="item-id<?php echo $count; ?>" value="<?php echo $row->ID; ?>" />
+                                    <input type="hidden" id="cat-id<?php echo $count; ?>" name="cat-id<?php echo $count; ?>" value="<?php echo $row->PRODUCT; ?>" />
+                                    <input type="hidden" class="lines" id="line-number<?php echo $count; ?>" name="line-number<?php echo $count; ?>" value="<?php echo $row->LINE_NUM; ?>" />
                                 </td>
                             </tr>
                             <?php $count++; ?>
@@ -208,8 +206,8 @@ body {
                                             <span class="input-group-addon">$</span><input value="<?php echo $invoice->Total; ?>" type="text" id="total" name="total"  class="form-control input-lg" readonly></div>                                </div>
                                 </div>
                             </fieldset>
-               		</div>
-               	</section>
+                    </div>
+                </section>
 
 
                 <section class="widget">
@@ -243,14 +241,14 @@ body {
 
 
 
-               	 	<section class="widget">
+                    <section class="widget">
 
                     <header>
                         <h4><i class="fa fa-user"></i> Other Info</h4>
                     </header>
-               		<div class="body">
+                    <div class="body">
 
-               			<fieldset>
+                        <fieldset>
                                 <legend class="section"></legend>
                                 <div class="form-group">
                                     <label for="inv-status" class="control-label col-sm-2">Invoice Status</label>
@@ -263,35 +261,36 @@ body {
                                     </div>
                                 </div>
 
-							<script> $("#inv-status").val("<?php echo $invoice->status; ?>"); </script>
+                            <script> $("#inv-status").val("<?php echo $invoice->status; ?>"); </script>
                                 <div class="form-group">
-                                	<label for="notes" class="control-label col-sm-2">Notes</label>
-                                	<div class="col-sm-10">
-                                		<div id="note_hold"><?php if ($notes != false) { echo $notes->note;} ?></div><br />
-                                		<textarea class="form-control" name="notes" id="notes"></textarea>
-                                	</div>
+                                    <label for="notes" class="control-label col-sm-2">Notes</label>
+                                    <div class="col-sm-10">
+                                        <div id="note_hold"><?php if ($notes != false) {
+                                            echo $notes->note;
+                                                            } ?></div><br />
+                                        <textarea class="form-control" name="notes" id="notes"></textarea>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                	<label for="images" class="control-label col-sm-2">Images</label>
-                                	<div class="col-sm-10">
-                                		<input type="file" class="" name="images1" id="images1" />
-                                		<input type="file" class="" name="images2" id="images2" />
-                                		<input type="file" class="" name="images3" id="images3" />
-                                		<input type="file" class="" name="images4" id="images4" />
-                                		<input type="file" class="" name="images5" id="images5" />
-                                	</div>
-                                	<?php if ($images != false) : ?>
-                                	<div id="img_container">
-                                	<?php foreach ($images as $image) : ?>
+                                    <label for="images" class="control-label col-sm-2">Images</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="" name="images1" id="images1" />
+                                        <input type="file" class="" name="images2" id="images2" />
+                                        <input type="file" class="" name="images3" id="images3" />
+                                        <input type="file" class="" name="images4" id="images4" />
+                                        <input type="file" class="" name="images5" id="images5" />
+                                    </div>
+                                    <?php if ($images != false) : ?>
+                                    <div id="img_container">
+                                        <?php foreach ($images as $image) : ?>
+                                            <div class="thumbnail col-sm-3">
+                                                <img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
+                                            </div>
 
-											<div class="thumbnail col-sm-3">
-												<img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
-											</div>
-
-									<?php endforeach; ?>
-									</div>
-                                	<?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <?php endif; ?>
                                 </div>
 
                             </fieldset>
@@ -304,28 +303,28 @@ body {
                                     </div>
                                 </div>
                             </div>
-						</div>
-					</section>
+                        </div>
+                    </section>
 
-               	</form>
+                </form>
 
 
             </div>
 
-			</div>
+            </div>
 
-       	</div>
+        </div>
    </div>
 
 
 <script type="text/javascript">
 
  $('#new-invoice').parsley();
-	var customer_type;
+    var customer_type;
   var added_items_array = [];
   var new_results;
   var customer_id;
-	var counter = <?php echo $count; ?>;
+    var counter = <?php echo $count; ?>;
 
 
    window.onbeforeunload = function() {
@@ -381,31 +380,31 @@ body {
       add_summary();
     }
 
-	function before_submit(){
+    function before_submit(){
     window.onbeforeunload = null;
-		var rows = counter - 1;
-		$("#counter").val(rows);
+        var rows = counter - 1;
+        $("#counter").val(rows);
 
-		var line_nums = 1;
-		$('.inv-row').each(function() {
+        var line_nums = 1;
+        $('.inv-row').each(function() {
 
-			//alert(this.getAttribute('data-name'));
-			//var rowNum = '#line-number' + line_nums;
+            //alert(this.getAttribute('data-name'));
+            //var rowNum = '#line-number' + line_nums;
 
-			$(".lines", this).val(line_nums);
-			//$(rowNum).val(line_nums);
+            $(".lines", this).val(line_nums);
+            //$(rowNum).val(line_nums);
 
-			line_nums++;
-			});
-	}
+            line_nums++;
+            });
+    }
 
-	function round(value, decimals) {
-  	return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
-	}
+    function round(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    }
 
-		function groupPrices(selected){
-		customer_type = $(selected).find(':selected').data('type');
-		var customer_id =  $(selected).find(':selected').val();
+        function groupPrices(selected){
+        customer_type = $(selected).find(':selected').data('type');
+        var customer_id =  $(selected).find(':selected').val();
     //alert(customer_type);
     // Get Popular Cats
     // Do the AJAX Query
@@ -425,8 +424,8 @@ body {
          }
         });
 
-		groupAllPrices();
-	}
+        groupAllPrices();
+    }
 
   function groupAllPrices(new_priced, results_exist){
     //console.log(new_priced);
@@ -457,7 +456,7 @@ body {
 
   }
 
-	function groupAjaxPrices(customer_id){
+    function groupAjaxPrices(customer_id){
   //console.log(customer_id);
   var new_results = [];
 
@@ -508,52 +507,52 @@ body {
     });
   }
 
-	function update_totals(){
-		var running_total = 0;
+    function update_totals(){
+        var running_total = 0;
 
-		for (i=1; i <= counter-1; i++){
-			var current_row_totals_box = '#cat-total' + i;
-			var current_row_total = parseFloat( $(current_row_totals_box).val() );
+        for (i=1; i <= counter-1; i++){
+            var current_row_totals_box = '#cat-total' + i;
+            var current_row_total = parseFloat( $(current_row_totals_box).val() );
 
-			running_total += current_row_total;
-		}
+            running_total += current_row_total;
+        }
 
-		running_total = round(running_total, 2);
-		$('#total').val(running_total);
-	}
+        running_total = round(running_total, 2);
+        $('#total').val(running_total);
+    }
 
-	function pageload(){
+    function pageload(){
 
 
-	   jQuery('.override').keyup(function () {
+       jQuery('.override').keyup(function () {
        var price;
-		   var selected = $(this).attr('data-over');
-		   var qty_container = '#cat-qty' + selected;
+           var selected = $(this).attr('data-over');
+           var qty_container = '#cat-qty' + selected;
 
-		   var price_container = '#cat-price-override' + selected;
-		   var total_container = '#cat-total' + selected;
+           var price_container = '#cat-price-override' + selected;
+           var total_container = '#cat-total' + selected;
 
         var id_container = '#cat-id' + selected;
        var id_to_check = $(this).parent().parent().parent().find(id_container).val();
 
-		   // Check if override container is empty
-		   if ( !$(price_container).val()){
+           // Check if override container is empty
+           if ( !$(price_container).val()){
          $(this).parent().parent().parent().attr('data-override', 0);
-			   // Get the actual price
-			   var true_price_container = '#cat-price' + selected;
-			   var price = parseFloat( $(true_price_container).val() );
-		   }
-		   else{
-		   	   price = parseFloat( $(price_container).val());
+               // Get the actual price
+               var true_price_container = '#cat-price' + selected;
+               var price = parseFloat( $(true_price_container).val() );
+           }
+           else{
+               price = parseFloat( $(price_container).val());
          price = price.toFixed(2);
 
           $(this).parent().parent().parent().attr('data-override', price);
           update_quantity_on_selected_item
-		   }
+           }
 
-		   var qty =  parseInt($(qty_container).val());
+           var qty =  parseInt($(qty_container).val());
 
-		   $(total_container).val(qty_update(qty, price));
+           $(total_container).val(qty_update(qty, price));
 
         // Check whether after override, cat will be sold at lost.
 
@@ -582,15 +581,15 @@ body {
 
        // End loss Check
 
-		   update_totals();
+           update_totals();
        add_summary();
-	   });
+       });
 
-		jQuery('.qty_field').keyup(function () {
-		   update_quantity_on_selected_item(this);
-	   });
+        jQuery('.qty_field').keyup(function () {
+           update_quantity_on_selected_item(this);
+       });
 
-	}
+    }
 
    $(window).load(function() {
     var new_results = [];
@@ -599,38 +598,38 @@ body {
     $("#popheader").click();
     $("#historyheader").click();
 
-	   jQuery('#cat_search').keyup(function(){
-		   var search_term = $(this).val();
-		   if (search_term.length > 2){
+       jQuery('#cat_search').keyup(function(){
+           var search_term = $(this).val();
+           if (search_term.length > 2){
 
                 // Hide all the Cats
         $("#show_all_cats").hide();
 
-			   // Do the AJAX Query
-		   	   jQuery.ajax({
-			   url: '<?php echo site_url(); ?>/invoicing/ajax_cats',
-			   data: { term : search_term },
-			   dataType: 'text',
-			   error: function() {
-            	$("#show_searched_cats").html('No Cats to Display');
-        		},
-			   success: function(results) {
-            	/* display the new results */
-				   $("#show_searched_cats").html(results);
-				   $("#show_searched_cats").show();
-				   groupAjaxPrices(customer_id);
-			   }
-		   	});
-		   }
-		   else{
+               // Do the AJAX Query
+               jQuery.ajax({
+               url: '<?php echo site_url(); ?>/invoicing/ajax_cats',
+               data: { term : search_term },
+               dataType: 'text',
+               error: function() {
+                $("#show_searched_cats").html('No Cats to Display');
+                },
+               success: function(results) {
+                /* display the new results */
+                   $("#show_searched_cats").html(results);
+                   $("#show_searched_cats").show();
+                   groupAjaxPrices(customer_id);
+               }
+            });
+           }
+           else{
          $("#show_all_cats").show();
-			   $("#show_searched_cats").empty();
-			   $("#show_searched_cats").hide();
-		   }
-	   });
-	   customer_type = $('#customer').find(':selected').data('type');
-	   groupAllPrices();
-	   //$('#customer').prop('disabled',false);
+               $("#show_searched_cats").empty();
+               $("#show_searched_cats").hide();
+           }
+       });
+       customer_type = $('#customer').find(':selected').data('type');
+       groupAllPrices();
+       //$('#customer').prop('disabled',false);
 
 
     //alert(customer_type);
@@ -733,23 +732,23 @@ body {
   }
 
 
-	function qty_update(price, qty){
-		var total = qty*price;
-		total = round(total, 2);
-		return total;
-	}
+    function qty_update(price, qty){
+        var total = qty*price;
+        total = round(total, 2);
+        return total;
+    }
 
-	function removeRow(row){
-		var id = $(row).attr('data-num');
-		var row_to_delete = '#row-id' + id;
-		var total_to_delete = '#cat-total' + id;
-		var is_active = '#isActive' + id;
-		$(is_active).val(0);
-		$(row_to_delete).hide();
-		$(total_to_delete).val(0);
-		update_totals();
+    function removeRow(row){
+        var id = $(row).attr('data-num');
+        var row_to_delete = '#row-id' + id;
+        var total_to_delete = '#cat-total' + id;
+        var is_active = '#isActive' + id;
+        $(is_active).val(0);
+        $(row_to_delete).hide();
+        $(total_to_delete).val(0);
+        update_totals();
     add_summary();
-	}
+    }
 
     function updateThisQuantity(item){
     var updated_qty = $(item).val();
@@ -761,24 +760,24 @@ body {
     //console.log(updated_qty);
   }
 
-	function addToInvoice(item){
-		var id = $(item).attr('data-id');
-		var price = $(item).attr('data-price');
-		var name = $(item).attr('data-name');
-		var image = $(item).attr('data-image');
+    function addToInvoice(item){
+        var id = $(item).attr('data-id');
+        var price = $(item).attr('data-price');
+        var name = $(item).attr('data-name');
+        var image = $(item).attr('data-image');
 
 
-		if (counter === 1){
-			counter++;
-			//Populate first row of invoice items:
-			$('#inv-img1').attr("src", image);
-			$('#cat-name1').val(name);
-			$('#cat-price1').val(price);
-			//$('#cat-qty1').val(1);
-			$('#cat-total1').val(price);
-			$('#cat-id1').val(id);
-			$('#row-id1').attr('data-name', price);
-			$('#line-number1').val(1);
+        if (counter === 1){
+            counter++;
+            //Populate first row of invoice items:
+            $('#inv-img1').attr("src", image);
+            $('#cat-name1').val(name);
+            $('#cat-price1').val(price);
+            //$('#cat-qty1').val(1);
+            $('#cat-total1').val(price);
+            $('#cat-id1').val(id);
+            $('#row-id1').attr('data-name', price);
+            $('#line-number1').val(1);
 
       // Check if quantity has any value.
         //var qty_input_field = $("*[data-qty-id=" + id + "]");
@@ -799,8 +798,8 @@ body {
         }
 
       added_items_array.push(id);
-		}
-		else{
+        }
+        else{
       var isInArray = ( jQuery.inArray(id, added_items_array) > -1 );
       if ( !isInArray ){
         var newRow = '<tr data-name="'+ price +'" data-override="" data-ids="' + id + '" data-qtys="1" data-active=true class="inv-row" id="row-id' + counter + '"> <td class="hidden-xs">  <img class="img-rounded" id="inv-img' + counter + '" src="" alt="" height="100">' +

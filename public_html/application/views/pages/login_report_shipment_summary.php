@@ -1,11 +1,11 @@
 <style type="text/css">
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
-	#datatable-table_filter input{
-		height:32px;
-		margin-left:10px;
-	}
+    #datatable-table_filter input{
+        height:32px;
+        margin-left:10px;
+    }
 </style>
 
             <h2 class="page-title">Shipment Summary Report<small></small></h2><div class="row">
@@ -15,11 +15,10 @@ body {
                     </header>
                     <div class="body">
                        <?php echo validation_errors('<span class="label label-important">'); ?></span>
-                       <?php
-						if ($this->session->flashdata('notice') && validation_errors() == '')
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-						} ?></span>
+                        <?php
+                        if ($this->session->flashdata('notice') && validation_errors() == '') {
+                            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+                        } ?></span>
 
                         <form id="user-form" class="form-horizontal" novalidate method="get" data-parsley-priority-enabled="false" data-parsley-excluded="" action="<?php echo site_url(); ?>/pages/view/report_shipment_summary">
                             <fieldset>
@@ -28,7 +27,9 @@ body {
                                     <label class="control-label col-sm-4 input-lg" for="from">From <span class="required"></span><br />
                                     <small>From date is <strong>NOT INCLUSIVE</strong>, select 1 day before the required date</small></label>
                                   <div class="col-sm-6 input-group">
-                                  <input type="text" name="from" id="from" value="<?php echo $last_date; ?>" class="form-control form_datetime" <?php if ($shipments) echo 'readonly=readonly' ?>  />
+                                  <input type="text" name="from" id="from" value="<?php echo $last_date; ?>" class="form-control form_datetime" <?php if ($shipments) {
+                                        echo 'readonly=readonly';
+                                                                                  } ?>  />
                                   </div>
                                 </div>
 
@@ -58,10 +59,9 @@ body {
             <div class="col-md-12">
                 <section class="widget">
                     <header>
-                      <?php
-                        if ($this->session->flashdata('shipment') && validation_errors() == '')
-                        {
-                          echo('<span class="label label-important">' . $this->session->flashdata('shipment'));
+                        <?php
+                        if ($this->session->flashdata('shipment') && validation_errors() == '') {
+                            echo('<span class="label label-important">' . $this->session->flashdata('shipment'));
                         } ?>
                     </header>
                     <div class="body">
@@ -83,25 +83,25 @@ body {
                         </thead>
                         <tbody>
                         <?php $new_from;
-								$new_to;
-							?>
+                                $new_to;
+                        ?>
                         <?php if ($shipments) : ?>
-                        <?php foreach ($shipments as $shipment) : ?>
-                    	<tr role="row" class="odd">
+                            <?php foreach ($shipments as $shipment) : ?>
+                        <tr role="row" class="odd">
                         <td><?php echo $shipment->id; ?></td>
-									<td class="">
-									<?php
-										$new_from = date_create_from_format('Y-m-d H:i:s', $shipment->from_date );
-										echo $new_from = date_format($new_from, 'Y/m/d H:i');  ?>
-										</td>
-									<td class="">
-									<?php
-										$new_to = date_create_from_format('Y-m-d H:i:s', $shipment->to_date );
-										echo $new_to = date_format($new_to, 'Y/m/d H:i');
-									?></td>
-									<td class=""><?php echo $shipment->qty; ?></td>
-									<td class=""><?php echo $shipment->actual_profit; ?></td>
-									<td class="">
+                                    <td class="">
+                                    <?php
+                                        $new_from = date_create_from_format('Y-m-d H:i:s', $shipment->from_date);
+                                        echo $new_from = date_format($new_from, 'Y/m/d H:i');  ?>
+                                        </td>
+                                    <td class="">
+                                    <?php
+                                        $new_to = date_create_from_format('Y-m-d H:i:s', $shipment->to_date);
+                                        echo $new_to = date_format($new_to, 'Y/m/d H:i');
+                                    ?></td>
+                                    <td class=""><?php echo $shipment->qty; ?></td>
+                                    <td class=""><?php echo $shipment->actual_profit; ?></td>
+                                    <td class="">
                     <a href="<?php echo site_url(); ?>/pages/view/report_shipment_summary?from=<?php echo $new_from; ?>&to=<?php echo $new_to ?>&profit=<?php echo $shipment->actual_profit ?>&action=view&shipment_id=<?php echo $shipment->id ?>">
                       <button class="btn btn-success inv-button">View</button></a>
 
@@ -124,9 +124,9 @@ body {
                     </div>
 
                   </td>
-						</tr>
-                 	 <?php endforeach; ?>
-                 	 <?php endif; ?>
+                        </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                    </tbody>
 
                     </table>
@@ -137,7 +137,7 @@ body {
         </div>
 
 
-       	</div>
+        </div>
 </div>
 
 
@@ -145,11 +145,11 @@ body {
         <!-- page libs -->
 <script>
 $(window).load(function() {
-	   $('#datatable-table').DataTable({
+       $('#datatable-table').DataTable({
     "order": [[ 0, "desc" ]]
     });
-	   $('#from').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
-	   $('#to').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
+       $('#from').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
+       $('#to').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
 
 });
 </script>

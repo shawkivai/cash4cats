@@ -1,12 +1,12 @@
 <style type="text/css">
-	
+    
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
 .omersBorder{
-	border: 1px solid #1e556c;
+    border: 1px solid #1e556c;
     border-radius: 3px;
-	padding: 2%;
+    padding: 2%;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -14,36 +14,33 @@ body {
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-	#show_searched_cats	{
-		display: none;
-		overflow: scroll;
-		height: 450px !important;
-	}
+    #show_searched_cats {
+        display: none;
+        overflow: scroll;
+        height: 450px !important;
+    }
 </style>         
-        <h2 class="page-title">View Invoice<small> <?php 
-						if ($this->session->flashdata('notice')) 
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-		} ?></span></small></h2>
-      <?php
-			$final_result = array();
-			foreach ($rows as $row){
-				$price_to_add = $row->PRICE;
-				
-				if ($row->OVERRIDE_PRICE != 0.00){
-					$price_to_add = $row->OVERRIDE_PRICE;
-				}
-				
-				for ($i = 0; $i < $row->QTY; $i++){
-					$final_result[] = $price_to_add;
-				}
-				
-				
-			}
-			
-			$final_result = array_count_values($final_result);
-	  ?>
-        	
+        <h2 class="page-title">View Invoice<small> <?php
+        if ($this->session->flashdata('notice')) {
+            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+        } ?></span></small></h2>
+        <?php
+            $final_result = array();
+        foreach ($rows as $row) {
+            $price_to_add = $row->PRICE;
+                
+            if ($row->OVERRIDE_PRICE != 0.00) {
+                $price_to_add = $row->OVERRIDE_PRICE;
+            }
+                
+            for ($i = 0; $i < $row->QTY; $i++) {
+                $final_result[] = $price_to_add;
+            }
+        }
+            
+            $final_result = array_count_values($final_result);
+        ?>
+            
       <section class="widget">
             <div class="body no-margin">
                 <div class="row">
@@ -54,7 +51,9 @@ body {
                     <div class="col-sm-6 col-print-6">
                         <div class="invoice-number text-align-right">
                             Invoice #<?php echo $invoice->purchase_id; ?> <br />
-                            <?php $phpdate = strtotime( $invoice->date ); $phpdate = date( 'l d-m-Y H:i:s', $phpdate ); echo $phpdate; ?>
+                            <?php $phpdate = strtotime($invoice->date);
+                            $phpdate = date('l d-m-Y H:i:s', $phpdate);
+                            echo $phpdate; ?>
                         </div>
                         <div class="invoice-number-info text-align-right">
                         </div>
@@ -106,11 +105,12 @@ body {
                     </thead>
                     <tbody>
                     <?php foreach ($final_result as $amount => $quantity) : ?>
-                    <?php $amount = floatval($amount); $quantity = intval($quantity); ?>
+                        <?php $amount = floatval($amount);
+                        $quantity = intval($quantity); ?>
                     <tr>
-                    	<td><?php echo $amount; ?></td>
-                    	<td><?php echo $quantity; ?></td>
-                    	<td><?php echo $amount*$quantity; ?></td>
+                        <td><?php echo $amount; ?></td>
+                        <td><?php echo $quantity; ?></td>
+                        <td><?php echo $amount*$quantity; ?></td>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>
@@ -139,19 +139,18 @@ body {
                 </div>
                 
                 <?php if ($images != false) : ?>
-                                	<div id="img_container" style="margin:20px;">
-                                	<h3>Purchase Images:</h3>
-                                	<?php foreach ($images as $image) : ?>
-                                		
-											<div class="thumbnail col-sm-3">                            
-												<img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
-											</div>
-										
-									<?php endforeach; ?>
-									</div>
-                                	<?php endif; ?>
-                                	
-                                	
+                                    <div id="img_container" style="margin:20px;">
+                                    <h3>Purchase Images:</h3>
+                                    <?php foreach ($images as $image) : ?>
+                                            <div class="thumbnail col-sm-3">                            
+                                                <img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
+                                            </div>
+                                        
+                                    <?php endforeach; ?>
+                                    </div>
+                <?php endif; ?>
+                                    
+                                    
                 <!--<p class="text-align-right mt-lg mb-xs">
                     Marketing Consultant
                 </p>
@@ -171,11 +170,11 @@ body {
                     </button></a>
                 </div>
             </div>
-        </section>  	
-        	
+        </section>      
+            
 
 <!-- close divs opened in header -->
-       	</div> 
+        </div> 
    </div> 
 
 
@@ -183,4 +182,4 @@ body {
         <!-- page libs -->
        
 
-	
+    

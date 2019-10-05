@@ -50,10 +50,9 @@ body {
 <div id="errorbox" style="">
 </div>
         <h2 class="page-title">New Invoice<small> <?php
-            if ($this->session->flashdata('notice'))
-            {
-              echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-    } ?></span></small></h2>
+        if ($this->session->flashdata('notice')) {
+            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+        } ?></span></small></h2>
 
           <div class="row" onClick="pageload()">
 
@@ -63,9 +62,9 @@ body {
                 <section class="widget" >
 
                     <header>
-                       <?php if ($customers == false) : ?>
+                        <?php if ($customers == false) : ?>
                           <span class="label label-important">No Customers have been registered. Please register customers first before continuing</span>
-                       <?php endif; ?>
+                        <?php endif; ?>
                         <h4><i class="fa fa-user"></i> Select Customer</h4>
                     </header>
                   <div class="body">
@@ -77,7 +76,7 @@ body {
                                     <div class="col-sm-10">
                                         <select onChange="groupPrices(this)" data-parsley-id="1" id="customer" name="customer" data-style="btn-success" data-width="80%" required required="required" data-parsley-trigger="change" class="select2 form-control optionBox" disabled>
                                             <option value="0" style="width:100%"></option>
-                                            <?php foreach($customers as $customer) : ?>
+                                            <?php foreach ($customers as $customer) : ?>
                                             <option value="<?php echo $customer->id ?>" style="width:100%" data-type="<?php echo $customer->customer_type; ?>"><?php echo $customer->business_name ?></option>
                                             <?php endforeach; ?>
                                         </select>
@@ -146,27 +145,26 @@ body {
                         <div class="form-group">
                                     <label for="cats-all" class="control-label col-sm-2">View all Catalytic Converters</label>
                                 <div class="col-sm-10 col-sm-offset-2" style="margin-top: 20px;" id="show_all_cats">
-                                  <?php
-                    $result ='';
-                    for ($i = 0; $i < count($cats); $i++){
-                          // Check if it doesn't have an image
-                          if($cats[$i]['image'] == ''){
-                          $image_string = base_url() . 'cat_img/no_image.jpg';
-                        }
-                          else{
-                          $image_string = base_url() . 'cat_img/resized_cat_images_300/' . $cats[$i]['image'];
-                        }
-                          if($i % 4 == 0){
-                            $result .= '<div class="row">
+                                    <?php
+                                    $result ='';
+                                    for ($i = 0; $i < count($cats); $i++) {
+                                          // Check if it doesn't have an image
+                                        if ($cats[$i]['image'] == '') {
+                                            $image_string = base_url() . 'cat_img/no_image.jpg';
+                                        } else {
+                                            $image_string = base_url() . 'cat_img/resized_cat_images_300/' . $cats[$i]['image'];
+                                        }
+                                        if ($i % 4 == 0) {
+                                            $result .= '<div class="row">
                                     <div class="col-md-12">
                                       <ul class="row thumbnails">';
-                          }
-                          if ($cats[$i]['final_price'] != 0){
-                            $cats[$i]['price_1'] = $cats[$i]['final_price'];
-                            $cats[$i]['price_2'] = $cats[$i]['final_price'];
-                            $cats[$i]['price_3'] = $cats[$i]['final_price'];
-                          }
-                          $result .= '<li class="col-sm-3">
+                                        }
+                                        if ($cats[$i]['final_price'] != 0) {
+                                            $cats[$i]['price_1'] = $cats[$i]['final_price'];
+                                            $cats[$i]['price_2'] = $cats[$i]['final_price'];
+                                            $cats[$i]['price_3'] = $cats[$i]['final_price'];
+                                        }
+                                        $result .= '<li class="col-sm-3">
                             <div class="thumbnail">
                               <img src="' . $image_string . '" />
                               <div class="caption data-holder">
@@ -184,15 +182,15 @@ body {
                             </div>
                           </li>';
 
-                          if($i % 4 == 3) {
-                            $result .= '
+                                        if ($i % 4 == 3) {
+                                            $result .= '
                               </ul>
                             </div>
                            </div>';
-                          }
-                    }
-                    echo $result;
-                    ?>
+                                        }
+                                    }
+                                    echo $result;
+                                    ?>
                                 </div>
                         </div>
                   </div>

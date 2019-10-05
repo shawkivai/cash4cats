@@ -8,9 +8,7 @@ require_once('slim.php');
 // Get posted data, if something is wrong, exit
 try {
     $images = Slim::getImages();
-}
-catch (Exception $e) {
-
+} catch (Exception $e) {
     // Possible solutions
     // ----------
     // Make sure you're running PHP version 5.6 or higher
@@ -25,7 +23,6 @@ catch (Exception $e) {
 
 // No image found under the supplied input name
 if ($images === false) {
-
     // Possible solutions
     // ----------
     // Make sure the name of the file input is "slim[]" or you have passed your custom
@@ -44,7 +41,6 @@ $image = array_shift($images);
 
 // Something was posted but no images were found
 if (!isset($image)) {
-
     // Possible solutions
     // ----------
     // Make sure you're running PHP version 5.6 or higher
@@ -59,7 +55,6 @@ if (!isset($image)) {
 
 // If image found but no output or input data present
 if (!isset($image['output']['data']) && !isset($image['input']['data'])) {
-
     // Possible solutions
     // ----------
     // If you've set the data-post attribute make sure it contains the "output" value -> data-post="actions,output"
@@ -77,7 +72,6 @@ if (!isset($image['output']['data']) && !isset($image['input']['data'])) {
 
 // if we've received output data save as file
 if (isset($image['output']['data'])) {
-
     // get the name of the file
     $name = $image['output']['name'];
 
@@ -96,7 +90,6 @@ if (isset($image['output']['data'])) {
 
 // if we've received input data (do the same as above but for input data)
 if (isset($image['input']['data'])) {
-
     // get the name of the file
     $name = $image['input']['name'];
 
@@ -111,7 +104,6 @@ if (isset($image['input']['data'])) {
 
     // Default call for saving the input data
     $input = Slim::saveFile($data, $name);
-
 }
 
 
@@ -124,7 +116,6 @@ $response = array(
 );
 
 if (isset($output) && isset($input)) {
-
     $response['output'] = array(
         'file' => $output['name'],
         'path' => $output['path']
@@ -134,9 +125,7 @@ if (isset($output) && isset($input)) {
         'file' => $input['name'],
         'path' => $input['path']
     );
-
-}
-else {
+} else {
     $response['file'] = isset($output) ? $output['name'] : $input['name'];
     $response['path'] = isset($output) ? $output['path'] : $input['path'];
 }

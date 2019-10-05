@@ -2,8 +2,9 @@
             <section class="widget login-widget">
                 <header class="text-align-center">
                     <h4>Login to your account</h4>
-                    <div><?php if($this->session->flashdata('notice')) {
-						echo ('<span class="label label-important">' . $this->session->flashdata('notice') .'</span>');} ?></div>
+                    <div><?php if ($this->session->flashdata('notice')) {
+                        echo ('<span class="label label-important">' . $this->session->flashdata('notice') .'</span>');
+                         } ?></div>
                 </header>
                 <div class="body">
                     <form class="no-margin"

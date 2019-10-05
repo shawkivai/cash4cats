@@ -25,21 +25,20 @@
                         <ul id="forms-collapse" class="panel-collapse collapse ">
                           <li><a href="<?php echo site_url() . '/Pages/view/add_cat' ?>">Add New Cat</a></li>
 
-                          <?php if ($this->session->userdata('user_type') == 'office') : ?>
+                            <?php if ($this->session->userdata('user_type') == 'office') : ?>
                                 <?php echo '<li class=""><a href="' . site_url() . '/pages/catalogue_view/34' . '">Drafts</a></li>'; ?>
-                          <?php endif; ?>
+                            <?php endif; ?>
 
-                          <?php if ($this->session->userdata('user_type') == 'admin') : ?>
+                            <?php if ($this->session->userdata('user_type') == 'admin') : ?>
+                                <?php if ($categories) : ?>
+                                    <?php foreach ($categories as $category) {
+                                        echo '<li class=""><a href="' . site_url() . '/pages/catalogue_view/' . $category->category_id . '">';
+                                        echo $category->name;
+                                        echo '</a></li>';
+                                    }
+                                endif; ?>  
 
-                              <?php if ($categories) : ?>
-                                <?php foreach ($categories as $category){
-    							echo '<li class=""><a href="' . site_url() . '/pages/catalogue_view/' . $category->category_id . '">';
-    							echo $category->name;
-    							echo '</a></li>';
-    						    }
-                              endif; ?>  
-
-                          <?php endif; ?>
+                            <?php endif; ?>
 
                         </ul>
                     </li>
@@ -55,7 +54,7 @@
                     </li>
                 <?php endif; ?>
 
-                <?php if ($this->session->userdata('user_type') == 'admin' ) :?>
+                <?php if ($this->session->userdata('user_type') == 'admin') :?>
                     <li class="panel">
                         <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="#tables-collapse"><i class="fa fa-user"></i> <span class="name">Users</span></a>
                         <ul id="tables-collapse" class="panel-collapse collapse ">
@@ -100,7 +99,6 @@
                                 <li class=""><a href="<?php echo(site_url().'/pages/view/report_daily_user_summary/' . $this->session->userdata('username')); ?>">Daily Staff Summary</a></li>
 
                             <?php if ($this->session->userdata('user_type') == 'admin') : ?>
-
                                 <li class=""><a href="<?php echo(site_url().'/pages/view/login_report_profit_loss') ?>">Profit/Loss Query</a></li>
                                 <li class=""><a href="<?php echo(site_url().'/pages/view/login_report_shipment_summary') ?>">Shipment Summary</a></li>
                                 <li class=""><a href="<?php echo(site_url().'/pages/view/login_report_bulk_pdf') ?>">Bulk PDF Export</a></li>

@@ -1,6 +1,6 @@
 <style type="text/css">
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
 </style>
 
@@ -10,12 +10,11 @@ body {
                     <header>
                     </header>
                     <div class="body">
-                       <?php 
-						if ($this->session->flashdata('notice')) 
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-						} ?></span>
-                       	
+                        <?php
+                        if ($this->session->flashdata('notice')) {
+                            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+                        } ?></span>
+                        
                         <form id="user-form" class="form-horizontal form-label-left" novalidate method="post" data-parsley-priority-enabled="false" data-parsley-excluded="" action="<?php echo site_url(); ?>/users/update_user">
                             <fieldset>
                                <legend class="section">Username & Password</legend>
@@ -34,18 +33,24 @@ body {
                                   <div class="col-sm-6 input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                   <input type="password"  value="<?php echo($password); ?>" id="c-password" name="c-password" required="required" class="form-control input-lg" data-parsley-trigger="change" data-parsley-maxlength="32" data-parsley-equalto="#password" data-parsley-id="3"></div>
                                 </div>
-                         		 <div class="form-group">
+                                 <div class="form-group">
                                     <label class="control-label col-sm-4 input-lg" for="user-type">User Type <span class="required">*</span></label>
                                   <div class="col-sm-6 input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>
                                   <select class="select2 form-control input-lg"  data-placeholder="Select User Type"  tabindex="-1" id="user-type" name="user-type" required data-parsley-trigger="change" data-parsley-id="15"> 
-									<option value></option> 
-									<option value="staff" <?php if ($user_type == 'staff') {echo('selected="selected" ');} ?>>Staff</option>
-									<option value="admin" <?php if ($user_type == 'admin') {echo('selected="selected" ');} ?>>Admin</option>
-                  <option value="office" <?php if ($user_type == 'office') {echo('selected="selected" ');} ?>>Office</option>		  
+                                    <option value></option> 
+                                    <option value="staff" <?php if ($user_type == 'staff') {
+                                        echo('selected="selected" ');
+                                                          } ?>>Staff</option>
+                                    <option value="admin" <?php if ($user_type == 'admin') {
+                                        echo('selected="selected" ');
+                                                          } ?>>Admin</option>
+                  <option value="office" <?php if ($user_type == 'office') {
+                        echo('selected="selected" ');
+                                         } ?>>Office</option>          
                                </select></div>
                                 </div>
                             </fieldset>  
-							<fieldset>
+                            <fieldset>
                               <legend class="section">Personal Info</legend>
                                 <div class="form-group">
                                     <label class="control-label col-sm-4 input-lg" for="first-name">First Name <span class="required"></span></label>
@@ -101,7 +106,7 @@ body {
             </div>
         </div>
         
-       	</div> 
+        </div> 
 </div> 
     
 
@@ -109,4 +114,4 @@ body {
         <!-- page libs -->
        
 
-	
+    

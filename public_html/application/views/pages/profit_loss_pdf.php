@@ -28,7 +28,7 @@
 //============================================================+
 
 /**
- * 
+ *
  * @package com.tecnick.tcpdf
  * @abstract TCPDF - Example: WriteHTML and RTL support
  * @author Nicola Asuni
@@ -52,8 +52,8 @@ $pdf->SetSubject('Profit&Loss');
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
 
 // set header and footer fonts
-$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -64,7 +64,7 @@ $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+$pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM);
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -89,7 +89,7 @@ $pdf->AddPage('L', 'A3');
 // create some HTML content
 
 
-ob_start(); //---------------------------------------------------------------- 
+ob_start(); //----------------------------------------------------------------
 ?>
   <h2 class="page-title">Profit & Loss Query - <?php echo $dates[0]; ?> to <?php echo $dates[1]; ?><small></small></h2>
 
@@ -114,19 +114,25 @@ ob_start(); //----------------------------------------------------------------
                           </tr>
                         </thead>
                       <tbody>
-                        <?php $gst_exp_total = 0.00; $super_exp_total = 0.00; $tax_exp_total = 0.00; $total_exp_amount = 0.00; ?>
+                        <?php $gst_exp_total = 0.00;
+                        $super_exp_total = 0.00;
+                        $tax_exp_total = 0.00;
+                        $total_exp_amount = 0.00; ?>
                         <?php if (isset($expenses)) : ?>
-                          <?php foreach ($expenses as $exp) : ?>
+                            <?php foreach ($expenses as $exp) : ?>
                             <tr>
                               <th><?php echo substr($exp->date, 0, 10); ?></th>
                               <th><?php echo $exp->name; ?></th>
-                              <th><?php $this_exp = ($exp->amount_ini == 0) ? $exp->amount : $exp->amount_ini; echo $this_exp; ?></th>
+                              <th><?php $this_exp = ($exp->amount_ini == 0) ? $exp->amount : $exp->amount_ini;
+                                echo $this_exp; ?></th>
                               <th><?php echo $exp->gst; ?></th>
                               <th><?php echo $exp->super; ?></th>
                               <th><?php echo $exp->amount; ?></th>
                             </tr>
-                            <?php $gst_exp_total += $exp->gst; $super_exp_total += $exp->super; $total_exp_amount += $exp->amount; ?>
-                          <?php endforeach; ?>
+                                <?php $gst_exp_total += $exp->gst;
+                                $super_exp_total += $exp->super;
+                                $total_exp_amount += $exp->amount; ?>
+                            <?php endforeach; ?>
                         <?php endif; ?>
                       </tbody>
                       <tr>
@@ -172,25 +178,34 @@ ob_start(); //----------------------------------------------------------------
                         </thead>
                         <tbody>
 
-                        <?php if(!$shipments) : ?>
+                        <?php if (!$shipments) : ?>
               <span class="label label-important">No shipments have been entered.</span><br /><br />
 
                         <?php else : ?>
-                    
-             <?php $total_revenue = 0.00; $total_gst = 0.00; $total_rollover = 0.00; $total_rollover_gst = 0.00; $total_buy = 0.00; ?>
-              <?php foreach ($shipments as $shipment) : ?>
+                            <?php $total_revenue = 0.00;
+                            $total_gst = 0.00;
+                            $total_rollover = 0.00;
+                            $total_rollover_gst = 0.00;
+                            $total_buy = 0.00; ?>
+                            <?php foreach ($shipments as $shipment) : ?>
                 <tr role="row" class="odd">
                   <td class=""><?php echo $shipment->id; ?></td>
-                  <td class=""><?php $new_from = new DateTime($shipment->from_date); $new_from->modify('+1 day'); $new_from = $new_from->format('Y-m-d H:i:s'); echo $new_from; ?></td>
+                  <td class=""><?php $new_from = new DateTime($shipment->from_date);
+                    $new_from->modify('+1 day');
+                    $new_from = $new_from->format('Y-m-d H:i:s');
+                    echo $new_from; ?></td>
                   <td class=""><?php echo $shipment->to_date; ?></td>
                   <td class=""><?php echo $shipment->qty; ?></td>
-                  <td class=""><?php $total_revenue += ($shipment->actual_profit != 0.00 ) ? $revenue = $shipment->actual_profit : $revenue = $shipment->cat_sales; echo $revenue; ?></td>
-                  <td class=""><?php $total_rollover += $shipment->rollover; echo $shipment->rollover;  ?></td>
+                  <td class=""><?php $total_revenue += ($shipment->actual_profit != 0.00 ) ? $revenue = $shipment->actual_profit : $revenue = $shipment->cat_sales;
+                    echo $revenue; ?></td>
+                  <td class=""><?php $total_rollover += $shipment->rollover;
+                    echo $shipment->rollover;  ?></td>
                   <td class=""><?php echo ($revenue + $shipment->rollover);  ?></td>
-                  <td class=""><?php $total_buy += $shipment->expenses; echo $shipment->expenses; ?></td>
+                  <td class=""><?php $total_buy += $shipment->expenses;
+                    echo $shipment->expenses; ?></td>
                 </tr>
-              <?php endforeach; ?>
-            <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                        </tbody>
 
                     </table>
@@ -202,11 +217,11 @@ ob_start(); //----------------------------------------------------------------
                                 <thead>
                                     <tr><th></th><th>Revenue</th><th>Rollover</th><th>Total Sell</th><th>Expenses</th><th>Total Buy</th><th>P/L inc GST</th><th>P/L ex GST</th></tr>
                                 </thead>
-                                   <?php 
+                                    <?php
 
-                                    $gst_income = round($total_revenue/11 ,2);
-                                    $revenue_gst = $gst_income + $total_rollover_gst; 
-                                    $buy_gst = round($total_buy/11,2); 
+                                    $gst_income = round($total_revenue/11, 2);
+                                    $revenue_gst = $gst_income + $total_rollover_gst;
+                                    $buy_gst = round($total_buy/11, 2);
                                     $gst_final = $revenue_gst + $gst_exp_total - $buy_gst; ?>
                                                                     
 
@@ -235,7 +250,8 @@ ob_start(); //----------------------------------------------------------------
                                 </td>
 
                                 <td><!-- P/L inc GST -->
-                                    $<?php $pl_inc_gst = $revenue - ($total_exp_amount + $total_buy); echo $pl_inc_gst;  ?>
+                                    $<?php $pl_inc_gst = $revenue - ($total_exp_amount + $total_buy);
+                                    echo $pl_inc_gst;  ?>
                                 </td>
 
                                 <td><!-- P/L ex GST -->
@@ -270,7 +286,7 @@ $pdf->lastPage();
 $file_name = 'Profit & Loss.pdf';
 
 //Close and output PDF document
-$pdf->Output($file_name , 'I');
+$pdf->Output($file_name, 'I');
 
 //============================================================+
 // END OF FILE

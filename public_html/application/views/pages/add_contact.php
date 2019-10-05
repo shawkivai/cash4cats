@@ -1,6 +1,6 @@
 <style type="text/css">
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
 </style>
 
@@ -11,11 +11,10 @@ body {
                     </header>
                     <div class="body">
                        <?php echo validation_errors('<span class="label label-important">'); ?></span>
-                       <?php
-						if ($this->session->flashdata('notice') && validation_errors() == '')
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-						} ?></span>
+                        <?php
+                        if ($this->session->flashdata('notice') && validation_errors() == '') {
+                            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+                        } ?></span>
                         <form id="user-form" class="form-horizontal" novalidate method="post" data-parsley-priority-enabled="false" data-parsley-excluded="" action="<?php echo site_url(); ?>/users/add_contact">
                             <fieldset>
                                <legend class="section">Contact Details</legend>
@@ -85,9 +84,9 @@ body {
                                       <span class="input-group-addon"><i class="fa fa-edit"></i></span>
                                       <input id="next-visit" class="form-control" type="text" name="next-visit" value="<?php // echo $customer->next_visit ?>" data-parsley-id="72">
                                     </div>
-                                </div>                         		 
+                                </div>                               
                             </fieldset>
-						            	<fieldset>
+                                        <fieldset>
                               <legend class="section">Business Details</legend>
                                 <div class="form-group">
                                     <label class="control-label col-sm-4 input-lg" for="abn">ABN <span class="required"></span></label>
@@ -138,7 +137,7 @@ body {
             </div>
         </div>
 
-       	</div>
+        </div>
 </div>
 
 
