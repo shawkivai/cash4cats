@@ -1,3 +1,29 @@
+<?php 
+// invoice parameters
+$purchase_id = isset($invoice->purchase_id) && !empty($invoice->purchase_id) ? $invoice->purchase_id : 0;
+$date = isset($invoice->date) && !empty($invoice->date) ? $invoice->date : '';
+$invoiceTotal = isset($invoice->Total) && !empty($invoice->Total) ? $invoice->Total : 0;
+
+// var_dump($invoice);
+// die('ok');
+
+// Customers parameters
+$business_name = isset($customer->business_name) && !empty($customer->business_name) ? $customer->business_name: '';
+$address = isset($customer->address) && !empty($customer->address) ? $customer->address: '';
+$email = isset($customer->email) && !empty($customer->email) ? $customer->email: '';
+$office_phone = isset($customer->office_phone) && !empty($customer->office_phone) ? $customer->office_phone: '';
+$rep_firstname = isset($customer->rep_firstname) && !empty($customer->rep_firstname) ? $customer->rep_firstname: '';
+$rep_lastname = isset($customer->rep_lastname) && !empty($customer->rep_lastname) ? $customer->rep_lastname: '';
+$rep_email = isset($customer->rep_email) && !empty($customer->rep_email) ? $customer->rep_email: '';
+$rep_contact = isset($customer->rep_contact) && !empty($customer->rep_contact) ? $customer->rep_contact: '';
+$image = isset($images->image) && !empty($images->image) ? $images->image : '';
+$img_link = $purchase_id && $image ? base_url() . 'inv_images/' . $purchase_id . '/' . $image : ''; 
+$print = $purchase_id ? site_url() .'/pdf_contr/generate_pdf_report/' . $purchase_id : '';
+$customer_id = isset($customer->id) && !empty($customer->id) ? $customer->id : null;
+$email_url = $purchase_id && $customer_id ? site_url() .'/pages/view/email_invoice/' . $purchase_id . '/' . $customer->id : '';
+
+?>
+
 <style type="text/css">
     
 body {
@@ -50,8 +76,8 @@ body {
                     </div>
                     <div class="col-sm-6 col-print-6">
                         <div class="invoice-number text-align-right">
-                            Invoice #<?php echo $invoice->purchase_id; ?> <br />
-                            <?php $phpdate = strtotime($invoice->date);
+                            Invoice #<?php echo $purchase_id; ?> <br />
+                            <?php $phpdate = strtotime($date);
                             $phpdate = date('l d-m-Y H:i:s', $phpdate);
                             echo $phpdate; ?>
                         </div>
@@ -76,20 +102,20 @@ body {
                         <div class="col-sm-6 col-print-6 client-details">
                             <h4 class="details-title">Client Information</h4>
                             <h3 class="client-name">
-                                <?php echo $customer->business_name; ?>
+                                <?php echo $business_name; ?>
                             </h3> 
-                                <abbr title="Address">address:</abbr> <?php echo $customer->address; ?> <br />                         
-                                <abbr title="Work email">e-mail:</abbr> <a href="mailto:<?php echo $customer->email; ?>"><?php echo $customer->email; ?></a><br>
-                                <abbr title="Work Phone">phone:</abbr> <?php echo $customer->office_phone; ?><br>
+                                <abbr title="Address">address:</abbr> <?php echo $address; ?> <br />                         
+                                <abbr title="Work email">e-mail:</abbr> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a><br>
+                                <abbr title="Work Phone">phone:</abbr> <?php echo $office_phone; ?><br>
                                 <div class="separator line"></div>
                                 <!-- <p class="margin-none"><strong>Note:</strong><br>Some nights I stay up cashing in my bad luck.
                                     Some nights I call it a draw</p> -->
                             </address><br />
                             <address>
                                 <strong>Contact Person: </strong> 
-                                <strong><a href="#"><?php echo $customer->rep_firstname . ' ' . $customer->rep_lastname; ?></a></strong><br>
-                                <abbr title="Customer email">e-mail:</abbr> <a href="mailto:<?php echo $customer->rep_email ?>"><?php echo $customer->rep_email ?></a><br>
-                                <abbr title="Work Phone">phone:</abbr> <?php echo $customer->rep_contact; ?><br>
+                                <strong><a href="#"><?php echo $rep_firstname . ' ' . $rep_lastname; ?></a></strong><br>
+                                <abbr title="Customer email">e-mail:</abbr> <a href="mailto:<?php echo $rep_email ?>"><?php echo $rep_email ?></a><br>
+                                <abbr title="Work Phone">phone:</abbr> <?php echo $rep_contact; ?><br>
                                 <div class="separator line"></div>
                             </address>
                         </div>
@@ -130,24 +156,24 @@ body {
                                 <p class="no-margin"><strong>Total</strong></p>
                             </div>
                             <div class="col-xs-3">
-                                <p><?php echo $subtotal = $invoice->Total/1.1; ?></p>
-                                <p><?php echo $invoice->Total - $subtotal; ?></p>
-                                <p class="no-margin"><strong>$<?php echo $invoice->Total; ?></strong></p>
+                                <p><?php echo $subtotal = $invoiceTotal/1.1; ?></p>
+                                <p><?php echo $invoiceTotal - $subtotal; ?></p>
+                                <p class="no-margin"><strong>$<?php echo $invoiceTotal; ?></strong></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <?php if ($images != false) : ?>
-                                    <div id="img_container" style="margin:20px;">
-                                    <h3>Purchase Images:</h3>
-                                    <?php foreach ($images as $image) : ?>
-                                            <div class="thumbnail col-sm-3">                            
-                                                <img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
-                                            </div>
-                                        
-                                    <?php endforeach; ?>
-                                    </div>
+                        <div id="img_container" style="margin:20px;">
+                        <h3>Purchase Images:</h3>
+                        <?php foreach ($images as $image) : ?>
+                                <div class="thumbnail col-sm-3">                            
+                                    <img src="<?php echo base_url() . 'inv_images/' . $purchase_id . '/' . $image->image;?>">
+                                </div>
+                            
+                        <?php endforeach; ?>
+                        </div>
                 <?php endif; ?>
                                     
                                     
@@ -158,12 +184,12 @@ body {
                     <span class="fw-semi-bold">Bob Smith</span>
                 </p> -->
                 <div class="btn-toolbar mt-lg text-align-right hidden-print" style="clear:left">
-                    <a href="<?php echo site_url() .'/pdf_contr/generate_pdf_report/' . $invoice->purchase_id ?>"><button id="print" class="btn btn-default">
+                    <a href="<?php echo $print ?>"><button id="print" class="btn btn-default">
                         <i class="fa fa-print"></i>
                         &nbsp;&nbsp;
                         Print
                     </button></a>
-                    <a href="<?php echo site_url() .'/pages/view/email_invoice/' . $invoice->purchase_id . '/' . $customer->id; ?>"><button  style="margin-left:6px" class="btn btn-danger">
+                    <a href="<?php echo $email_url; ?>"><button  style="margin-left:6px" class="btn btn-danger">
                         Email
                         &nbsp;
                         <i class="fa fa-arrow-right"></i>
