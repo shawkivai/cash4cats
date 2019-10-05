@@ -12,16 +12,16 @@
 
 
 <style type="text/css">
-	hr {border-top: 5px solid #eeeeee; color: black;}
-	.inv-button { margin-bottom:5px; margin-right:5px; }
+    hr {border-top: 5px solid #eeeeee; color: black;}
+    .inv-button { margin-bottom:5px; margin-right:5px; }
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
-	#datatable-table_filter{
+    #datatable-table_filter{
     float: right;
     margin-top: -30px;
     margin-bottom: 15px;
-	}
+    }
   .pointy{
     cursor: pointer;
   }
@@ -32,7 +32,7 @@ body {
     top: -34px;
 position: relative;
   }
-	.width-200{width:200px;}
+    .width-200{width:200px;}
   .dataTables_paginate{float:right;text-align:right;padding-top:0.25em} .dataTables_wrapper .dataTables_paginate .paginate_button{box-sizing:border-box;display:inline-block;min-width:1.5em;padding:0.5em 1em;margin-left:2px;text-align:center;text-decoration:none !important;cursor:pointer;*cursor:hand;color:#333 !important;border:1px solid transparent;border-radius:2px}
   .dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{color:#333 !important;
     background-color:#eeeeee;
@@ -74,19 +74,25 @@ position: relative;
                           </tr>
                         </thead>
                       <tbody>
-                        <?php $gst_exp_total = 0.00; $super_exp_total = 0.00; $tax_exp_total = 0.00; $total_exp_amount = 0.00; ?>
+                        <?php $gst_exp_total = 0.00;
+                        $super_exp_total = 0.00;
+                        $tax_exp_total = 0.00;
+                        $total_exp_amount = 0.00; ?>
                         <?php if (isset($expenses)) : ?>
-                          <?php foreach ($expenses as $exp) : ?>
+                            <?php foreach ($expenses as $exp) : ?>
                             <tr>
                               <th><?php echo substr($exp->date, 0, 10); ?></th>
                               <th><?php echo $exp->name; ?></th>
-                              <th><?php $this_exp = ($exp->amount_ini == 0) ? $exp->amount : $exp->amount_ini; echo $this_exp; ?></th>
+                              <th><?php $this_exp = ($exp->amount_ini == 0) ? $exp->amount : $exp->amount_ini;
+                                echo $this_exp; ?></th>
                               <th><?php echo $exp->gst; ?></th>
                               <th><?php echo $exp->super; ?></th>
                               <th><?php echo $exp->amount; ?></th>
                             </tr>
-                            <?php $gst_exp_total += $exp->gst; $super_exp_total += $exp->super; $total_exp_amount += $exp->amount; ?>
-                          <?php endforeach; ?>
+                                <?php $gst_exp_total += $exp->gst;
+                                $super_exp_total += $exp->super;
+                                $total_exp_amount += $exp->amount; ?>
+                            <?php endforeach; ?>
                         <?php endif; ?>
                       </tbody>
                       <tr>
@@ -141,25 +147,34 @@ position: relative;
                         </thead>
                         <tbody style="margin-top:10px">
 
-                        <?php if(!$shipments) : ?>
-							<span class="label label-important">No shipments have been entered.</span><br /><br />
+                        <?php if (!$shipments) : ?>
+                            <span class="label label-important">No shipments have been entered.</span><br /><br />
 
-						            <?php else : ?>
-										
-              <?php $total_revenue = 0.00; $total_gst = 0.00; $total_rollover = 0.00; $total_rollover_gst = 0.00; $total_buy = 0.00; ?>
-							<?php foreach ($shipments as $shipment) : ?>
-								<tr role="row" class="odd">
-									<td class=""><?php echo $shipment->id; ?></td>
-									<td class=""><?php $new_from = new DateTime($shipment->from_date); $new_from->modify('+1 day'); $new_from = $new_from->format('Y-m-d H:i:s'); echo $new_from; ?></td>
-									<td class=""><?php echo $shipment->to_date; ?></td>
-									<td class=""><?php echo $shipment->qty; ?></td>
-									<td class=""><?php $total_revenue += ($shipment->actual_profit != 0.00 ) ? $revenue = $shipment->actual_profit : $revenue = $shipment->cat_sales; echo $revenue; ?></td>
-									<td class=""><?php $total_rollover += $shipment->rollover; echo $shipment->rollover;  ?></td>
-									<td class=""><?php echo ($revenue + $shipment->rollover);  ?></td>
-									<td class=""><?php $total_buy += $shipment->expenses; echo $shipment->expenses; ?></td>
+                        <?php else : ?>
+                                        <?php $total_revenue = 0.00;
+                                        $total_gst = 0.00;
+                                        $total_rollover = 0.00;
+                                        $total_rollover_gst = 0.00;
+                                        $total_buy = 0.00; ?>
+                                        <?php foreach ($shipments as $shipment) : ?>
+                                <tr role="row" class="odd">
+                                    <td class=""><?php echo $shipment->id; ?></td>
+                                    <td class=""><?php $new_from = new DateTime($shipment->from_date);
+                                    $new_from->modify('+1 day');
+                                    $new_from = $new_from->format('Y-m-d H:i:s');
+                                    echo $new_from; ?></td>
+                                    <td class=""><?php echo $shipment->to_date; ?></td>
+                                    <td class=""><?php echo $shipment->qty; ?></td>
+                                    <td class=""><?php $total_revenue += ($shipment->actual_profit != 0.00 ) ? $revenue = $shipment->actual_profit : $revenue = $shipment->cat_sales;
+                                    echo $revenue; ?></td>
+                                    <td class=""><?php $total_rollover += $shipment->rollover;
+                                    echo $shipment->rollover;  ?></td>
+                                    <td class=""><?php echo ($revenue + $shipment->rollover);  ?></td>
+                                    <td class=""><?php $total_buy += $shipment->expenses;
+                                    echo $shipment->expenses; ?></td>
                 </tr>
-							<?php endforeach; ?>
-						<?php endif; ?>
+                                        <?php endforeach; ?>
+                        <?php endif; ?>
                        </tbody>
 
                     </table>
@@ -167,9 +182,9 @@ position: relative;
                 </div>
                    <div style="">
                       
-                  			<?php
-					   			$form_action = site_url() . '/pdf_contr/generate_profit_loss_pdf';
-					   		?>
+                            <?php
+                                $form_action = site_url() . '/pdf_contr/generate_profit_loss_pdf';
+                            ?>
                 </div>
                   </div>
 
@@ -178,11 +193,11 @@ position: relative;
                                 <thead>
                                     <tr><th></th><th>Revenue</th><th>Rollover</th><th>Total Sell</th><th>Expenses</th><th>Total Buy</th><th>P/L inc GST</th><th>P/L ex GST</th></tr>
                                 </thead>
-                                   <?php 
+                                    <?php
 
-                                    $gst_income = round($total_revenue/11 ,2);
-                                    $revenue_gst = $gst_income + $total_rollover_gst; 
-                                    $buy_gst = round($total_buy/11,2); 
+                                    $gst_income = round($total_revenue/11, 2);
+                                    $revenue_gst = $gst_income + $total_rollover_gst;
+                                    $buy_gst = round($total_buy/11, 2);
                                     $gst_final = $revenue_gst + $gst_exp_total - $buy_gst; ?>
                                                                     
 
@@ -211,7 +226,8 @@ position: relative;
                                 </td>
 
                                 <td><!-- P/L inc GST -->
-                                    $<?php $pl_inc_gst = $revenue - ($total_exp_amount + $total_buy); echo $pl_inc_gst;  ?>
+                                    $<?php $pl_inc_gst = $revenue - ($total_exp_amount + $total_buy);
+                                    echo $pl_inc_gst;  ?>
                                 </td>
 
                                 <td><!-- P/L ex GST -->
@@ -231,20 +247,20 @@ position: relative;
                   </section>
               </div>
           </div>
-   	</div>
+    </div>
 
 <div class="row" style="max-width:100%">
     <div class="col-md-12">
            <section class="widget" style="height:50px;text-align: center">
-                   			<form method="get" action="<?php echo $form_action; ?>">						
-                 			<div class="col-sm-2">
+                            <form method="get" action="<?php echo $form_action; ?>">                        
+                            <div class="col-sm-2">
                         <input type="hidden" value="<?php echo $this->input->get('from'); ?>" name="from" />
                         <input type="hidden" value="<?php echo $this->input->get('to'); ?>" name="to" />
-                  				<input type="submit" class="form-control input-lg" value="Print" style="margin:0 auto"/>
-							</div>
+                                <input type="submit" class="form-control input-lg" value="Print" style="margin:0 auto"/>
+                            </div>
 
-                   			</div>
-                   			</form>
+                            </div>
+                            </form>
                       </section>
                     </div>
                   </div>
@@ -254,20 +270,20 @@ position: relative;
 
 
 <script type="text/javascript">
-	$(window).load(function(){
-		$('#datatable-table').DataTable({
+    $(window).load(function(){
+        $('#datatable-table').DataTable({
         "order": [[ 0, "asc" ]] });
     $('#datatable-table1').DataTable({
         "order": [[ 0, "desc" ]] });
 
   
 
-	$('input[type=search]').addClass("form-control ml-sm");
-	$('select').addClass("btn dropdown-toggle btn-default");
+    $('input[type=search]').addClass("form-control ml-sm");
+    $('select').addClass("btn dropdown-toggle btn-default");
     $('#from_date').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
     $('#to_date').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
 
-	});
+    });
   function expand(row){
     if ($(row).hasClass("hidden_row")){
       $(row).parent().widgster('expand');

@@ -1,13 +1,16 @@
 <?php
 
-abstract class SlimStatus {
+abstract class SlimStatus
+{
     const FAILURE = 'failure';
     const SUCCESS = 'success';
 }
 
-class Slim {
+class Slim
+{
 
-    public static function getImages($inputName = 'slim') {
+    public static function getImages($inputName = 'slim')
+    {
 
         $values = Slim::getPostData($inputName);
 
@@ -32,14 +35,16 @@ class Slim {
 
         // return the data collected from the fields
         return $data;
-
     }
 
     // $value should be in JSON format
-    private static function parseInput($value) {
+    private static function parseInput($value)
+    {
 
         // if no json received, exit, don't handle empty input values.
-        if (empty($value)) {return null;}
+        if (empty($value)) {
+            return null;
+        }
 
         // If magic quotes enabled
         if (get_magic_quotes_gpc()) {
@@ -55,13 +60,11 @@ class Slim {
         $output = null;
         $meta = null;
 
-        if (isset ($data->input)) {
-
+        if (isset($data->input)) {
             $inputData = null;
             if (isset($data->input->image)) {
                 $inputData = Slim::getBase64Data($data->input->image);
-            }
-            else if (isset($data->input->field)) {
+            } elseif (isset($data->input->field)) {
                 $filename = $_FILES[$data->input->field]['tmp_name'];
                 if ($filename) {
                     $inputData = file_get_contents($filename);
@@ -76,16 +79,13 @@ class Slim {
                 'width' => $data->input->width,
                 'height' => $data->input->height,
             );
-
         }
 
         if (isset($data->output)) {
-
             $outputDate = null;
             if (isset($data->output->image)) {
                 $outputData = Slim::getBase64Data($data->output->image);
-            }
-            else if (isset ($data->output->field)) {
+            } elseif (isset($data->output->field)) {
                 $filename = $_FILES[$data->output->field]['tmp_name'];
                 if ($filename) {
                     $outputData = file_get_contents($filename);
@@ -135,7 +135,8 @@ class Slim {
     }
 
     // $path should have trailing slash
-    public static function saveFile($data, $name, $path = 'tmp/', $uid = true) {
+    public static function saveFile($data, $name, $path = 'tmp/', $uid = true)
+    {
 
         // Add trailing slash if omitted
         if (substr($path, -1) !== '/') {
@@ -143,7 +144,7 @@ class Slim {
         }
 
         // Test if directory already exists
-        if(!is_dir($path)){
+        if (!is_dir($path)) {
             mkdir($path, 0755, true);
         }
 
@@ -173,20 +174,22 @@ class Slim {
      * @param $url
      * @return string
      */
-    public static function fetchURL($url, $maxFileSize) {
+    public static function fetchURL($url, $maxFileSize)
+    {
         if (!ini_get('allow_url_fopen')) {
             return null;
         }
         $content = null;
         try {
             $content = @file_get_contents($url, false, null, 0, $maxFileSize);
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             return false;
         }
         return $content;
     }
 
-    public static function outputJSON($data) {
+    public static function outputJSON($data)
+    {
         header('Content-Type: application/json');
         echo json_encode($data);
     }
@@ -200,7 +203,8 @@ class Slim {
      * @param $str
      * @return string
      */
-    public static function sanitizeFileName($str) {
+    public static function sanitizeFileName($str)
+    {
         // Basic clean up
         $str = preg_replace('([^\w\s\d\-_~,;\[\]\(\).])', '', $str);
         // Remove any runs of periods
@@ -213,14 +217,14 @@ class Slim {
      * @param $inputName
      * @return array|bool
      */
-    private static function getPostData($inputName) {
+    private static function getPostData($inputName)
+    {
 
         $values = array();
 
         if (isset($_POST[$inputName])) {
             $values = $_POST[$inputName];
-        }
-        else if (isset($_FILES[$inputName])) {
+        } elseif (isset($_FILES[$inputName])) {
             // Slim was not used to upload this file
             return false;
         }
@@ -234,7 +238,8 @@ class Slim {
      * @param $path
      * @return bool
      */
-    private static function save($data, $path) {
+    private static function save($data, $path)
+    {
         if (!file_put_contents($path, $data)) {
             return false;
         }
@@ -246,8 +251,8 @@ class Slim {
      * @param $data
      * @return string
      */
-    private static function getBase64Data($data) {
+    private static function getBase64Data($data)
+    {
         return base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data));
     }
-
 }

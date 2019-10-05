@@ -47,14 +47,12 @@ $filename = $file['path'];
 // Test if file is safe for use
 $type = finfo_file(finfo_open(FILEINFO_MIME_TYPE), $filename);
 
-if (
-    // is it not an image
+if (// is it not an image
     !(substr($type, 0, 6) === 'image/')
 ) {
-
     // remove file
     if (file_exists($filename)) {
-       unlink($filename);
+        unlink($filename);
     }
 
     // echo error

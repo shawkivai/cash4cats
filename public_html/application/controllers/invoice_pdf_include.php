@@ -15,7 +15,7 @@
 //============================================================+
 
 /**
- * 
+ *
  * @package com.tecnick.tcpdf
  * @abstract TCPDF - Example: WriteHTML and RTL support
  * @author Nicola Asuni
@@ -39,8 +39,8 @@ $pdf->SetSubject('Invoice PDFs');
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
 
 // set header and footer fonts
-$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -51,7 +51,7 @@ $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+$pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM);
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -75,31 +75,31 @@ $pdf->AddPage();
 
 // create some HTML content
 $final_result = array();
-            foreach ($rows as $row){
-                $price_to_add = $row->PRICE;
+foreach ($rows as $row) {
+    $price_to_add = $row->PRICE;
                 
-                if ($row->OVERRIDE_PRICE != 0.00){
-                    $price_to_add = $row->OVERRIDE_PRICE;
-                }
+    if ($row->OVERRIDE_PRICE != 0.00) {
+        $price_to_add = $row->OVERRIDE_PRICE;
+    }
                 
-                for ($i = 0; $i < $row->QTY; $i++){
-                    $final_result[] = $price_to_add;
-                }
-                
-                
-            }
+    for ($i = 0; $i < $row->QTY; $i++) {
+        $final_result[] = $price_to_add;
+    }
+}
             
             $final_result = array_count_values($final_result);
-            $gst = round( ($invoice->Total/1.1)*0.1 , 2 );
+            $gst = round(($invoice->Total/1.1)*0.1, 2);
 
-ob_start(); //---------------------------------------------------------------- 
+ob_start(); //----------------------------------------------------------------
 ?>
  <h2 class="">Cash 4 Cats Pty Ltd.</h2> <small>PURCHASE ORDER</small> <br />
                             <address><abbr title="Address">Address:</abbr> Chipping Norton<br><abbr title="Work email">E-mail:</abbr> <a href="mailto:#">info@cash4cats.com.au</a><br><abbr title="Work Fax">Phone:</abbr> 0412 345 678</address>           
       <section class="widget">
             <div class="body no-margin" style="margin-top: -50px">
                         <div class="invoice-number text-align-right" style="font-size: 12px;">Invoice #<?php echo $invoice->purchase_id; ?> <br />
-                            <?php $phpdate = strtotime( $invoice->date ); $phpdate = date( 'l d-m-Y H:i:s', $phpdate ); echo $phpdate; ?>
+                            <?php $phpdate = strtotime($invoice->date);
+                            $phpdate = date('l d-m-Y H:i:s', $phpdate);
+                            echo $phpdate; ?>
                         </div>
                 <hr><h3 class="client-name">Purchased From: <?php echo $customer->business_name; ?></h3> 
                                 <abbr title="Address">Address:</abbr> <?php echo $customer->address; ?> <br /><abbr title="Work email">E-mail:</abbr> <a href="mailto:<?php echo $customer->email; ?>"><?php echo $customer->email; ?></a><br /><abbr title="Work Phone">Phone:</abbr> <?php echo $customer->office_phone; ?><br><abbr>Contact Person: </abbr><strong><a href="#"><?php echo $customer->rep_firstname . ' ' . $customer->rep_lastname; ?></a></strong><br><abbr title="Customer email">E-mail:</abbr> <a href="mailto:<?php echo $customer->rep_email ?>"><?php echo $customer->rep_email ?></a><br><abbr title="Work Phone">Phone:</abbr> <?php echo $customer->rep_contact; ?></address><br /><br /><br />
@@ -114,7 +114,8 @@ ob_start(); //----------------------------------------------------------------
                         <hr />
                     <tbody>
                     <?php foreach ($final_result as $amount => $quantity) : ?>
-                    <?php $amount = floatval($amount); $quantity = intval($quantity); ?>
+                        <?php $amount = floatval($amount);
+                        $quantity = intval($quantity); ?>
                     <tr style="height: 24px">
                         <td style="height: 24px"><?php echo $amount; ?></td>
                         <td><?php echo $quantity; ?></td>
@@ -135,14 +136,13 @@ ob_start(); //----------------------------------------------------------------
                                     <div id="img_container" style="margin:20px;">
                                     <h3>Purchase Images:</h3>
                                     <?php foreach ($images as $image) : ?>
-                                        
                                             <div class="thumbnail col-sm-3">                            
                                                 <img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
                                             </div>
                                         
                                     <?php endforeach; ?>
                                     </div>
-                                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         </section>      
 
@@ -156,6 +156,6 @@ $pdf->writeHTML($html, true, false, true, false, '');
 $pdf->lastPage();
 
 $file_name = $invoice->purchase_id;
-$dir = FCPATH . '/temp_pdfs/' . $file_name . '.pdf'; 
+$dir = FCPATH . '/temp_pdfs/' . $file_name . '.pdf';
 //Close and output PDF document
-$pdf->Output($dir , 'F');
+$pdf->Output($dir, 'F');

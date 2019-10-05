@@ -1,12 +1,12 @@
 <style type="text/css">
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
 </style>
 
             <h2 class="page-title">Customer<small></small></h2>
 
-	<div class="row">
+    <div class="row">
             <div class="col-md-7">
                 <section class="widget">
                     <header>
@@ -29,7 +29,7 @@ body {
                             <fieldset class="mt-sm">
                                 <legend>Edit Customer <small></small></legend>
                             </fieldset>
-							 <fieldset>
+                             <fieldset>
                                 <legend class="section">Company Info</legend>
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="company-name">Company Name<span class="required">*</span></label>
@@ -56,7 +56,7 @@ body {
                                     <div class="col-sm-8"><input id="email" class="form-control" type="email" name="email" value="" data-parsley-maxlength="45" data-parsley-id="45"></div>
                                 </div>
                             </fieldset>
-							<fieldset>								
+                            <fieldset>                              
                                 <div class="form-group">
                                     <label for="checkbox-isactive" class="control-label col-sm-4">Active
                                             </label>
@@ -64,7 +64,7 @@ body {
                                                 <input type="checkbox" name="isactive" id="isactive" checked="" data-switchery="true" style="display: none;" value="1">
                                         </div>
                                 </div>
-							</fieldset>
+                            </fieldset>
                             <fieldset>
                                 <legend class="section">Company Representative</legend>
                                 <div class="form-group">
@@ -88,8 +88,8 @@ body {
                                     <div class="col-sm-8"><input id="rep-email" class="form-control" type="email" name="rep-email" value="" data-parsley-maxlength="45" data-parsley-id="54"></div>
                                 </div>
                             </fieldset>
-							
-							
+                            
+                            
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-4">
@@ -105,10 +105,10 @@ body {
         </div>
 
         <script>
-			var elem = document.querySelector('#isactive');
-			var init = new Switchery(elem);
-		</script>
-       	</div> 
+            var elem = document.querySelector('#isactive');
+            var init = new Switchery(elem);
+        </script>
+        </div> 
 </div> 
     
 
@@ -116,4 +116,4 @@ body {
         <!-- page libs -->
        
 
-	
+    

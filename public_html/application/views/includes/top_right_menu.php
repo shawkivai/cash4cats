@@ -1,6 +1,6 @@
 
 <div class="wrap">
-			<header class="page-header">
+            <header class="page-header">
             <div class="navbar">
                     
                 <ul class="nav navbar-nav navbar-right pull-right"><?php echo $this->session->userdata('user_type'); ?>

@@ -1,6 +1,6 @@
 <style type="text/css">
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
 .employee{
   display: none;
@@ -21,17 +21,17 @@ $supplier = '';
 $date = '';
 $invoiceRef = '';
 $super = '';
- if ( isset($action) && $action == 'edit'){
-	  $amount_ini = $expense->amount_ini;
+if (isset($action) && $action == 'edit') {
+     $amount_ini = $expense->amount_ini;
     $amount = $expense->amount;
-		$gst= $expense->gst;
-		$supplier = $expense->supplier;
-		$date = $expense->date;
-		$invoiceRef = $expense->ref;
-		$super = $expense->super;
-		$image = $expense->image;
-		$id = $_GET['expense_id'];
- }
+       $gst= $expense->gst;
+       $supplier = $expense->supplier;
+       $date = $expense->date;
+       $invoiceRef = $expense->ref;
+       $super = $expense->super;
+       $image = $expense->image;
+       $id = $_GET['expense_id'];
+}
 ?>
             <h2 class="page-title">Add Expense <small></small></h2><div class="row">
             <div class="col-md-12">
@@ -39,12 +39,11 @@ $super = '';
                     <header>
                     </header>
                     <div class="body">
-                       <?php echo validation_errors('<span class="label label-important">'); ?></span>
-                       <?php
-						if ($this->session->flashdata('notice') && validation_errors() == '')
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-						} ?></span>
+                        <?php echo validation_errors('<span class="label label-important">'); ?></span>
+                        <?php
+                        if ($this->session->flashdata('notice') && validation_errors() == '') {
+                            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+                        } ?></span>
 
                         <form id="user-form" class="form-horizontal" novalidate method="post" data-parsley-priority-enabled="false" data-parsley-excluded="" enctype="multipart/form-data" action="<?php echo site_url(); ?>/pages/add_expense">
                             <fieldset>
@@ -54,10 +53,10 @@ $super = '';
                                   <select onChange="switch_emp(this)" id="supplier" name="supplier" required="required" class="select2 form-control optionBox" style="width:83%">
                                             <option value="0"></option>
                                             <?php if ($contacts) : ?>
-                                              <?php foreach($contacts as $contact) : ?>
+                                                <?php foreach ($contacts as $contact) : ?>
                                               <option value="<?php echo $contact->id ?>" data-type="<?php echo $contact->contact_type; ?>"><?php
-                                              echo $contact->name; ?></option>
-                                              <?php endforeach; ?>
+                                                echo $contact->name; ?></option>
+                                                <?php endforeach; ?>
                                             <?php endif; ?>
                                   </select>
                                </div>
@@ -81,14 +80,14 @@ $super = '';
                                   <div class="col-sm-6 input-group">
                                   <input type="checkbox" id="gst_check" name="gst_check" style="width:5%" class="form-control input-lg" data-parsley-trigger="change"  onClick="gst_clicked()"></div>
                                 <script>
-                                    		<?php if (isset($action) && $action == 'edit') : ?>
-                                    		var gst_appl = <?php  echo $gst; ?>;
-                                    		if ( gst_appl == 0 ){
-                                    			$('#gst_check').click();
-                                    		}
+                                            <?php if (isset($action) && $action == 'edit') : ?>
+                                            var gst_appl = <?php  echo $gst; ?>;
+                                            if ( gst_appl == 0 ){
+                                                $('#gst_check').click();
+                                            }
 
-                                    		<?php endif; ?>
-									             </script>
+                                            <?php endif; ?>
+                                                 </script>
                                 </div>
                                 <div class="form-group employee">
                                     <label class="control-label col-sm-4 input-lg" for="super">Superannuation <span class="required"></span><br /><small><?php echo $options[0]['option-value']; ?>%</small></label>
@@ -109,9 +108,9 @@ $super = '';
                                 <div class="form-group">
                                     <label class="control-label col-sm-4 input-lg" for="image">Image </label>
                                   <div class="col-sm-6 input-group slim">
-																	<?php	if ( isset($action) && $action == 'edit') : ?>
-																		<img src="<?php echo base_url() . '/exp_images/' . $id . '/' . $image; ?>" />
-																	<?php endif; ?>
+                                                                    <?php	if (isset($action) && $action == 'edit') : ?>
+                                                                        <img src="<?php echo base_url() . '/exp_images/' . $id . '/' . $image; ?>" />
+                                                                    <?php endif; ?>
                                   <input type="file" class="uploadImg" accept="image/*" capture="environment" name="images" id="images"  />
                                   </div>
                                 </div>
@@ -119,7 +118,7 @@ $super = '';
                                    $('.slim').slim({
                                       size: { width: 680, height: 800 },
                                       label: 'Drop image here / Select from computer',
-																			download: true
+                                                                            download: true
                                     });
                                  </script>
 
@@ -134,11 +133,11 @@ $super = '';
                             <div class="form-actions">
                                 <div class="row">
                                   <div class="col-sm-6 col-sm-offset-4">
-                                       <?php if ( isset($action) && $action == 'edit') : ?>
+                                        <?php if (isset($action) && $action == 'edit') : ?>
                                        <input type="hidden" id="isUpdate" name="isUpdate" value=true />
                                        <input type="hidden" id="expense_id" name="expense_id" value="<?php echo $_GET['expense_id'] ?>" />
                                        <button type="submit" class="btn btn-primary input-lg">Update</button>
-                                       <?php else : ?>
+                                        <?php else : ?>
                                        <input type="hidden" id="isUpdate" name="isUpdate" value=false />
                                         <button type="submit" onClick="before_submit()" class="btn btn-primary input-lg">Submit</button>
                                         <?php endif; ?>
@@ -151,7 +150,7 @@ $super = '';
             </div>
         </div>
 
-       	</div>
+        </div>
 </div>
 
 
@@ -164,41 +163,41 @@ $super = '';
  var income = <?php echo $options[1]['option-value']; ?>;
  income = parseFloat(income);
  var final_amount;
- <?php if ( isset($action) && $action == 'edit') : ?>
-	 var supplier = <?php echo $supplier ?>;
-	 $('#supplier').val(supplier);
-	 $('#supplier').change();
-<?php endif; ?>
+    <?php if (isset($action) && $action == 'edit') : ?>
+     var supplier = <?php echo $supplier ?>;
+     $('#supplier').val(supplier);
+     $('#supplier').change();
+    <?php endif; ?>
 
 
 $(window).load(function() {
-		var gst_amount;
+        var gst_amount;
     $('#super').attr('readonly','readonly');
 
-	   $('#date').datetimepicker({format: 'YYYY/MM/DD'});
-	   $('#amount').keyup(function () {
+       $('#date').datetimepicker({format: 'YYYY/MM/DD'});
+       $('#amount').keyup(function () {
 
       if (!$('#gst_check').is(":checked")){
-		   gst_amount = cal_gst();
-		   $('#gst').val(gst_amount);
+           gst_amount = cal_gst();
+           $('#gst').val(gst_amount);
      }
 
-				 ini_amount = parseFloat( $('#amount').val() );
-				 $('#total_holder').html( '$' + ini_amount );
-				 $('#total_amount').val(ini_amount);
-				 if (is_emp){
-					 var superanu = parseFloat( ( ini_amount * (supera/100) ).toFixed(2) );
-					 //var incomeu = parseFloat( (ini_amount * (income/100)).toFixed(2) );
+                 ini_amount = parseFloat( $('#amount').val() );
+                 $('#total_holder').html( '$' + ini_amount );
+                 $('#total_amount').val(ini_amount);
+                 if (is_emp){
+                     var superanu = parseFloat( ( ini_amount * (supera/100) ).toFixed(2) );
+                     //var incomeu = parseFloat( (ini_amount * (income/100)).toFixed(2) );
 
-					 $('#super').val(superanu);
-					 //$('#tax').val(incomeu);
-					 final_amount = (ini_amount + superanu).toFixed(2);
-					 $('#total_holder').html( '$' + final_amount  );
-					 $('#total_amount').val(final_amount);
-				 }
+                     $('#super').val(superanu);
+                     //$('#tax').val(incomeu);
+                     final_amount = (ini_amount + superanu).toFixed(2);
+                     $('#total_holder').html( '$' + final_amount  );
+                     $('#total_amount').val(final_amount);
+                 }
 
 
-	   });
+       });
 
 
 });
@@ -229,20 +228,20 @@ $(window).load(function() {
     }
 
   }
-	function cal_gst(){
-		gst_amount = ($('#amount').val() / 1.1)*0.1;
-		gst_amount = gst_amount.toFixed(2);
-		return gst_amount;
-	}
-	function gst_clicked(){
-		if ($('#gst_check').is(":checked")){
-			$('#gst').val(0.00);
-			$('#gst').attr('readonly','readonly');
-		}
-		else{
-			var gst = cal_gst();
-			$('#gst').val(gst);
-			$('#gst').removeAttr('readonly');
-		}
-	}
+    function cal_gst(){
+        gst_amount = ($('#amount').val() / 1.1)*0.1;
+        gst_amount = gst_amount.toFixed(2);
+        return gst_amount;
+    }
+    function gst_clicked(){
+        if ($('#gst_check').is(":checked")){
+            $('#gst').val(0.00);
+            $('#gst').attr('readonly','readonly');
+        }
+        else{
+            var gst = cal_gst();
+            $('#gst').val(gst);
+            $('#gst').removeAttr('readonly');
+        }
+    }
 </script>

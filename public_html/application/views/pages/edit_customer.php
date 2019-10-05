@@ -1,6 +1,6 @@
 <style type="text/css">
 body {
-	background-color: #000000;
+    background-color: #000000;
 }
 .dataTables_filter{
     float: right;
@@ -12,13 +12,12 @@ body {
 
             <h2 class="page-title"><?php echo $customer->business_name; ?> - <small>View Customer</small></h2>
 
-	<div class="row">
+    <div class="row">
             <div class="col-md-7">
                 <section class="widget">
-                  <?php if ($this->session->flashdata('notice'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-						} ?></span>
+                    <?php if ($this->session->flashdata('notice')) {
+                            echo('<span class="label label-important">' . $this->session->flashdata('notice'));
+                    } ?></span>
                     <header>
                         <h4><i class="fa fa-user"></i> Account Profile <small></small></h4>
                     </header>
@@ -50,7 +49,7 @@ body {
                             <fieldset class="mt-sm">
                                 <legend>Edit Customer <small></small></legend>
                             </fieldset>
-							 <fieldset>
+                             <fieldset>
                                 <legend class="section">Company Info</legend>
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="company-name">Company Name<span class="required">*</span></label>
@@ -77,19 +76,19 @@ body {
                                     <div class="col-sm-8"><input id="email" class="form-control" type="email" value="<?php echo $customer->email ?>" name="email" value="" data-parsley-maxlength="45" data-parsley-id="45"></div>
                                 </div>
                             </fieldset>
-							<fieldset>
+                            <fieldset>
                                 <div class="form-group">
                                     <label for="checkbox-isactive" class="control-label col-sm-4">Active </label>
                                     <div class="checkbox-inline checkbox-ios">
-                                              	<input type="checkbox" name="isactive" id="isactive" data-switchery="true" style="display: none;"
-                                               <?php if ($customer->active) : ?>
+                                                <input type="checkbox" name="isactive" id="isactive" data-switchery="true" style="display: none;"
+                                                <?php if ($customer->active) : ?>
                                                  checked="checked">
                                                 <?php else : ?>
                                                 >
                                                 <?php endif; ?>
                                         </div>
                                 </div>
-							</fieldset>
+                            </fieldset>
                             <fieldset>
                                 <legend class="section">Company Representative</legend>
                                 <div class="form-group">
@@ -114,7 +113,7 @@ body {
                                 </div>
                             </fieldset>
 
-							<input type="hidden" name="customer-id" id="customer-id" value="<?php echo $customer->id ?>" />
+                            <input type="hidden" name="customer-id" id="customer-id" value="<?php echo $customer->id ?>" />
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-4">
@@ -127,10 +126,9 @@ body {
                 </section>
 
                  <section class="widget">
-                    <?php if ($this->session->flashdata('notice_notes_table'))
-                        {
+                    <?php if ($this->session->flashdata('notice_notes_table')) {
                             echo('<span class="label label-important">' . $this->session->flashdata('notice_table'));
-                        } ?></span>
+                    } ?></span>
                     <header>
                         <h4><i class="fa fa-user"></i> Customer Notes</h4><small>All Customer Notes</small>
                         <div class="actions">
@@ -149,25 +147,21 @@ body {
                             </thead>
                             <tbody>
 
-                            <?php if(!$notes) {
+                            <?php if (!$notes) {
                                 echo('<span class="label label-important">No customers are currently registered.</span><br /><br />');
-                            }
-                                else{
-
-                                foreach ($notes as $note)
-                                {
-                                echo ('<tr role="row" class="odd">
+                            } else {
+                                foreach ($notes as $note) {
+                                    echo ('<tr role="row" class="odd">
                                 <td class="sorting_1">');
-                                echo $note->Date;
-                                echo ('</td>
+                                    echo $note->Date;
+                                    echo ('</td>
                                 <td><span class="fw-semi-bold">');
-                                echo '<a style="cursor:pointer" data-fancybox="iframe" data-src="' . site_url() . '/pages/view/view_invoice/' . $note->inv_id . '" data-type="iframe">' . $note->inv_id . '</a>';
-                                echo ('</span></td>
+                                    echo '<a style="cursor:pointer" data-fancybox="iframe" data-src="' . site_url() . '/pages/view/view_invoice/' . $note->inv_id . '" data-type="iframe">' . $note->inv_id . '</a>';
+                                    echo ('</span></td>
                                 <td class="">
                                 <span class="fw-semi-bold">');
-                                echo $note->note;
-                                echo ('</span></td>');
-
+                                    echo $note->note;
+                                    echo ('</span></td>');
                                 } //endloop
                             } //end foreach
                             ?>
@@ -180,10 +174,9 @@ body {
                 </section>
 
                   <section class="widget">
-                    <?php if ($this->session->flashdata('notice_invoice_table'))
-                        {
+                    <?php if ($this->session->flashdata('notice_invoice_table')) {
                             echo('<span class="label label-important">' . $this->session->flashdata('notice_invoice_table'));
-                        } ?></span>
+                    } ?></span>
                     <header>
                         <h4><i class="fa fa-user"></i> Invoices</h4><small>All Customer Invoices</small>
                         <div class="actions">
@@ -205,15 +198,14 @@ body {
                             </thead>
                             <tbody>
 
-                            <?php if(!$invoices) : ?>
+                            <?php if (!$invoices) : ?>
                                 <span class="label label-important">No invoices currently registered.</span><br /><br />
 
                             <?php else : ?>
-
                                 <?php foreach ($invoices as $invoice) : ?>
                                 <tr role="row" class="odd">
                                 <td class="sorting_1">
-                                <?php echo $invoice->date;  ?>
+                                    <?php echo $invoice->date;  ?>
                                 </td>
                                 <td><span class="fw-semi-bold">
                                 <a href="<?php echo site_url() . '/pages/view/view_invoice/' . $invoice->purchase_id; ?>"><?php echo $invoice->purchase_id; ?></a>
@@ -221,24 +213,27 @@ body {
                                 </span></td>
                                 <td class="hidden-xs">
                                 <span class="fw-semi-bold">
-                                <?php switch ($invoice->status){
-                                    case (0): echo 'Quote';
-                                    break;
-                                    case (1): echo 'Unpaid';
-                                    break;
-                                    case (2): echo 'Paid';
-                                    break;
-                                }
-                                 ?>
+                                    <?php switch ($invoice->status) {
+                                        case (0):
+                                              echo 'Quote';
+                                                  break;
+                                        case (1):
+                                              echo 'Unpaid';
+                                                  break;
+                                        case (2):
+                                              echo 'Paid';
+                                                  break;
+                                    }
+                                    ?>
                                 </span></td>
                                 <td><span class="fw-semi-bold">
-                                <?php echo $invoice->qty; ?>
+                                    <?php echo $invoice->qty; ?>
                                 </span></td>
                                 <td><span class="fw-semi-bold">
-                                <?php echo $invoice->Total; ?>
+                                    <?php echo $invoice->Total; ?>
                                 </span></td>
                                 <td><span class="fw-semi-bold">
-                                <?php echo $invoice->admin_id; ?>
+                                    <?php echo $invoice->admin_id; ?>
                                 </span></td>
                                 <?php endforeach ?>
 
@@ -254,10 +249,9 @@ body {
             </div>
             <div class="col-md-5">
                 <section class="widget">
-                    <?php if ($this->session->flashdata('notice_freq'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice_freq'));
-						} ?></span>
+                    <?php if ($this->session->flashdata('notice_freq')) {
+                            echo('<span class="label label-important">' . $this->session->flashdata('notice_freq'));
+                    } ?></span>
                     <header>
                         <h4><i class="fa fa-clock-o"></i> Company Visits</h4>
                         <div class="actions">
@@ -268,15 +262,15 @@ body {
                             <fieldset>
                                 <div class="form-group">
                                     <label for="visit_frequency" class="control-label col-sm-4">Visit Frequency </label>
-                                    	<div class="col-sm-6"><select class="select2 form-control" data-placeholder="Set Frequency" tabindex="-1" id="visit_frequency" name="visit_frequency" required data-parsley-trigger="change" data-parsley-id="70" <?php // if ($this->session->userdata('user_type') != 'admin') echo 'disabled' ?>>
-											<option value></option>
-											<option value="weekly">Weekly</option>
-											<option value="fortnightly">Fortnightly</option>
-											<option value="monthly">Monthly</option>
-											<option value="3-monthly">Quarterly</option>
-											<option value="6-monthly">Bi-Annually</option>
-											<option value="12-monthly">Annually</option>
-											</select></div>
+                                        <div class="col-sm-6"><select class="select2 form-control" data-placeholder="Set Frequency" tabindex="-1" id="visit_frequency" name="visit_frequency" required data-parsley-trigger="change" data-parsley-id="70" <?php // if ($this->session->userdata('user_type') != 'admin') echo 'disabled' ?>>
+                                            <option value></option>
+                                            <option value="weekly">Weekly</option>
+                                            <option value="fortnightly">Fortnightly</option>
+                                            <option value="monthly">Monthly</option>
+                                            <option value="3-monthly">Quarterly</option>
+                                            <option value="6-monthly">Bi-Annually</option>
+                                            <option value="12-monthly">Annually</option>
+                                            </select></div>
                                 </div>
                                 <div style="height:30px"></div>
                                 <div class="form-group">
@@ -298,10 +292,9 @@ body {
                 </section>
 
                  <section class="widget">
-                    <?php if ($this->session->flashdata('notice_type'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice_type'));
-						} ?></span>
+                    <?php if ($this->session->flashdata('notice_type')) {
+                            echo('<span class="label label-important">' . $this->session->flashdata('notice_type'));
+                    } ?></span>
                     <header>
                         <h4><i class="fa fa-user"></i> Customer Type</h4><small>Changes customer pricing</small>
                         <div class="actions">
@@ -312,12 +305,14 @@ body {
                             <fieldset>
                                 <div class="form-group">
                                     <label for="cus_type" class="control-label col-sm-4">Customer Type</label>
-                                    	<div class="col-sm-6"><select class="select2 form-control" data-placeholder="Set Type" tabindex="-1" id="cus_type" name="cus_type" required data-parsley-trigger="change" data-parsley-id="80" <?php if ($this->session->userdata('user_type') != 'admin') echo 'disabled' ?>>
-											<option value></option>
-											<option value="1">Best Customers</option>
-											<option value="2">Average Customers</option>
-											<option value="3">Rare Customers</option>
-											</select></div>
+                                        <div class="col-sm-6"><select class="select2 form-control" data-placeholder="Set Type" tabindex="-1" id="cus_type" name="cus_type" required data-parsley-trigger="change" data-parsley-id="80" <?php if ($this->session->userdata('user_type') != 'admin') {
+                                            echo 'disabled';
+                                                                                                                                                                                                                                       } ?>>
+                                            <option value></option>
+                                            <option value="1">Best Customers</option>
+                                            <option value="2">Average Customers</option>
+                                            <option value="3">Rare Customers</option>
+                                            </select></div>
                                 </div>
                             </fieldset>
                             <input type="hidden" name="customer-id" id="customer-id" value="<?php echo $customer->id ?>" />
@@ -333,10 +328,9 @@ body {
                 </section>
 
                  <section class="widget">
-                    <?php if ($this->session->flashdata('notice_assign'))
-						{
-							echo('<span class="label label-important">' . $this->session->flashdata('notice_assign'));
-						} ?></span>
+                    <?php if ($this->session->flashdata('notice_assign')) {
+                            echo('<span class="label label-important">' . $this->session->flashdata('notice_assign'));
+                    } ?></span>
                     <header>
                         <h4><i class="fa fa-user"></i> Assign Customer</h4><small>Assign Customer to Staff Member</small>
                         <div class="actions">
@@ -347,12 +341,14 @@ body {
                             <fieldset>
                                 <div class="form-group">
                                     <label for="cus_type" class="control-label col-sm-4">Assigned To: </label>
-                                    	<div class="col-sm-6"><select class="select2 form-control" data-placeholder="Set Type" tabindex="-1" id="ass_to" name="ass_to" required data-parsley-trigger="change" data-parsley-id="90" <?php if ($this->session->userdata('user_type') != 'admin') echo 'disabled' ?>>
-											<option value></option>
-											<?php foreach ($users as $user) : ?>
-											<option value="<?php echo $user->id; ?>"><?php echo $user->username; ?></option>
-											<?php endforeach; ?>
-											</select></div>
+                                        <div class="col-sm-6"><select class="select2 form-control" data-placeholder="Set Type" tabindex="-1" id="ass_to" name="ass_to" required data-parsley-trigger="change" data-parsley-id="90" <?php if ($this->session->userdata('user_type') != 'admin') {
+                                            echo 'disabled';
+                                                                                                                                                                                                                                   } ?>>
+                                            <option value></option>
+                                            <?php foreach ($users as $user) : ?>
+                                            <option value="<?php echo $user->id; ?>"><?php echo $user->username; ?></option>
+                                            <?php endforeach; ?>
+                                            </select></div>
                                 </div>
                             </fieldset>
                             <input type="hidden" name="customer-id" id="customer-id" value="<?php echo $customer->id ?>" />
@@ -368,10 +364,9 @@ body {
                 </section>
 
                      <section class="widget">
-                    <?php if ($this->session->flashdata('notice_notes'))
-                        {
+                    <?php if ($this->session->flashdata('notice_notes')) {
                             echo('<span class="label label-important">' . $this->session->flashdata('notice_notes'));
-                        } ?></span>
+                    } ?></span>
                     <header>
                         <h4><i class="fa fa-user"></i> Customer Notes</h4><small>View Customer Notes</small>
                         <div class="actions">
@@ -404,18 +399,18 @@ body {
         </div>
 
         <script>
-			var elem = document.querySelector('#isactive');
-			var init = new Switchery(elem);
-			$("#visit_frequency").val("<?php echo $customer->visit_frequency; ?>");
-			$("#cus_type").val("<?php echo $customer->customer_type; ?>");
-			$("#ass_to").val("<?php echo $customer->assigned_to; ?>");
+            var elem = document.querySelector('#isactive');
+            var init = new Switchery(elem);
+            $("#visit_frequency").val("<?php echo $customer->visit_frequency; ?>");
+            $("#cus_type").val("<?php echo $customer->customer_type; ?>");
+            $("#ass_to").val("<?php echo $customer->assigned_to; ?>");
             $(window).load(function(){
                 $('#notes-table').DataTable({"order": [[ 0, "desc" ]]});
-		            $('#inv-table').DataTable({"order": [[ 0, "desc" ]]});
+                    $('#inv-table').DataTable({"order": [[ 0, "desc" ]]});
                 $('#next-visit').datetimepicker({format: 'DD/MM/YYYY'});
             });
-		</script>
-       	</div>
+        </script>
+        </div>
 </div>
 
 

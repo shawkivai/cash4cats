@@ -15,7 +15,7 @@
                       https://code.google.com/p/chromium/issues/detail?id=332189
         */
 </script>
-				<!-- common libraries. required for every page-->
+                <!-- common libraries. required for every page-->
 <script src="<?php echo (base_url(). 'theme/lib/jquery/dist/jquery.min.js'); ?>"></script>
 <script src="<?php echo (base_url(). 'theme/lib/jquery-pjax/jquery.pjax.js'); ?>"></script>
 <script src="<?php echo (base_url(). 'theme/lib/bootstrap-sass/assets/javascripts/bootstrap.min.js'); ?>"></script>
@@ -58,15 +58,15 @@
 
 
 
-			<!-- page application js -->
+            <!-- page application js -->
 <script src="<?php echo (base_url() . 'theme/js/tables-dynamic.js'); ?>"></script>
 <style>
-	@media screen and (max-width:767px){
-	#side-nav{
-		background-color:black;
-	}
+    @media screen and (max-width:767px){
+    #side-nav{
+        background-color:black;
+    }
 
-	}
+    }
 </style>
 </head>
 <body class="<?php echo ( isset($page) ? $page : '' ); ?>">

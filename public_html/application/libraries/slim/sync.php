@@ -7,21 +7,15 @@ $images = Slim::getImages();
 
 // No image found under the supplied input name
 if ($images == false) {
-
     // inject your own auto crop or fallback script here
     echo '<p>Slim was not used to upload these images.</p>';
-
-}
-else {
-
+} else {
     // Could be multiple slim croppers
     foreach ($images as $image) {
-
         $files = array();
 
         // save output data if set
         if (isset($image['output']['data'])) {
-
             // Save the file
             $name = $image['output']['name'];
 
@@ -39,8 +33,7 @@ else {
         }
 
         // save input data if set
-        if (isset ($image['input']['data'])) {
-
+        if (isset($image['input']['data'])) {
             // Save the file
             $name = $image['input']['name'];
 
@@ -57,10 +50,14 @@ else {
             array_push($files, $input);
         }
 
-        $filenames = join(', ', array_map(function($file){ return ellipsis($file['name'], 100); }, $files));
-        $images = array_map(function($file) { return '<img src="' . $file['path'] . '" alt=""/>'; }, $files);
+        $filenames = join(', ', array_map(function ($file) {
+            return ellipsis($file['name'], 100);
+        }, $files));
+        $images = array_map(function ($file) {
+            return '<img src="' . $file['path'] . '" alt=""/>';
+        }, $files);
 
-    echo '
+        echo '
     <h1>You uploaded "' . $filenames . '"</h1>
     
     ' . join('<br>', $images) . '
@@ -82,7 +79,7 @@ else {
                 </tr>
                 <tr>
                     <th>Name</th>
-                    <td>' . ellipsis($image['input']['name'],100) . '</td>
+                    <td>' . ellipsis($image['input']['name'], 100) . '</td>
                 </tr>
                 <tr>
                     <th>Type</th>
@@ -202,10 +199,10 @@ else {
         </tbody>
     </table>
     </div>';
-
     }
 }
 
-function ellipsis($str, $len = 50) {
+function ellipsis($str, $len = 50)
+{
     return strlen($str) > $len ? substr($str, 0, $len) . '...' : $str;
 }

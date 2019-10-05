@@ -90,10 +90,9 @@
 <h2 class="page-title"><?= $title ?> <small>Cash4Cats System</small></h2>
 <div class="col-md-12 row">
                 <section class="widget">
-                 <?php if ($this->session->flashdata('notice'))
-                        {
+                 <?php if ($this->session->flashdata('notice')) {
                             echo('<span class="label label-important">' . $this->session->flashdata('notice'));
-                        } ?></span>
+                 } ?></span>
                     <header>
                         <h4>
                             <i class="fa fa-calendar"></i>
@@ -115,35 +114,32 @@
                         </thead>
                         <tbody>
 
-                        <?php if($customers == false) {
+                        <?php if ($customers == false) {
                             echo('<span class="label label-important">Make sure you have been assigned customers</span><br /><br />');
-                        }
-                            else{
+                        } else {
                             $counter = 1;
-                            foreach ($customers as $customer)
-                            {
-                            echo ('<tr role="row" class="odd">
+                            foreach ($customers as $customer) {
+                                echo ('<tr role="row" class="odd">
                             <td class="sorting_1">');
-                            echo $customer->business_name;
-                            echo ('</td>
+                                echo $customer->business_name;
+                                echo ('</td>
                             <td class="sorting_1">');
-                            echo $customer->visit_frequency;
-                            echo ('</td>
+                                echo $customer->visit_frequency;
+                                echo ('</td>
                             <td><span class="fw-semi-bold">');
-                            echo '<form action="' . site_url() . '/pages/update_date" method="post" ><input type="text" name="lastvisit" id="lastvisit" class="form-control input-lg" value="';
-                            echo $customer->next_visit;
-                            echo '" />';
-                            echo ('</span></td>
+                                echo '<form action="' . site_url() . '/pages/update_date" method="post" ><input type="text" name="lastvisit" id="lastvisit" class="form-control input-lg" value="';
+                                echo $customer->next_visit;
+                                echo '" />';
+                                echo ('</span></td>
                             <td><span class="fw-semi-bold">');
-                            echo '<input type="hidden" name="count" value="' . $counter . '" />';
-                            echo '<input type="hidden" name="customer_id" value="' . $customer->id . '" />';
-                            echo '<input type="submit" value="Update Last Visit" class="btn btn-success inv-button" style="background-color:#13a148"></form></a>';
-                            echo ('</span></td></tr>');
+                                echo '<input type="hidden" name="count" value="' . $counter . '" />';
+                                echo '<input type="hidden" name="customer_id" value="' . $customer->id . '" />';
+                                echo '<input type="submit" value="Update Last Visit" class="btn btn-success inv-button" style="background-color:#13a148"></form></a>';
+                                echo ('</span></td></tr>');
 
-                            $counter++;
-                                } // end loop
-
-                            } //end if
+                                $counter++;
+                            } // end loop
+                        } //end if
                         ?>
 
                        </tbody>
@@ -157,10 +153,9 @@
 <?php if ($this->session->userdata('user_type') == 'admin') : ?>
             <div class="col-md-12 row">
                             <section class="widget">
-                             <?php if ($this->session->flashdata('expenses'))
-                                    {
+                             <?php if ($this->session->flashdata('expenses')) {
                                         echo('<span class="label label-important">' . $this->session->flashdata('expenses'));
-                                    } ?></span>
+                             } ?></span>
                                 <header>
                                     <h4>
                                         <i class="fa fa-usd"></i>
@@ -183,37 +178,32 @@
                                     </thead>
                                     <tbody>
 
-                                    <?php if($expenses == false) {
+                                    <?php if ($expenses == false) {
                                         echo('<span class="label label-important">Make sure you have entered contacts</span><br /><br />');
-                                    }
-                                        else{
+                                    } else {
                                         $counter = 1;
-                                        foreach ($expenses as $expense)
-                                        {
-                                        echo ('<tr role="row" class="odd">
+                                        foreach ($expenses as $expense) {
+                                            echo ('<tr role="row" class="odd">
                                         <td class="sorting_1">');
-                                        echo $expense->name;
-                                        echo ('</td>
+                                            echo $expense->name;
+                                            echo ('</td>
                                         <td class="sorting_1">');
-                                        echo $expense->phone;
-                                        echo ('</td>
+                                            echo $expense->phone;
+                                            echo ('</td>
                                         <td><span class="fw-semi-bold">');
-                                        echo ('<form action="');
-                                        echo site_url() . '/pages/update_expense_date" method="post">';
-                                        echo $expense->payment_freq;
-                                        echo ('</span></td><td>');
-                                        echo $expense->payment_next;
-                                        echo ('</td><td><span class="fw-semi-bold">');
-                                        echo '<input type="hidden" name="expense_id" value="' . $expense->id . '" />';
-                                        echo '<input type="hidden" name="frequency" value="' . $expense->payment_freq . '" />';
-                                        echo '<input type="hidden" name="last_payment" value="' . $expense->payment_next . '" />';
-                                        echo '<input type="submit" value="Update Last Payment" class="btn btn-success inv-button" style="background-color:#13a148"></form></a>';
-                                        echo ('</span></td></tr>');
-
-
-                                            } // end loop
-
-                                        } //end if
+                                            echo ('<form action="');
+                                            echo site_url() . '/pages/update_expense_date" method="post">';
+                                            echo $expense->payment_freq;
+                                            echo ('</span></td><td>');
+                                            echo $expense->payment_next;
+                                            echo ('</td><td><span class="fw-semi-bold">');
+                                            echo '<input type="hidden" name="expense_id" value="' . $expense->id . '" />';
+                                            echo '<input type="hidden" name="frequency" value="' . $expense->payment_freq . '" />';
+                                            echo '<input type="hidden" name="last_payment" value="' . $expense->payment_next . '" />';
+                                            echo '<input type="submit" value="Update Last Payment" class="btn btn-success inv-button" style="background-color:#13a148"></form></a>';
+                                            echo ('</span></td></tr>');
+                                        } // end loop
+                                    } //end if
                                     ?>
 
                                    </tbody>
@@ -225,7 +215,7 @@
                         </div>
 <?php endif; ?>
 
-	</div>
+    </div>
 </div>
 
 <script type="text/javascript">
