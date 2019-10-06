@@ -64,9 +64,16 @@ body {
     <!-- page specific scripts -->
         <!-- page libs -->
 <script>
-$(window).load(function() {
-       $('#from').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
-       $('#to').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
-
-});
+    $(window).load(function() {
+       $('#from').datetimepicker(
+           {
+               format: 'YYYY-MM-DD',
+               maxDate: new Date,
+            });
+       $('#to').datetimepicker(
+           {
+               format: 'YYYY-MM-DD',
+               maxDate: new Date,
+            });
+    });
 </script>
