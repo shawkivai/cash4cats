@@ -1,11 +1,10 @@
 <?php 
 // invoice parameters
-$purchase_id = isset($invoice->purchase_id) && !empty($invoice->purchase_id) ? $invoice->purchase_id : 0;
+$current_url = explode('/', current_url());
+$id_from_url = end($current_url);
+$purchase_id = isset($invoice->purchase_id) && !empty($invoice->purchase_id) ? $invoice->purchase_id : $id_from_url;
 $date = isset($invoice->date) && !empty($invoice->date) ? $invoice->date : '';
 $invoiceTotal = isset($invoice->Total) && !empty($invoice->Total) ? $invoice->Total : 0;
-
-// var_dump($invoice);
-// die('ok');
 
 // Customers parameters
 $business_name = isset($customer->business_name) && !empty($customer->business_name) ? $customer->business_name: '';
@@ -131,6 +130,8 @@ body {
                     </thead>
                     <tbody>
                     <?php foreach ($final_result as $amount => $quantity) : ?>
+                        
+
                         <?php $amount = floatval($amount);
                         $quantity = intval($quantity); ?>
                     <tr>
@@ -164,16 +165,17 @@ body {
                     </div>
                 </div>
                 
-                <?php if ($images != false) : ?>
-                        <div id="img_container" style="margin:20px;">
-                        <h3>Purchase Images:</h3>
-                        <?php foreach ($images as $image) : ?>
-                                <div class="thumbnail col-sm-3">                            
-                                    <img src="<?php echo base_url() . 'inv_images/' . $purchase_id . '/' . $image->image;?>">
-                                </div>
-                            
-                        <?php endforeach; ?>
-                        </div>
+                <?php if ($images) :?>
+
+                    <div id="img_container" style="margin:20px;">
+                    <h3>Purchase Images:</h3>
+                    <?php foreach ($images as $image) : ?>
+                            <div class="thumbnail col-sm-3">                            
+                                <img src="<?php echo base_url() . 'inv_images/' . $purchase_id . '/' . $image->image;?>">
+                            </div>
+                        
+                    <?php endforeach; ?>
+                    </div>
                 <?php endif; ?>
                                     
                                     
