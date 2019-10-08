@@ -28,7 +28,7 @@ body {
                                     <small>From date is NOT INCLUSIVE, select 1 day before the required date</small>
                                     </label>
                                   <div class="col-sm-6 input-group">
-                                  <input type="text" name="from" id="from" class="form-control form_datetime"  />
+                                  <input type="text" name="from" id="from" autocomplete="off" class="form-control form_datetime"  />
                                   </div>
                                 </div>
 
@@ -36,7 +36,7 @@ body {
                                     <label class="control-label col-sm-4 input-lg" for="amount">To <span class="required"></span><br />
                                     <small>To date IS INCLUSIVE</small></label>
                                   <div class="col-sm-6 input-group">
-                                  <input type="text" name="to" id="to" class="form-control form_datetime" />
+                                  <input type="text" name="to" id="to" autocomplete="off" class="form-control form_datetime" />
                                   </div>
                                 </div>
 
@@ -64,9 +64,16 @@ body {
     <!-- page specific scripts -->
         <!-- page libs -->
 <script>
-$(window).load(function() {
-       $('#from').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
-       $('#to').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
-
-});
+    $(window).load(function() {
+       $('#from').datetimepicker(
+           {
+               format: 'YYYY-MM-DD',
+               maxDate: new Date,
+            });
+       $('#to').datetimepicker(
+           {
+               format: 'YYYY-MM-DD',
+               maxDate: new Date,
+            });
+    });
 </script>

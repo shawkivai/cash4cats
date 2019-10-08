@@ -335,7 +335,8 @@ class Pages extends CI_Controller
 
                 // Customer Data
                 $this->load->model('customers_model');
-                $data['customer'] = $this->customers_model->recall_customer($data['invoice']->customer_id);
+                $invoice = isset($data['invoice']) && !empty($data['invoice']) ? $data['invoice']->customer_id : null;
+                $data['customer'] = $this->customers_model->recall_customer($invoice);
                 // Get all images
                 $data['images'] = $this->invoice_model->get_invoice_images($inv_id);
             }
