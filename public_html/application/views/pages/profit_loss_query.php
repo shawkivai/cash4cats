@@ -194,7 +194,10 @@ position: relative;
                                     <tr><th></th><th>Revenue</th><th>Rollover</th><th>Total Sell</th><th>Expenses</th><th>Total Buy</th><th>P/L inc GST</th><th>P/L ex GST</th></tr>
                                 </thead>
                                     <?php
-
+                                    $total_rollover_gst = isset($total_rollover_gst) && !empty($total_rollover_gst) ? $total_rollover_gst : 0;
+                                    $total_revenue = isset($total_revenue) && !empty($total_revenue) ? $total_revenue : 0;
+                                    $total_buy = isset($total_buy) && !empty($total_buy) ? $total_buy : 0;
+                                    $total_rollover = isset($total_rollover) && !empty($total_rollover) ? $total_rollover : 0;
                                     $gst_income = round($total_revenue/11, 2);
                                     $revenue_gst = $gst_income + $total_rollover_gst;
                                     $buy_gst = round($total_buy/11, 2);
