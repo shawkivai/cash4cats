@@ -99,15 +99,16 @@ class Pages extends CI_Controller
             } elseif ($page == 'profit_loss_query') {
                 $this->load->model('reports_model');
                 $from = new DateTime($this->input->get('from'));
-                $from = $from->format('Y-m-d H:i:s');
+                $from = $from->format('Y-m-d');
 
                 $to = $this->input->get('to');
                 $new_to_date = new DateTime($to);
                 $new_to_date->modify('+1 day');
-                $new_to_date = $new_to_date->format('Y-m-d H:i:s');
-
+                
+                $new_to_date = $new_to_date->format('Y-m-d');
                 
                 $data['expenses'] = $this->reports_model->get_expenses_from($from, $new_to_date);
+                
 
                 //$data['expense'] = $this->reports_model->get_total_expense($from, $new_to_date);
                 //$data['expense_gst'] = $this->reports_model->get_expense_gst($from, $new_to_date);

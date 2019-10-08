@@ -27,7 +27,7 @@ body {
                                     <label class="control-label col-sm-4 input-lg" for="from">From <span class="required"></span><br />
                                     <small>From date is <strong>NOT INCLUSIVE</strong>, select 1 day before the required date</small></label>
                                   <div class="col-sm-6 input-group">
-                                  <input type="text" name="from" id="from" value="<?php echo $last_date; ?>" class="form-control form_datetime" <?php if ($shipments) {
+                                  <input type="text" name="from" id="from" autocomplete="off" value="<?php echo $last_date; ?>" class="form-control form_datetime" <?php if ($shipments) {
                                         echo 'readonly=readonly';
                                                                                   } ?>  />
                                   </div>
@@ -37,7 +37,7 @@ body {
                                     <label class="control-label col-sm-4 input-lg" for="amount">To <span class="required"></span><br />
                                     <small>To date <strong>IS INCLUSIVE</strong></small></label>
                                   <div class="col-sm-6 input-group">
-                                  <input type="text" name="to" id="to" class="form-control form_datetime" />
+                                  <input type="text" name="to" id="to" autocomplete="off" class="form-control form_datetime" />
                                   </div>
                                 </div>
 
@@ -148,8 +148,8 @@ $(window).load(function() {
        $('#datatable-table').DataTable({
     "order": [[ 0, "desc" ]]
     });
-       $('#from').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
-       $('#to').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
+       $('#from').datetimepicker({format: 'YYYY-MM-DD'});
+       $('#to').datetimepicker({format: 'YYYY-MM-DD'});
 
 });
 </script>
