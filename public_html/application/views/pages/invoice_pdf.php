@@ -1,28 +1,5 @@
 <?php
 
-//============================================================+
-// File name   : invoice_pdf
-// Begin       : 2008-03-04
-// Last Update : 2013-05-14
-//
-//
-// Author: Nicola Asuni
-//
-// (c) Copyright:
-//               Nicola Asuni
-//               Tecnick.com LTD
-//               www.tecnick.com
-//               info@tecnick.com
-//============================================================+
-
-/**
- *
- * @package com.tecnick.tcpdf
- * @abstract TCPDF - Example: WriteHTML and RTL support
- * @author Nicola Asuni
- * @since 2008-03-04
- */
-
 // Include the main TCPDF library (search for installation path).
 //require_once('../tcpdf_include.php');
 
@@ -74,6 +51,17 @@ $pdf->AddPage();
 // writeHTML($html, $ln=true, $fill=false, $reseth=false, $cell=false, $align='')
 // writeHTMLCell($w, $h, $x, $y, $html='', $border=0, $ln=0, $fill=0, $reseth=true, $align='', $autopadding=true)
 
+// Checking All Variables if they consist data
+$current_url = explode('/', current_url());
+$id_from_url = end($current_url);
+$purchase_id = isset($invoice->purchase_id) && !empty($invoice->purchase_id) ? $invoice->purchase_id : $id_from_url;
+$invoice_total = $invoice ? $invoice->Total : 0;
+$invoice_first_name = $invoice ? $invoice->first_name : '';
+$invoice_email = $invoice ? $invoice->email : '';
+$invoice_phone = $invoice ? $invoice->phone : null;
+$invoice_mobile = $invoice ? $invoice->mobile : null;
+$invoice_date = $invoice ? $invoice->date : null;
+
 // create some HTML content
 $final_result = array();
 foreach ($rows as $row) {
@@ -87,18 +75,17 @@ foreach ($rows as $row) {
         $final_result[] = $price_to_add;
     }
 }
-            
-            $final_result = array_count_values($final_result);
-            $gst = round(($invoice->Total/1.1)*0.1, 2);
+    $final_result = array_count_values($final_result);
+    $gst = round(($invoice_total/1.1)*0.1, 2);
 
 ob_start(); //----------------------------------------------------------------
 ?>
  <h2 class="">Cash 4 Cats Pty Ltd.</h2> <small>PURCHASE ORDER</small> <br />
-                            <address><abbr title="Salesperson">Salesperson:</abbr> <?php echo $invoice->first_name; ?><br><abbr title="Work email">E-mail:</abbr> <a href="mailto:<?php echo $invoice->email; ?>"><?php echo $invoice->email; ?></a><br><abbr title="Work Fax">Phone:</abbr> <?php echo $invoice->phone ?><br><abbr title="Work Fax">Mobile:</abbr> <?php echo $invoice->mobile; ?></address>              
+                            <address><abbr title="Salesperson">Salesperson:</abbr> <?php echo $invoice_first_name; ?><br><abbr title="Work email">E-mail:</abbr> <a href="mailto:<?php echo $invoice_email; ?>"><?php echo $invoice->email; ?></a><br><abbr title="Work Fax">Phone:</abbr> <?php echo $invoice_phone ?><br><abbr title="Work Fax">Mobile:</abbr> <?php echo $invoice_mobile; ?></address>              
       <section class="widget">
             <div class="body no-margin" style="margin-top: -50px">
-                        <div class="invoice-number text-align-right" style="font-size: 12px;">Invoice #<?php echo $invoice->purchase_id; ?> <br />
-                            <?php $phpdate = strtotime($invoice->date);
+                        <div class="invoice-number text-align-right" style="font-size: 12px;">Invoice #<?php echo $purchase_id; ?> <br />
+                            <?php $phpdate = strtotime($invoice_date);
                             $phpdate = date('l d-m-Y H:i:s', $phpdate);
                             echo $phpdate; ?>
                         </div>
@@ -138,7 +125,7 @@ ob_start(); //----------------------------------------------------------------
                     <h3>Purchase Images:</h3>
                     <?php foreach ($images as $image) : ?>
                         <div class="thumbnail col-sm-3">                            
-                            <img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
+                            <img src="<?php echo base_url() . 'inv_images/' . $purchase_id . '/' . $image->image; ?>">
                         </div>
                     <?php endforeach; ?>
                     </div>
@@ -151,12 +138,12 @@ ob_start(); //----------------------------------------------------------------
 $html = ob_get_clean();
 
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Image('inv_images/' . $invoice->purchase_id . '/' . $image->image, '', '', 100, 150, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
+$pdf->Image('inv_images/' . $purchase_id . '/' . $image->image, '', '', 150, 100, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
 
 // reset pointer to the last page
 $pdf->lastPage();
 
-$file_name = $invoice->purchase_id;
+$file_name = $purchase_id;
 
 //Close and output PDF document
 $pdf->Output($file_name, 'I');

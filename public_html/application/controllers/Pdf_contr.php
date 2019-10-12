@@ -92,16 +92,16 @@ class Pdf_contr extends CI_Controller
             $row->image = $this->invoice_model->get_product_image($row->PRODUCT);
         }
                 
-                $data['rows'] = $rows;
-                
-                // Customer Data
-                $this->load->model('customers_model');
-                $data['customer'] = $this->customers_model->recall_customer($data['invoice']->customer_id);
-                // Get all images
-                $data['images'] = $this->invoice_model->get_invoice_images($inv_id);
-                var_dump($data['images']);
-                
-                $this->load->view('pages/invoice_pdf', $data);
+        $data['rows'] = $rows;
+        
+        // Customer Data
+        $this->load->model('customers_model');
+        $customer_invoice = isset($data['invoice']) && !empty($data['invoice']) ? $data['invoice']->customer_id : null;
+        $data['customer'] =$this->customers_model->recall_customer($customer_invoice);
+        // Get all images
+        $data['images'] = $this->invoice_model->get_invoice_images($inv_id);
+        
+        $this->load->view('pages/invoice_pdf', $data);
     }
 
     public function generate_profit_loss_pdf()
