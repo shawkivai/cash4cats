@@ -99,6 +99,7 @@ class Pdf_contr extends CI_Controller
                 $data['customer'] = $this->customers_model->recall_customer($data['invoice']->customer_id);
                 // Get all images
                 $data['images'] = $this->invoice_model->get_invoice_images($inv_id);
+                var_dump($data['images']);
                 
                 $this->load->view('pages/invoice_pdf', $data);
     }

@@ -134,15 +134,14 @@ ob_start(); //----------------------------------------------------------------
                 </div>
                 
                 <?php if ($images != false) : ?>
-                                    <div id="img_container" style="margin:20px;">
-                                    <h3>Purchase Images:</h3>
-                                    <?php foreach ($images as $image) : ?>
-                                            <div class="thumbnail col-sm-3">                            
-                                                <img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
-                                            </div>
-                                        
-                                    <?php endforeach; ?>
-                                    </div>
+                    <div id="img_container" style="margin:20px;">
+                    <h3>Purchase Images:</h3>
+                    <?php foreach ($images as $image) : ?>
+                        <div class="thumbnail col-sm-3">                            
+                            <img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
+                        </div>
+                    <?php endforeach; ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </section>      
@@ -152,6 +151,7 @@ ob_start(); //----------------------------------------------------------------
 $html = ob_get_clean();
 
 $pdf->writeHTML($html, true, false, true, false, '');
+$pdf->Image('inv_images/' . $invoice->purchase_id . '/' . $image->image, '', '', 100, 150, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
 
 // reset pointer to the last page
 $pdf->lastPage();
