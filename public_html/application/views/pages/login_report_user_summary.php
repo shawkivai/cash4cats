@@ -68,8 +68,15 @@ body {
 <script>
 $(window).load(function() {
     
-       $('#from').datetimepicker({format: 'YYYY/MM/DD'});
-       $('#to').datetimepicker({format: 'YYYY/MM/DD'});
+       $('#from').datetimepicker({
+           format: 'YYYY/MM/DD',
+           maxDate: new Date(),
+           });
+       $('#to').datetimepicker({
+           format: 'YYYY/MM/DD',
+           maxDate: new Date(),
+           
+           });
        $('#amount').keyup(function () {
            gst_amount = cal_gst();
            $('#gst').val(gst_amount);

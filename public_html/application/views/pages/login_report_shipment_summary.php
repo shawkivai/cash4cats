@@ -148,8 +148,16 @@ $(window).load(function() {
        $('#datatable-table').DataTable({
     "order": [[ 0, "desc" ]]
     });
-       $('#from').datetimepicker({format: 'YYYY-MM-DD'});
-       $('#to').datetimepicker({format: 'YYYY-MM-DD'});
+       $('#from').datetimepicker({
+           format: 'YYYY-MM-DD',
+           maxDate: new Date(),
+           
+           });
+       $('#to').datetimepicker({
+           format: 'YYYY-MM-DD',
+           maxDate: new Date(),
+           
+           });
 
 });
 </script>
