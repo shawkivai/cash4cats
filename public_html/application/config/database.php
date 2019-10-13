@@ -75,7 +75,7 @@ $query_builder = true;
 
 $db['default'] = array(
     'dsn'   => '',
-    'hostname' => 'http://13.210.135.225/phpmyadmin/',
+    'hostname' => 'localhost',
     'username' => 'root',
     'password' => 'Note@Pass',
     'database' => 'cash4cat_ruyatulislam',
