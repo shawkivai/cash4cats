@@ -1,3 +1,9 @@
+<?php 
+  $current_url = explode('/', current_url());
+  $id_from_url = end($current_url);
+  $purchase_id = isset($invoice->purchase_id) && !empty($invoice->purchase_id) ? $invoice->purchase_id : $id_from_url;
+?>
+
 <h2 class="page-title">Edit Invoice<small>
 
 <?php if ($this->session->flashdata('notice')) {
@@ -206,7 +212,7 @@
 
                               <div style="padding:20px"><h4 style="text-align: left;margin-top: 5px">INVOICE TOTAL: </h4>
                               <div class="input-group" style="margin-top:10px">
-                                          <span class="input-group-addon">$</span><input value="<?php echo $invoice->Total; ?>" type="text" id="total" name="total"  class="form-control input-lg" readonly></div>                                </div>
+                                  <span class="input-group-addon">$</span><input value="<?php echo $invoice->Total; var_dump($invoice->Total) ?>" type="text" id="total" name="total"  class="form-control input-lg" readonly></div>                                </div>
                               </div>
                           </fieldset>
                   </div>
@@ -288,7 +294,7 @@
                                   <div id="img_container">
                                       <?php foreach ($images as $image) : ?>
                                           <div class="thumbnail col-sm-3">
-                                              <img src="<?php echo base_url() . 'inv_images/' . $invoice->purchase_id . '/' . $image->image; ?>">
+                                              <img src="<?php echo base_url() . 'inv_images/' . $purchase_id . '/' . $image->image; ?>">
                                           </div>
 
                                       <?php endforeach; ?>
@@ -298,7 +304,7 @@
 
                           </fieldset>
                           <input type="hidden" id="counter" name="counter" />
-                          <input type="hidden" id="inv-id" name="inv-id" value="<?php echo $invoice->purchase_id; ?>" />
+                          <input type="hidden" id="inv-id" name="inv-id" value="<?php echo $purchase_id; ?>" />
                           <div class="form-actions">
                               <div class="row">
                                 <div class="col-sm-6 col-sm-offset-5">
