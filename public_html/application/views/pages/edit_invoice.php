@@ -212,7 +212,7 @@
 
                               <div style="padding:20px"><h4 style="text-align: left;margin-top: 5px">INVOICE TOTAL: </h4>
                               <div class="input-group" style="margin-top:10px">
-                                  <span class="input-group-addon">$</span><input value="<?php echo $invoice->Total; var_dump($invoice->Total) ?>" type="text" id="total" name="total"  class="form-control input-lg" readonly></div>                                </div>
+                                  <span class="input-group-addon">$</span><input value="<?php echo $invoice->Total;?>" type="text" id="total" name="total"  class="form-control input-lg" readonly></div>                                </div>
                               </div>
                           </fieldset>
                   </div>
