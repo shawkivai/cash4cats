@@ -180,7 +180,12 @@
                                     <img class="img-rounded" id="inv-img<?php echo $count ?>" src="<?php echo base_url() . $product_image; ?>" height="100px" />
                               </td>
                               <td>
-                                  <input type="text" id="cat-name<?php echo $count ?>" name="cat-name<?php echo $count; ?>"  class="form-control" value="<?php echo $row->name ?>" readonly>
+                                  <input type="text"
+                                        id="cat-name<?php echo $count ?>"
+                                        name="cat-name<?php echo $count; ?>"
+                                        class="form-control"
+                                        value="<?php echo $row->name ?>"
+                                        readonly>
                               </td>
                               <td> <div class="input-group">
                                           <span class="input-group-addon">$</span>

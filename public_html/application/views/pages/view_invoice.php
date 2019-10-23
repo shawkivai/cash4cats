@@ -129,17 +129,24 @@ body {
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($final_result as $amount => $quantity) : ?>
-                        
-
-                        <?php $amount = floatval($amount);
-                        $quantity = intval($quantity); ?>
+                    <?php 
+                    $invoiceSubtotal = array();
+                    $count = 0;
+                    foreach ($final_result as $amount => $quantity) : 
+                        $count++;
+                        $amount = floatval($amount);
+                        $quantity = intval($quantity);
+                        $invoiceSubtotal[$count] = $amount*$quantity;
+                        ?>
                     <tr>
                         <td><?php echo $amount; ?></td>
                         <td><?php echo $quantity; ?></td>
                         <td><?php echo $amount*$quantity; ?></td>
                     </tr>
-                    <?php endforeach; ?>
+                    <?php endforeach; 
+                    $invoice_subtotal = array_sum($invoiceSubtotal);
+                    ?>
+
                     </tbody>
                 </table>
                 <div class="row">
@@ -157,9 +164,20 @@ body {
                                 <p class="no-margin"><strong>Total</strong></p>
                             </div>
                             <div class="col-xs-3">
+<!--                                 
                                 <p><?php echo $subtotal = $invoiceTotal/1.1; ?></p>
                                 <p><?php echo $invoiceTotal - $subtotal; ?></p>
-                                <p class="no-margin"><strong>$<?php echo $invoiceTotal; ?></strong></p>
+                                <p class="no-margin"><strong>$<?php echo $invoiceTotal; ?></strong></p> -->
+
+                                <!-- Invoice subtotal and GST issue fixes -->
+                                
+                                <p><?php echo round($invoice_subtotal, 2); ?></p>
+                                <p><?php $gst = ($invoice_subtotal/1.1) * .10;
+                                        echo round($gst, 2);
+                                ?>
+                                
+                                </p>
+                                <p class="no-margin"><strong>$<?php echo round($invoice_subtotal + $gst, 2); ?></strong></p>
                             </div>
                         </div>
                     </div>

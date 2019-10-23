@@ -115,7 +115,7 @@ ob_start(); //----------------------------------------------------------------
                 <hr />
                 <div class="row">
                     <table>
-                    <tr><td style="width:150px"><strong>Total GST Inclusive:</strong></td><td style="width: 150px">$<?php echo $invoice->Total; ?></td></tr>
+                    <tr><td style="width:150px"><strong>Total GST Inclusive:</strong></td><td style="width: 150px">$<?php echo $invoice->Total + $gst; ?></td></tr>
                     <tr><td style="width:150px"><strong>GST:</strong></td><td style="width: 150px">$<?php echo $gst; ?></td></tr>
                     </table>
                 </div>
