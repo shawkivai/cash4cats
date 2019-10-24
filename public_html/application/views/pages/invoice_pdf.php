@@ -76,7 +76,7 @@ foreach ($rows as $row) {
     }
 }
     $final_result = array_count_values($final_result);
-    $gst = round(($invoice_total/1.1)*0.1, 2);
+    // $gst = round($invoice_total*0.1, 2);
 
 ob_start(); //----------------------------------------------------------------
 ?>
@@ -101,22 +101,31 @@ ob_start(); //----------------------------------------------------------------
                     </thead>
                         <hr />
                     <tbody>
-                    <?php foreach ($final_result as $amount => $quantity) : ?>
-                        <?php $amount = floatval($amount);
-                        $quantity = intval($quantity); ?>
+                    <?php 
+                    $invoiceSubtotal = array();
+                    $count = 0; 
+                    foreach ($final_result as $amount => $quantity) : 
+                        $count++;
+                        $amount = floatval($amount);
+                        $quantity = intval($quantity); 
+                        $invoiceSubtotal[$count] = $amount*$quantity;
+                        ?>
                     <tr style="height: 24px">
                         <td style="height: 24px"><?php echo $amount; ?></td>
                         <td><?php echo $quantity; ?></td>
                         <td><?php echo $amount*$quantity; ?></td>
                     </tr>
-                    <?php endforeach; ?>
+                    <?php endforeach; 
+                    $invoice_final_subtotal = array_sum($invoiceSubtotal);
+                    $final_gst = ($invoice_final_subtotal * .10);
+                    ?>
                     </tbody>
                 </table>
                 <hr />
                 <div class="row">
                     <table>
-                    <tr><td style="width:150px"><strong>Total GST Inclusive:</strong></td><td style="width: 150px">$<?php echo $invoice->Total + $gst; ?></td></tr>
-                    <tr><td style="width:150px"><strong>GST:</strong></td><td style="width: 150px">$<?php echo $gst; ?></td></tr>
+                    <tr><td style="width:150px"><strong>Total GST Inclusive:</strong></td><td style="width: 150px">$<?php echo $invoice_final_subtotal + $final_gst; ?></td></tr>
+                    <tr><td style="width:150px"><strong>GST:</strong></td><td style="width: 150px">$<?php echo $final_gst; ?></td></tr>
                     </table>
                 </div>
                 

@@ -334,12 +334,10 @@ class Pages extends CI_Controller
                     $i++;
                     $row->name = $this->invoice_model->get_product_name($row->PRODUCT);
                     $row->image = $this->invoice_model->get_product_image($row->PRODUCT);
-                    $row->PRICE = (int)$row->PRICE;
                     $row->INV_ID = (int)$row->INV_ID;
                     $row->PRODUCT = (int)$row->PRODUCT;
-                    $row->OVERRIDE_PRICE = (int)$row->OVERRIDE_PRICE;
                     $row->TOTAL_ROW = (int)$row->TOTAL_ROW;
-                    $row->SOLD_PRICE = (int)$row->SOLD_PRICE;
+                    $row->SOLD_PRICE = (float)$row->SOLD_PRICE;
                     $row->QTY = (int)$row->QTY;
 
                     $invoicePrices[$i] = $row->PRICE;

@@ -187,13 +187,29 @@
                                         value="<?php echo $row->name ?>"
                                         readonly>
                               </td>
-                              <td> <div class="input-group">
-                                          <span class="input-group-addon">$</span>
-                                  <input type="text" value="<?php echo $row->PRICE; ?>" id="cat-price<?php echo $count; ?>" name="cat-price<?php echo $count; ?>"  class="form-control <?php echo ($row->OVERRIDE_PRICE == 0.00) ? '' : 'striked'; ?> " readonly></div>
+
+                              <td> 
+                                  <div class="input-group">
+                                      <span class="input-group-addon">$</span>
+                                      <input type="text" 
+                                            value="<?php echo $row->PRICE; ?>" 
+                                            id="cat-price<?php echo $count; ?>" 
+                                            name="cat-price<?php echo $count; ?>"  
+                                            class="form-control <?php echo ($row->OVERRIDE_PRICE == 0.00) ? '' : 'striked'; ?> "
+                                            readonly>
+                                  </div>
                                   <div class="input-group" style="margin-top:10px">
-                                          <span class="input-group-addon">$</span>
-                                  <input type="text" value="<?php echo ($row->OVERRIDE_PRICE == 0.00) ? '' : $row->OVERRIDE_PRICE; ?>" id="cat-price-override<?php echo $count; ?>" name="cat-price-override<?php echo $count; ?>" data-over="<?php echo $count; ?>" class="form-control override" placeholder="Override Price" >   </div>
+                                      <span class="input-group-addon">$</span>
+                                  <input type="text" 
+                                        value="<?php echo ($row->OVERRIDE_PRICE == 0.00) ? '' : $row->OVERRIDE_PRICE; ?>" 
+                                        id="cat-price-override<?php echo $count; ?>" 
+                                        name="cat-price-override<?php echo $count; ?>" data-over="<?php echo $count; ?>" 
+                                        class="form-control override" 
+                                        placeholder="Override Price" >   
+                                  </div>
                                 </td>
+
+
                               <td class="text-muted">
                                   <input type="text" value="<?php echo $row->QTY; ?>" id="cat-qty<?php echo $count; ?>" name="cat-qty<?php echo $count; ?>" data-qty="<?php echo $count; ?>"  class="form-control qty_field" >
                               </td>

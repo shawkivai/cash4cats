@@ -53,9 +53,9 @@ body {
             $final_result = array();
         foreach ($rows as $row) {
             $price_to_add = $row->PRICE;
-                
             if ($row->OVERRIDE_PRICE != 0.00) {
                 $price_to_add = $row->OVERRIDE_PRICE;
+                
             }
                 
             for ($i = 0; $i < $row->QTY; $i++) {
@@ -64,6 +64,7 @@ body {
         }
             
             $final_result = array_count_values($final_result);
+            
         ?>
             
       <section class="widget">
@@ -164,15 +165,9 @@ body {
                                 <p class="no-margin"><strong>Total</strong></p>
                             </div>
                             <div class="col-xs-3">
-<!--                                 
-                                <p><?php echo $subtotal = $invoiceTotal/1.1; ?></p>
-                                <p><?php echo $invoiceTotal - $subtotal; ?></p>
-                                <p class="no-margin"><strong>$<?php echo $invoiceTotal; ?></strong></p> -->
-
-                                <!-- Invoice subtotal and GST issue fixes -->
-                                
+                                <!-- FIxed GST Issue -->
                                 <p><?php echo round($invoice_subtotal, 2); ?></p>
-                                <p><?php $gst = ($invoice_subtotal/1.1) * .10;
+                                <p><?php $gst = $invoice_subtotal * .10;
                                         echo round($gst, 2);
                                 ?>
                                 
