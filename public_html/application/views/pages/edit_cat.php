@@ -14,6 +14,7 @@ body {
                <form class="form-horizontal form-label-left" method="post" action="<?php echo (site_url() . '/cats/update') ?>" enctype="multipart/form-data">
                 <section class="widget">
                     <?php if ($this->session->flashdata('notice')) {
+                            
                             echo('<span class="label label-important">' . $this->session->flashdata('notice'));
                     } ?></span>
                     <header>
@@ -35,18 +36,18 @@ body {
                                                 <fieldset>
                         <h4 style="margin-top:15px">Converter Description</h4>
                         <textarea id="desc" name="desc" style="width:100%;margin-top:20px; height:300px"><?php echo $cat->description; ?></textarea>
-                        <input type="hidden" id="cat-id" name="cat-id" value="<?php echo $cat->id; ?>" />
+                        <input type="hidden" id="cat-id" name="cat-id" value="<?php echo $cat->product_id; ?>" />
                         </fieldset>
                     </header>
                     <div class="body">
                     </div>
 
                     <div class="form-actions">
-                                <div class="row">
-                                  <div class="col-sm-6 col-sm-offset-5">
-                                        <button type="submit" class="btn btn-primary input-lg" >Update Cat</button>
-                                    </div>
-                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-5">
+                                <button type="submit" class="btn btn-primary input-lg" >Update Cat</button>
+                            </div>
+                    </div>
                   </div>
 
                 </section>

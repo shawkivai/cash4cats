@@ -167,7 +167,7 @@ class Catalogue_model extends CI_model
 
     public function get_cats_in_category_and_price($id)
     {
-        $this->db->select('product.id, product.name, product.description, product.image, product_attribute.value');
+        $this->db->select('product.id, product.name, product.description, product.image, product.category_id, product_attribute.value');
         $this->db->from('product');
         $this->db->where('category_id', $id);
         $this->db->join('product_attribute', 'product_attribute.product_id = product.id');
@@ -233,5 +233,19 @@ class Catalogue_model extends CI_model
         $new_image = array('image' => $new_image);
         $this->db->where('id', $product_id);
         $this->db->update('product', $new_image);
+    }
+
+    public function delete_cat($product_id)
+    {
+        $this->db->where('id', $product_id);
+        $result = $this->db->delete('product');
+        // Delete Invoice Rows from Purchase Attribute
+        $this->db->where('product_id', $product_id);
+        $this->db->delete('product_attribute');
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
