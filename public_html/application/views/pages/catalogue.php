@@ -23,7 +23,45 @@
                                 <h4><?php echo $cats[$i]['name']; ?></h4>
                                 <p>Price: <strong>$<?php echo $cats[$i]['value'] ?></strong></p>
                                 <p><?php echo $cats[$i]['description']; ?></p> 
-                                <a href="<?php echo site_url() . '/pages/view/edit_cat/' . $cats[$i]['id'] ?>" class="btn btn-inverse">View</a></p>
+                                <a href="<?php echo site_url() . '/pages/view/edit_cat/' . $cats[$i]['id'] ?>" class="btn btn-inverse">View</a>
+                                <?php 
+                                    echo '<button class="btn btn-success inv-button" data-toggle="modal" data-target="#myModal_'. $cats[$i]['id'];
+                                    echo '" style="background-color:#f31a1a; float:right">
+                                    Delete</button>';
+
+                                    echo '</td>';
+
+                                    echo '<div id="myModal_'. $cats[$i]['id'];
+                                    echo '" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <button type="button" 
+                                            class="close"
+                                            data-dismiss="modal" 
+                                            aria-hidden="true">×</button>
+                                            <h4 class="modal-title" 
+                                            id="myModalLabel">
+                                            Are you sure you want to delete this Cat?
+                                            </h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" 
+                                                class="btn btn-default"
+                                                data-dismiss="modal">No</button>';
+                                        echo '<a href="';
+                                        echo (site_url() .'/cats/delete_product/' . $cats[$i]['id'] . '/' . $cats[$i]['category_id'] );
+                                        echo '"<button type="button" class="btn btn-primary" style="margin-left:20px">Yes</button></a>
+                                        </div>"'
+                                ?></p>
+                                
+
+
+
+
+
+
                             </div>
                         </div>
                     </li>
@@ -34,7 +72,9 @@
                     <?php endif; ?>  
                 <?php endfor; ?>
             <?php else : ?>
-                    <span class="label label-important">No cats in this category.</span>
+                    <span class="label label-important">
+                        No cats in this category.
+                    </span>
             <?php endif; ?>
         
         </div> 

@@ -13,7 +13,7 @@ class Cats extends CI_Controller
                            'sample_number' => $this->input->post('cat_sample_no'),
                            'description' => $this->input->post('desc'),
                            'final_price' => $this->input->post('cat_override'),
-                             'category_id' => $this->input->post('category_id')
+                            'category_id' => $this->input->post('category_id')
                           );
         $this->load->model('catalogue_model');
         $result_cat_update = $this->catalogue_model->update_cat($cat_id, $cat_array);
@@ -242,5 +242,20 @@ class Cats extends CI_Controller
         }
             redirect(site_url() . '/pages/view/edit_cat/' . $cat_id);
             //redirect(site_url() . '/pages/view/add_cat/');
+    }
+
+    public function delete_product($product_id, $category_id)
+    {
+        $this->load->model('catalogue_model');
+        $result = $this->catalogue_model->delete_cat($product_id);
+        if ($result) {
+                    $this->session->set_flashdata('notice', 'Cat Successfully Deleted');
+        } else {
+                    $this->session->set_flashdata('notice', 'Error deleting Cat');
+        }
+        
+        $redirect = site_url() .'/pages/catalogue_view/' . $category_id;
+        redirect($redirect);
+
     }
 }
