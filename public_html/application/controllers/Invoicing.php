@@ -88,10 +88,11 @@ class Invoicing extends CI_Controller
         $current_admin = $this->session->userdata('username');
 
         // Main Invoice Table
+        $gst = 1.1;
         $new_invoice = array(
                 'customer_id' => $this->input->post('customer'),
                 'status' => $this->input->post('inv-status'),
-                'Total' => $this->input->post('total'),
+                'Total' => $this->input->post('total') * $gst,
                 'admin_id' => $current_admin,
                 'commission' => $this->input->post('comm')
             );
