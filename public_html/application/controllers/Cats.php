@@ -15,6 +15,7 @@ class Cats extends CI_Controller
                            'final_price' => $this->input->post('cat_override'),
                             'category_id' => $this->input->post('category_id')
                           );
+
         $this->load->model('catalogue_model');
         $result_cat_update = $this->catalogue_model->update_cat($cat_id, $cat_array);
 
@@ -48,7 +49,7 @@ class Cats extends CI_Controller
 
         if ($_FILES['mainImg']['tmp_name'] != "") {
             error_log($_FILES['mainImg']['tmp_name']);
-    // If error occurs
+        // If error occurs
             if (! $this->upload->do_upload('mainImg')) {
                 $this->session->set_flashdata('notice', $this->upload->display_errors());
                 $errors = true;
@@ -119,7 +120,7 @@ class Cats extends CI_Controller
         } else {
             $this->session->set_flashdata('notice', 'Error updating Cat');
         }
-            redirect(site_url() . '/pages/view/edit_cat/' . $cat_id);
+            redirect(site_url() . '/pages/catalogue_view/' . $cat_array['category_id']);
     }
 
 
