@@ -231,7 +231,7 @@
 
                       </table>
 
-                              <div style="padding:20px"><h4 style="text-align: left;margin-top: 5px">INVOICE TOTAL: </h4>
+                              <div style="padding:20px"><h4 style="text-align: left;margin-top: 5px; font-weight:600; font-size:18px">INVOICE TOTAL: <span class="badge badge-success mr-1">Including GST</span> </h4>
                               <div class="input-group" style="margin-top:10px">
                                   <span class="input-group-addon">$</span><input value="<?php echo $invoice->Total;?>" type="text" id="total" name="total"  class="form-control input-lg" readonly></div>                                </div>
                               </div>
