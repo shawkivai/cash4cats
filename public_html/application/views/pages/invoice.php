@@ -209,8 +209,9 @@ body {
                   <h4 style="text-align: left;margin-top: 5px">INVOICE TOTALS: </h4>
                                 <div class="input-group" style="margin-top:10px">
                                   <span class="input-group-addon" >CATS TOTAL: <br /><div style="font-weight:bold" id="catTotalSummary"></div></span>
+                                  <input type="hidden" id="invoiceTotal" name="invoiceTotal" class="form-control" readonly>
                                   <span class="input-group-addon" >GST: <br /><div style="font-weight:bold" id="gstTotalSummary"></div></span>
-                                            <span class="input-group-addon">TOTAL DUE: $</span><input type="text" id="total" name="total"  class="form-control" style="font-size: 22px;height: 50px;" readonly></div>                                </div>
+                                  <span class="input-group-addon">TOTAL DUE: $</span><input type="text" id="total" name="total"  class="form-control" style="font-size: 22px;height: 50px;" readonly></div>                                </div>
                                 </div>
                             </fieldset>
                   </div>
@@ -441,10 +442,12 @@ body {
     }
 
     running_total = round(running_total, 2);
+
     $('#catTotalSummary').html('$' + running_total);
     var current_gst = round(running_total*0.1,2);
     $('#gstTotalSummary').html('$' + current_gst);
     $('#total').val(round(running_total*1.1,2));
+    $('#invoiceTotal').val(round(running_total, 2));
   }
 
   function groupPrices(selected){
