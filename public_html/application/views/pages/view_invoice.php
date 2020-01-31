@@ -54,7 +54,7 @@ body {
         foreach ($rows as $row) {
             $price_to_add = $row->PRICE;
             if ($row->OVERRIDE_PRICE != 0.00) {
-                $price_to_add = $row->OVERRIDE_PRICE;
+                $price_to_add = $row->TOTAL_ROW / $row->QTY;
                 
             }
                 
