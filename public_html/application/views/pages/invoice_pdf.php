@@ -147,7 +147,7 @@ ob_start(); //----------------------------------------------------------------
 $html = ob_get_clean();
 
 $pdf->writeHTML($html, true, false, true, false, '');
-// $pdf->Image('inv_images/' . $purchase_id . '/' . $image->image, '', '', 150, 100, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
+$pdf->Image('inv_images/' . $purchase_id . '/' . $image->image, '', '', 150, 100, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
 
 // reset pointer to the last page
 $pdf->lastPage();
