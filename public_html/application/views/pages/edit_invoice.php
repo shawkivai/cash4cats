@@ -200,8 +200,10 @@
                                   </div>
                                   <div class="input-group" style="margin-top:10px">
                                       <span class="input-group-addon">$</span>
+                                      <?php var_dump($row->OVERRIDE_PRICE); ?>
                                   <input type="text" 
-                                        value="<?php echo ($row->OVERRIDE_PRICE == 0.00) ? '' : $row->OVERRIDE_PRICE; ?>" 
+                                        value="<?php 
+                                                  echo ($row->OVERRIDE_PRICE == 0.00) ? '' : $row->OVERRIDE_PRICE; ?>" 
                                         id="cat-price-override<?php echo $count; ?>" 
                                         name="cat-price-override<?php echo $count; ?>" data-over="<?php echo $count; ?>" 
                                         class="form-control override" 
