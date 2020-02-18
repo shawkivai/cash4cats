@@ -167,7 +167,8 @@ class Catalogue_model extends CI_model
 
     public function get_cats_in_category_and_price($id)
     {
-        $this->db->select('product.id, product.name, product.description, product.image, product.category_id, product_attribute.value');
+        $this->db->select('product.id, product.name, product.description, product.image, product.category_id, 
+                        product.final_price, product_attribute.value');
         $this->db->from('product');
         $this->db->where('category_id', $id);
         $this->db->join('product_attribute', 'product_attribute.product_id = product.id');

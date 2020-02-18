@@ -7,6 +7,10 @@ body {
     }
 </style>
 
+<?php 
+$cat_price = $cat->final_price != 0 ? round(($cat->final_price + $cat->final_price * .10) ,2) : $cat->value; 
+
+?>
             <h2 class="page-title"><?php echo $cat->name; ?> - <small>View Cat</small></h2>
 
     <div class="row">
@@ -23,7 +27,7 @@ body {
                         Update Image: <input type="file" class="" name="mainImg" id="mainImg" /></div>
                         <h3 style="margin-bottom:15px">Name: <input type="text" name="cat_name" id="cat_name" value="<?php echo $cat->name ?>"></h3>
                         <h3 style="margin-bottom:15px">Sample #: <input type="text" name="cat_sample_no" id="cat_sample_no" value="<?php echo $cat->sample_number ?>"></h3>
-                        <h3 style="margin-bottom:15px">Price: $<?php echo $cat->value; ?></h2>
+                        <h3 style="margin-bottom:15px">Price: $<?php echo $cat_price ; ?></h2>
                         <h3 style="margin-bottom:15px">Override Price: $ <input type="text" name="cat_override" id="cat_override" value="<?php echo $cat->final_price ?>"></h3><small>Note: A value set for Override Price will override any other price even after all calculations!</small>
                                                 <h3 style="margin-bottom:15px;margin-top:15px">Category: </h3>
                                                     <select class="xs-pull-right select2 form-control input-lg" data-placeholder="Select Cat Brand" tabindex="-1" id="category_id" name="category_id" required data-parsley-trigger="change" data-parsley-id="15">
